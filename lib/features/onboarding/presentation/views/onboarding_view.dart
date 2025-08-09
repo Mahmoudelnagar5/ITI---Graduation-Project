@@ -6,20 +6,23 @@ import 'package:final_project_iti/core/utilities/app_colors.dart';
 
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/core/widgets/app_botton.dart';
-import 'package:final_project_iti/features/onboarding/onboarding_view/widgets/onboarding_body.dart';
+import 'package:final_project_iti/features/onboarding/data/onboarding_list.dart';
+import 'package:final_project_iti/features/onboarding/presentation/widgets/onboarding_body.dart';
+import 'package:final_project_iti/features/onboarding/presentation/widgets/skip_botton.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class onboardingView extends StatefulWidget {
-  const onboardingView({super.key});
+class OnboardingView extends StatefulWidget {
+  const OnboardingView({super.key});
 
   @override
-  State<onboardingView> createState() => _onboardingViewState();
+  State<OnboardingView> createState() => _OnboardingViewState();
 }
 
-class _onboardingViewState extends State<onboardingView> {
+class _OnboardingViewState extends State<OnboardingView> {
   late final PageController _pageController;
   late double height;
+  int pageIndex = 0;
 
   @override
   void initState() {
@@ -41,45 +44,38 @@ class _onboardingViewState extends State<onboardingView> {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6.0),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {
-                    AppNavigation.pushWithReplacement(
-                      context: context,
-                      route: AppRoutes.loginRole,
-                    );
-                  },
-                  child: Text(
-                    "Skip",
-                    style: AppTextStyles.textStyleRegular20.copyWith(
-                      color: AppColors.mainColorStart,
-                      fontFamily: 'Inter',
-                    ),
-                  ),
-                ),
-              ),
+            const skipBotton(),
+            OnboardingBody(
+              pageController: _pageController,
+              onPageChanged: (p0) {
+                setState(() {
+                  pageIndex = p0;
+                });
+              },
             ),
 
-            onboardingBody(pageController: _pageController),
-
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: AppBotton(
                 child: Text(
-                  'Next',
+                  pageIndex == onboardingDataList.length - 1
+                      ? 'Get Started'
+                      : 'Next',
                   style: AppTextStyles.textStyleRegular20.copyWith(
                     color: AppColors.white,
                     fontFamily: 'Inter',
                   ),
                 ),
                 onPressed: () {
-                  _pageController.nextPage(
-                    duration: Duration(milliseconds: 300),
-                    curve: Curves.easeIn,
-                  );
+                  pageIndex == onboardingDataList.length - 1
+                      ? AppNavigation.pushWithReplacement(
+                          context: context,
+                          route: AppRoutes.loginRole,
+                        )
+                      : _pageController.nextPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeIn,
+                        );
                 },
               ),
             ),

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CasheHelper().init();
+  // CasheHelper().saveData(key: CasheKeys.firstTime, value: true);
   runApp(const MyApp());
 }
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: AppRouter.generateRoute,
       initialRoute: initalRouteMethod(),
 
-      home: SplashView(),
+      home: const SplashView(),
     );
   }
 }

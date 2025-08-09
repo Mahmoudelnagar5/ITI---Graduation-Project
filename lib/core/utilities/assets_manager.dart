@@ -3,8 +3,8 @@ class AssetsManager {
   AssetsManager._();
   
   /// Assets for imagesITIfayoumlogo
-  /// assets/images/ITIfayoumlogo.jpg
-  static const String imagesITIfayoumlogo = "assets/images/ITIfayoumlogo.jpg";
+  /// assets/images/ITIfayoumlogo.png
+  static const String imagesITIfayoumlogo = "assets/images/ITIfayoumlogo.png";
 
   /// Assets for imagesLogo
   /// assets/images/logo.png
@@ -15,7 +15,7 @@ class AssetsManager {
   static const String imagesOnboarding = "assets/images/onboarding.jpg";
 
   /// Assets for imagesOnboarding2
-  /// assets/images/onboarding2.jpg
+  /// assets/images/onboarding2.png
   static const String imagesOnboarding2 = "assets/images/onboarding2.png";
 }
 

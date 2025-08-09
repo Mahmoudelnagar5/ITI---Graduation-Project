@@ -1,3 +1,4 @@
+import 'package:final_project_iti/core/utilities/assets_manager.dart';
 import 'package:flutter/material.dart';
 
 class LoginRoleView extends StatelessWidget {
@@ -5,6 +6,20 @@ class LoginRoleView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              AssetsManager.imagesITIfayoumlogo,
+              height: 120,
+              width: 120,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

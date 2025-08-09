@@ -5,15 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class onboardingBody extends StatelessWidget {
-  const onboardingBody({super.key, required this.pageController});
+class OnboardingBody extends StatelessWidget {
+  const OnboardingBody({
+    super.key,
+    required this.pageController,
+    this.onPageChanged,
+  });
   final PageController pageController;
-
+  final void Function(int)? onPageChanged;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: PageView.builder(
-        physics: BouncingScrollPhysics(),
+        onPageChanged: onPageChanged,
+        physics: const BouncingScrollPhysics(),
         controller: pageController,
         itemCount: onboardingDataList.length,
         itemBuilder: (context, index) => Padding(
@@ -30,7 +35,7 @@ class onboardingBody extends StatelessWidget {
                   fontFamily: 'Inter',
                 ),
               ),
-              Gap(16),
+              const Gap(16),
               Text(
                 textAlign: TextAlign.center,
                 onboardingDataList[index].subTitle,
@@ -40,18 +45,18 @@ class onboardingBody extends StatelessWidget {
                   fontFamily: 'Inter',
                 ),
               ),
-              Gap(32),
+              const Gap(32),
               SmoothPageIndicator(
                 controller: pageController,
                 count: onboardingDataList.length,
-                effect: WormEffect(
+                effect: const WormEffect(
                   dotColor: AppColors.onboardindDotColor,
                   activeDotColor: AppColors.mainColorStart,
                   dotHeight: 12,
                   dotWidth: 12,
                 ),
               ),
-              Gap(32),
+              const Gap(32),
             ],
           ),
         ),

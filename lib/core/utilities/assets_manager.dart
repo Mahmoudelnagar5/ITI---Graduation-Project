@@ -1,20 +1,21 @@
 // ignore_for_file: prefer_single_quotes
-abstract class AssetsManager {
+class AssetsManager {
   AssetsManager._();
-
+  
   /// Assets for imagesITIfayoumlogo
-  /// assets/images/ITIfayoumlogo.jpg
-  static const String imagesITIfayoumlogo = "assets/images/ITIfayoumlogo.jpg";
+  /// assets/images/ITIfayoumlogo.png
+  static const String imagesITIfayoumlogo = "assets/images/ITIfayoumlogo.png";
 
   /// Assets for imagesLogo
-  /// assets/images/logo.jpg
-  static const String imagesLogo = "assets/images/logo.jpg";
+  /// assets/images/logo.png
+  static const String imagesLogo = "assets/images/logo.png";
 
   /// Assets for imagesOnboarding
   /// assets/images/onboarding.jpg
   static const String imagesOnboarding = "assets/images/onboarding.jpg";
 
   /// Assets for imagesOnboarding2
-  /// assets/images/onboarding2.jpg
-  static const String imagesOnboarding2 = "assets/images/onboarding2.jpg";
+  /// assets/images/onboarding2.png
+  static const String imagesOnboarding2 = "assets/images/onboarding2.png";
 }
+

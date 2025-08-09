@@ -16,4 +16,5 @@ abstract class AppColors {
   static const Color backappbar = Color(0xff1F2937);
   static const Color addcontant = Color(0xffF9FAFB);
   static const Color adminpanelactivateicon = Color(0xffE53935);
+  static const Color onboardindDotColor = Color(0xffE5E5E5);
 }

@@ -16,6 +16,6 @@ class AssetsManager {
 
   /// Assets for imagesOnboarding2
   /// assets/images/onboarding2.jpg
-  static const String imagesOnboarding2 = "assets/images/onboarding2.jpg";
+  static const String imagesOnboarding2 = "assets/images/onboarding2.png";
 }
 

@@ -4,9 +4,9 @@ import 'package:final_project_iti/core/functions/network/network.dart';
 import 'package:final_project_iti/features/splash_view/splash_view.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  CasheHelper().init;
+  await CasheHelper().init();
   runApp(const MyApp());
 }
 

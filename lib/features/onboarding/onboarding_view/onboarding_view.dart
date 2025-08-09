@@ -1,5 +1,7 @@
 import 'package:final_project_iti/core/cashe_helper/cashe_helper.dart';
 import 'package:final_project_iti/core/cashe_helper/cashe_helper_keys.dart';
+import 'package:final_project_iti/core/config/configrations.dart';
+import 'package:final_project_iti/core/functions/navigations/navigations.dart';
 import 'package:final_project_iti/core/utilities/app_colors.dart';
 
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
@@ -22,7 +24,7 @@ class _onboardingViewState extends State<onboardingView> {
   @override
   void initState() {
     _pageController = PageController(initialPage: 0);
-    CasheHelper().saveData(key: CasheKeys.firstTime, value: true);
+    CasheHelper().saveData(key: CasheKeys.firstTime, value: false);
     super.initState();
   }
 
@@ -44,7 +46,12 @@ class _onboardingViewState extends State<onboardingView> {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    AppNavigation.pushWithReplacement(
+                      context: context,
+                      route: AppRoutes.loginRole,
+                    );
+                  },
                   child: Text(
                     "Skip",
                     style: AppTextStyles.textStyleRegular20.copyWith(

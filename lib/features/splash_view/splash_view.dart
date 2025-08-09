@@ -1,3 +1,5 @@
+import 'package:final_project_iti/core/cashe_helper/cashe_helper.dart';
+import 'package:final_project_iti/core/cashe_helper/cashe_helper_keys.dart';
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/navigations/navigations.dart';
 import 'package:final_project_iti/core/utilities/app_colors.dart';
@@ -16,7 +18,10 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-
+    bool? firstTime = CasheHelper().getData(CasheKeys.firstTime)as bool? ?? true ;
+    Future.delayed(Duration(seconds: 3), () {
+      AppNavigation.pushName(context: context, route: firstTime? AppRoutes.onboardingView:AppRoutes.loginRole);
+    });
 
     super.initState();
   }

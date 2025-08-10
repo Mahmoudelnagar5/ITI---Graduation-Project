@@ -27,12 +27,11 @@ class LoginForm extends StatelessWidget {
 
             const Gap(8),
 
-            const PasswordTextFormField(),
+            const PasswordTextFormField(hintText: 'Password'),
             const Gap(16),
 
             const ForgotPasswordBotton(),
-            const Spacer(flex: 5),
-
+            Gap(MediaQuery.sizeOf(context).height * 0.26),
             AppBotton(
               onPressed: () {},
               child: Text(
@@ -43,12 +42,9 @@ class LoginForm extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(flex: 2),
           ],
         ),
       ),
     );
   }
 }
-
-

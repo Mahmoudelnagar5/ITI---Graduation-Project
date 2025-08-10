@@ -4,8 +4,9 @@ import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:flutter/material.dart';
 
 class PasswordTextFormField extends StatefulWidget {
-  const PasswordTextFormField({super.key, this.controller});
+  const PasswordTextFormField({super.key, this.controller, required this.hintText});
   final TextEditingController? controller;
+  final String hintText;
   @override
   State<PasswordTextFormField> createState() => _AppTextFormFieldState();
 }
@@ -16,10 +17,13 @@ class _AppTextFormFieldState extends State<PasswordTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: const TextStyle(color: AppColors.black),
       controller: widget.controller,
       obscureText: obscureText,
       decoration: InputDecoration(
-        hintText: 'Password',
+        fillColor: AppColors.white,
+        filled: true,
+        hintText: widget.hintText,
         hintStyle: AppTextStyles.textStyleRegular16.copyWith(
           fontFamily: AppFontFamily.roboto,
           color: AppColors.hinttextfield,

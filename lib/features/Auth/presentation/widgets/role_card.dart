@@ -20,7 +20,7 @@ class RoleCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 20.0, left: 20, bottom: 16),
       child: InkWell(
-        onTap: () {},
+        onTap:onTap,
         child: Card(
           elevation: 2,
           shape: RoundedRectangleBorder(

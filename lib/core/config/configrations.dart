@@ -1,5 +1,6 @@
 import 'package:final_project_iti/core/functions/transitions/page_route_builder_method.dart';
 import 'package:final_project_iti/features/Auth/presentation/views/login_role.dart';
+import 'package:final_project_iti/features/Auth/presentation/views/login_view.dart';
 import 'package:final_project_iti/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,12 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const LoginRoleView(),
         );
+      case AppRoutes.loginView:
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const LoginView(),
+        );
 
       default:
         return pageRouteBuilderMethod(
@@ -33,4 +40,5 @@ abstract class AppRoutes {
   static const String splashView = '/';
   static const String onboardingView = '/onboardingView';
   static const String loginRole = '/loginRole';
+  static const String loginView = '/loginView';
 }

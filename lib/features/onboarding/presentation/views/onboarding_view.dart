@@ -3,6 +3,7 @@ import 'package:final_project_iti/core/cashe_helper/cashe_helper_keys.dart';
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/navigations/navigations.dart';
 import 'package:final_project_iti/core/utilities/app_colors.dart';
+import 'package:final_project_iti/core/utilities/app_font_family.dart';
 
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/core/widgets/app_botton.dart';
@@ -63,7 +64,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                       : 'Next',
                   style: AppTextStyles.textStyleRegular20.copyWith(
                     color: AppColors.white,
-                    fontFamily: 'Inter',
+                    fontFamily: AppFontFamily.inter,
                   ),
                 ),
                 onPressed: () {

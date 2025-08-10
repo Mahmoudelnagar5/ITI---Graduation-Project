@@ -1,4 +1,5 @@
 import 'package:final_project_iti/core/utilities/app_colors.dart';
+import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/features/onboarding/data/onboarding_list.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class OnboardingBody extends StatelessWidget {
               Text(
                 onboardingDataList[index].title,
                 style: AppTextStyles.textStyleRegular24.copyWith(
-                  fontFamily: 'Inter',
+                  fontFamily: AppFontFamily.inter,
                 ),
               ),
               const Gap(16),
@@ -42,7 +43,7 @@ class OnboardingBody extends StatelessWidget {
 
                 style: AppTextStyles.textStyleRegular16.copyWith(
                   color: AppColors.acountsubtitle,
-                  fontFamily: 'Inter',
+                  fontFamily: AppFontFamily.inter,
                 ),
               ),
               const Gap(32),

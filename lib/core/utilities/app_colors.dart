@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppColors {
   static const Color mainColorStart = Color(0xff9D2235);
+  static const Color roleIconBackground = Color(0xffF6E9EB);
   static const Color white = Color(0xffFFFFFF);
   static const Color black = Color(0xff000000);
   static const Color accountype = Color(0xff1A1A1A);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../../../../../core/utilities/assets_manager.dart';
 import '../../../../../core/utilities/styles_manager.dart';
@@ -13,7 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         children: [
           Image.asset(Assets.imagesTrackLogo),
-          const SizedBox(width: 10),
+          const Gap(10),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,5 +30,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 20);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 5);
 }

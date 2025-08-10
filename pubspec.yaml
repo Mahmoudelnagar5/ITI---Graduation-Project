@@ -82,6 +82,18 @@ flutter:
           weight: 500
         - asset: assets/fonts/Tajawal/Tajawal-Bold.ttf
           weight: 700
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Roboto/Roboto-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Roboto/Roboto-SemiBold.ttf
+          weight: 600 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

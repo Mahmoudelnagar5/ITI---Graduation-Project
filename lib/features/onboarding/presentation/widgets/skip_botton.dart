@@ -1,6 +1,7 @@
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/navigations/navigations.dart';
 import 'package:final_project_iti/core/utilities/app_colors.dart';
+import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class skipBotton extends StatelessWidget {
             "Skip",
             style: AppTextStyles.textStyleRegular20.copyWith(
               color: AppColors.mainColorStart,
-              fontFamily: 'Inter',
+              fontFamily: AppFontFamily.inter,
             ),
           ),
         ),

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CasheHelper().init();
-  // CasheHelper().saveData(key: CasheKeys.firstTime, value: true);
+
   runApp(const MyApp());
 }
 
@@ -18,6 +18,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+
+      themeMode: ThemeMode.system,
       onGenerateRoute: AppRouter.generateRoute,
       initialRoute: initalRouteMethod(),
 

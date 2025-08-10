@@ -16,14 +16,15 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
+    CasheHelper().saveData(key: CasheKeys.firstTime, value: true);
     bool? firstTime =
         CasheHelper().getData(CasheKeys.firstTime) as bool? ?? true;
-    Future.delayed(const Duration(seconds: 3), () {
-      AppNavigation.pushWithReplacement(
-        context: context,
-        route: firstTime ? AppRoutes.onboardingView : AppRoutes.loginRole,
-      );
-    });
+    // Future.delayed(const Duration(seconds: 3), () {
+    //   AppNavigation.pushWithReplacement(
+    //     context: context,
+    //     route: firstTime ? AppRoutes.onboardingView : AppRoutes.loginRole,
+    //   );
+    // });
     super.initState();
   }
 

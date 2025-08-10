@@ -5,7 +5,7 @@ abstract class AppNavigation {
   static void pushName({
     required BuildContext context,
     required String route,
-    String? argument,
+    Object? argument,
     bool rootNavigator = false,
   }) {
     Navigator.of(

@@ -2,6 +2,7 @@ import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/assets_manager.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginRoleView extends StatelessWidget {
   const LoginRoleView({super.key});
@@ -14,10 +15,14 @@ class LoginRoleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
-            Image.asset(Assets.imagesITIfayoumlogo, height: 120, width: 120),
+            Image.asset(
+              Assets.imagesITIfayoumlogo,
+              height: 120.h,
+              width: 120.w,
+            ),
             Text(
               "Welcome to ITI Fayoum",
-              style: AppTextStyles.textStyleBold24.copyWith(
+              style: AppTextStyles.textStyleBold20.copyWith(
                 fontFamily: AppFontFamily.roboto,
               ),
             ),

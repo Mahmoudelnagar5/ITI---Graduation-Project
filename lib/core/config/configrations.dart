@@ -3,6 +3,8 @@ import 'package:final_project_iti/features/Auth/login_role.dart';
 import 'package:final_project_iti/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../features/home/presentation/views/track_content_view.dart';
+
 class AppRouter {
   static Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -17,6 +19,12 @@ class AppRouter {
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
               const LoginRoleView(),
+        );
+      case AppRoutes.trackContentView:
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const TrackContentView(),
         );
 
       default:
@@ -33,4 +41,6 @@ abstract class AppRoutes {
   static const String splashView = '/';
   static const String onboardingView = '/onboardingView';
   static const String loginRole = '/loginRole';
+  static const String tracksView = '/tracksView';
+  static const String trackContentView = '/trackContentView';
 }

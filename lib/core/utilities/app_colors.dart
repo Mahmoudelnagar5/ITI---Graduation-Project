@@ -18,4 +18,5 @@ abstract class AppColors {
   static const Color addcontant = Color(0xffF9FAFB);
   static const Color adminpanelactivateicon = Color(0xffE53935);
   static const Color onboardindDotColor = Color(0xffE5E5E5);
+  static const Color unfocusedTextFieldBorder = Color(0xffE5E5E5);
 }

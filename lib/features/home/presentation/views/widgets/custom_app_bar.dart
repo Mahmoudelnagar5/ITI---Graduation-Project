@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.only(left: 20),
       child: Row(
         children: [
-          Image.asset(Assets.imagesTracklogo),
+          Image.asset(Assets.imagesTrackLogo),
           const SizedBox(width: 10),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,

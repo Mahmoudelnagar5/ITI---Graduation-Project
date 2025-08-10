@@ -18,7 +18,11 @@ class Assets {
   /// assets/images/onboarding2.png
   static const String imagesOnboarding2 = "assets/images/onboarding2.png";
 
+  /// Assets for imagesSearch icon
+  /// assets/images/search icon.png
+  static const String imagesSearchIcon = "assets/images/search icon.png";
+
   /// Assets for imagesTrack logo
   /// assets/images/track logo.png
-  static const String imagesTracklogo = "assets/images/track logo.png";
+  static const String imagesTrackLogo = "assets/images/track logo.png";
 }

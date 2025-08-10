@@ -1,7 +1,6 @@
 import 'package:final_project_iti/core/cashe_helper/cashe_helper.dart';
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/network/network.dart';
-import 'package:final_project_iti/features/splash_view/splash_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
@@ -30,6 +29,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData.light(),
           darkTheme: ThemeData.dark(),
 

@@ -1,8 +1,11 @@
+import 'package:final_project_iti/core/utilities/app_colors.dart';
 import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/assets_manager.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
+import 'package:final_project_iti/features/Auth/data/login_role_list.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/role_card.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class LoginRoleView extends StatelessWidget {
   const LoginRoleView({super.key});
@@ -22,13 +25,37 @@ class LoginRoleView extends StatelessWidget {
                 fontFamily: AppFontFamily.roboto,
               ),
             ),
+            const Gap(8),
             Text(
               "Please select your account type",
               style: AppTextStyles.textStyleRegular16.copyWith(
                 fontFamily: AppFontFamily.roboto,
               ),
             ),
-            const RoleCard(),
+            const Gap(32),
+            Expanded(
+              child: ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: roleList.length,
+                itemBuilder: (context, index) {
+                  return RoleCard(
+                    title: roleList[index].title,
+                    subTitle: roleList[index].subTitle,
+                    svgAssets: roleList[index].svgAssets,
+
+                    // TODO add onTap to LoginRoleModel in the list
+                  );
+                },
+              ),
+            ),
+            Text(
+              'Select your role to proceed to login',
+              style: AppTextStyles.textStyleRegular14.copyWith(
+                fontFamily: AppFontFamily.roboto,
+                color: AppColors.acountsubtitle,
+              ),
+            ),
+            Gap(MediaQuery.sizeOf(context).height * 00.22),
           ],
         ),
       ),

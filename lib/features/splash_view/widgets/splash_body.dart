@@ -13,7 +13,7 @@ class SplashBody extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(AssetsManager.imagesLogo, height: 200),
+          Image.asset(Assets.imagesLogo, height: 200),
           const Gap(13),
           Text(
             'المعهد التكنولوجي العالي',

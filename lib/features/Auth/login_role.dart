@@ -12,11 +12,7 @@ class LoginRoleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              AssetsManager.imagesITIfayoumlogo,
-              height: 120,
-              width: 120,
-            ),
+            Image.asset(Assets.imagesITIfayoumlogo, height: 120, width: 120),
           ],
         ),
       ),

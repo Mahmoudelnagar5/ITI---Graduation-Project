@@ -6,12 +6,12 @@ final List<OnboardingModel> onboardingDataList = [
     title: 'Welcome to ITI Fayoum',
     subTitle:
         "Join Egypt's premier tech education hub. Start your journey to becoming a tech professional.",
-    image: AssetsManager.imagesOnboarding,
+    image: Assets.imagesOnboarding,
   ),
   OnboardingModel(
     title: 'Welcome to ITI Fayoum',
     subTitle:
         "Join Egypt's premier tech education hub. Start your journey to becoming a tech professional.",
-    image: AssetsManager.imagesOnboarding2,
+    image: Assets.imagesOnboarding2,
   ),
 ];

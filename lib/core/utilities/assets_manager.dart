@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_single_quotes
-class AssetsManager {
-  AssetsManager._();
+abstract class Assets {
+  Assets._();
   
   /// Assets for imagesITIfayoumlogo
   /// assets/images/ITIfayoumlogo.png

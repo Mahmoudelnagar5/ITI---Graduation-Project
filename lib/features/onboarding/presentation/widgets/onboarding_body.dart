@@ -32,7 +32,8 @@ class OnboardingBody extends StatelessWidget {
               ),
               Text(
                 onboardingDataList[index].title,
-                style: AppTextStyles.textStyleRegular24.copyWith(
+                style: AppTextStyles.textStyleBold24.copyWith(
+                  color: AppColors.accountype,
                   fontFamily: AppFontFamily.inter,
                 ),
               ),

@@ -3,7 +3,9 @@ import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/assets_manager.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/login_form.dart';
+import 'package:final_project_iti/features/Auth/presentation/widgets/register_form.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -31,10 +33,13 @@ class LoginView extends StatelessWidget {
                 child: TabBar(
                   tabs: [Text('Login'), Text('Register')],
                   indicatorColor: AppColors.mainColorStart,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  labelColor: AppColors.mainColorStart,
                 ),
               ),
+              const Gap(32),
               const Expanded(
-                child: TabBarView(children: [LoginForm(), Text('data')]),
+                child: TabBarView(children: [LoginForm(),RegisterForm()]),
               ),
             ],
           ),

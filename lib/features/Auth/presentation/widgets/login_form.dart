@@ -5,7 +5,9 @@ import 'package:final_project_iti/core/widgets/app_botton.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/app_text_form_field.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/forgot_password_botton.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/password_text_field.dart';
+import 'package:final_project_iti/features/Auth/presentation/widgets/text_field_title.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -17,11 +19,20 @@ class LoginForm extends StatelessWidget {
       child: Form(
         child: Column(
           children: [
-            const Text('Email'),
+            const TextFieldTitle(title: 'Email'),
+            const Gap(8),
             const AppTextFormField(hintText: 'Email'),
-            const Text('Password'),
+            const Gap(16),
+            const TextFieldTitle(title: 'Password'),
+
+            const Gap(8),
+
             const PasswordTextFormField(),
+            const Gap(16),
+
             const ForgotPasswordBotton(),
+            const Spacer(flex: 5),
+
             AppBotton(
               onPressed: () {},
               child: Text(
@@ -32,9 +43,12 @@ class LoginForm extends StatelessWidget {
                 ),
               ),
             ),
+            const Spacer(flex: 2),
           ],
         ),
       ),
     );
   }
 }
+
+

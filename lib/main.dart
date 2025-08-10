@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'features/home/presentation/views/main_view.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CasheHelper().init();
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: initalRouteMethod(),
 
-          home: const SplashView(),
+          home: const MainView(),
         );
       },
     );

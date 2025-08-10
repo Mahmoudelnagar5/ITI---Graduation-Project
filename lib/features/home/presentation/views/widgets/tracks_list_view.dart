@@ -13,14 +13,9 @@ class TracksListView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemCount: trackItems.length,
       itemBuilder: (context, index) {
-        final track = trackItems[index];
         return Padding(
           padding: const EdgeInsets.only(bottom: 16.0),
-          child: TrackItem(
-            title: track.title,
-            description: track.description,
-            imageUrl: track.image,
-          ),
+          child: TrackItem(trackModel: trackItems[index]),
         );
       },
     );

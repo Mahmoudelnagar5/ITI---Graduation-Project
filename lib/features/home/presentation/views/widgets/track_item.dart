@@ -1,20 +1,16 @@
+import 'package:final_project_iti/features/home/data/models/track_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../../core/config/configrations.dart';
+import '../../../../../core/functions/navigations/navigations.dart';
 import '../../../../../core/utilities/app_colors.dart';
 import '../../../../../core/utilities/styles_manager.dart';
 
 class TrackItem extends StatelessWidget {
-  const TrackItem({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.imageUrl,
-  });
-  final String title;
-  final String description;
-  final String imageUrl;
+  const TrackItem({super.key, required this.trackModel});
+  final TrackModel trackModel;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +40,7 @@ class TrackItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
-            child: Center(child: Image.asset(imageUrl)),
+            child: Center(child: Image.asset(trackModel.image)),
           ),
           const Gap(16),
           Expanded(
@@ -52,14 +48,14 @@ class TrackItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  title,
+                  trackModel.title,
                   style: AppTextStyles.textStyleSemiBold16.copyWith(
                     color: AppColors.hometusertitle,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 Text(
-                  description,
+                  trackModel.description,
                   style: AppTextStyles.textStyleRegular14.copyWith(
                     color: AppColors.hometusersubtitle,
                   ),
@@ -74,7 +70,12 @@ class TrackItem extends StatelessWidget {
               size: 20.sp,
             ),
             onPressed: () {
-              // Handle navigation or action
+              AppNavigation.pushName(
+                context: context,
+                route: AppRoutes.trackContentView,
+                rootNavigator: true,
+                argument: trackModel,
+              );
             },
           ),
         ],

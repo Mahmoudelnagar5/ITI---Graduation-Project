@@ -6,12 +6,13 @@ import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/features/Auth/data/login_role_list.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/role_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../core/functions/navigations/navigations.dart';
 
-class LoginRoleView extends StatelessWidget {
-  const LoginRoleView({super.key});
+class AuthRoleView extends StatelessWidget {
+  const AuthRoleView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,21 +22,25 @@ class LoginRoleView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
-            Image.asset(Assets.imagesITIfayoumlogo, height: 120, width: 120),
+            Image.asset(
+              Assets.imagesITIfayoumlogo,
+              height: 120.r,
+              width: 120.r,
+            ),
             Text(
               "Welcome to ITI Fayoum",
               style: AppTextStyles.textStyleBold24.copyWith(
                 fontFamily: AppFontFamily.roboto,
               ),
             ),
-            const Gap(8),
+            Gap(8.h),
             Text(
               "Please select your account type",
               style: AppTextStyles.textStyleRegular16.copyWith(
                 fontFamily: AppFontFamily.roboto,
               ),
             ),
-            const Gap(32),
+            Gap(32.h),
             Expanded(
               child: ListView(
                 physics: const NeverScrollableScrollPhysics(),
@@ -69,19 +74,6 @@ class LoginRoleView extends StatelessWidget {
                   ),
                 ],
               ),
-              // child: ListView.builder(
-              //   physics: const NeverScrollableScrollPhysics(),
-              //   itemCount: roleList.length,
-              //   itemBuilder: (context, index) {
-              //     return RoleCard(
-              //       title: roleList[index].title,
-              //       subTitle: roleList[index].subTitle,
-              //       svgAssets: roleList[index].svgAssets,
-
-              //       // TODO add onTap to LoginRoleModel in the list
-              //     );
-              //   },
-              // ),
             ),
             Text(
               'Select your role to proceed to login',
@@ -90,7 +82,7 @@ class LoginRoleView extends StatelessWidget {
                 color: AppColors.acountsubtitle,
               ),
             ),
-            Gap(MediaQuery.sizeOf(context).height * 00.09),
+            Gap(130.h),
           ],
         ),
       ),

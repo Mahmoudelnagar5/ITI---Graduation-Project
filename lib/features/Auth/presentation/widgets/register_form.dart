@@ -6,6 +6,7 @@ import 'package:final_project_iti/core/widgets/app_text_form_field.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/password_text_field.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/text_field_title.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class RegisterForm extends StatelessWidget {
@@ -34,7 +35,7 @@ class RegisterForm extends StatelessWidget {
             const TextFieldTitle(title: 'Confirm Password'),
             const Gap(8),
             const PasswordTextFormField(hintText: 'Confirm Password'),
-            Gap(MediaQuery.sizeOf(context).height * 0.08),
+            Gap(70.h),
             AppBotton(
               onPressed: () {},
               child: Text(

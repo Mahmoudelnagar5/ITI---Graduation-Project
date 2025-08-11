@@ -23,7 +23,7 @@ class AppBotton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: color ?? AppColors.mainColorStart,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusGeometry.circular(8),
+            borderRadius: BorderRadiusGeometry.circular(8.r),
           ),
         ),
         child: child,

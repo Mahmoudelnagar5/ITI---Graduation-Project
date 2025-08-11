@@ -11,8 +11,8 @@ import 'package:gap/gap.dart';
 
 import '../../../../core/functions/navigations/navigations.dart';
 
-class LoginRoleView extends StatelessWidget {
-  const LoginRoleView({super.key});
+class AuthRoleView extends StatelessWidget {
+  const AuthRoleView({super.key});
 
   @override
   Widget build(BuildContext context) {

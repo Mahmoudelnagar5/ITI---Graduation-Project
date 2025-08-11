@@ -1,5 +1,6 @@
 import 'package:final_project_iti/features/home/presentation/views/search_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import 'search_text_field.dart';
@@ -10,15 +11,16 @@ class TrackViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SearchWidget(hintText: 'Search Tracks'),
+          Gap(12.h),
+          const SearchWidget(hintText: 'Search Tracks'),
           // SearchTextField(hintText: 'Search tracks...'),
-          Gap(24),
-          Expanded(child: TracksListView()),
+          const Gap(24),
+          const Expanded(child: TracksListView()),
         ],
       ),
     );

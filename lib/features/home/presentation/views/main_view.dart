@@ -3,6 +3,7 @@ import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 import '../../../../core/utilities/app_colors.dart';
 import '../../../../core/utilities/styles_manager.dart';
+import 'questions_view.dart';
 import 'tracks_view.dart';
 
 class MainView extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MainViewState extends State<MainView> {
   final List<Widget> _pages = [
     const TracksView(),
     const TracksView(),
-    const TracksView(),
+    const QuestionsView(),
     const TracksView(),
   ];
 

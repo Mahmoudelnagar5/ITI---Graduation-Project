@@ -12,6 +12,7 @@ class TrackContentListView extends StatelessWidget {
     final List<TrackContentModel> tracksContent =
         TrackContentModel.trackContents;
     return ListView.separated(
+      physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       itemCount: tracksContent.length,
       separatorBuilder: (context, index) => const Gap(16),

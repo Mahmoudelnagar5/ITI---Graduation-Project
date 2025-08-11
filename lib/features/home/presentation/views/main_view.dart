@@ -1,3 +1,4 @@
+import 'package:final_project_iti/features/home/presentation/views/resources_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
@@ -19,6 +20,8 @@ class _MainViewState extends State<MainView> {
     const TracksView(),
     const TracksView(),
     const QuestionsView(),
+    const ResourcesPage(),
+    const TracksView(),
     const TracksView(),
   ];
 

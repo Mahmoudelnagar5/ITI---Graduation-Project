@@ -80,4 +80,21 @@ abstract class AppTextStyles {
     fontWeight: AppFontWieght.bold,
     fontSize: 24.sp,
   );
+
+  /// Resources Page Styles
+  // Common radii
+  static const cardRadius = 12.0;
+  static const smallRadius = 8.0;
+
+  // Shadows
+  static final cardShadow = [
+    BoxShadow(
+      color: Colors.black.withOpacity(0.03),
+      blurRadius: 10,
+      offset: const Offset(0, 4),
+    ),
+  ];
+
+  // Common paddings
+  static const pagePadding = EdgeInsets.symmetric(horizontal: 16, vertical: 18);
 }

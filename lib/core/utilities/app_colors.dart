@@ -20,6 +20,8 @@ abstract class AppColors {
   static const Color adminpanelactivateicon = Color(0xffE53935);
   static const Color onboardindDotColor = Color(0xffE5E5E5);
   static const Color unfocusedTextFieldBorder = Color(0xffE5E5E5);
+  static const Color successGreen = Color(0xFF4CAF50);
+  static const Color lightGrey = Color(0xFF9E9E9E);
 
   /// Resources Page Colors
 
@@ -27,6 +29,5 @@ abstract class AppColors {
     0xFFF6F7F8,
   ); // off-white background from design
 
-  // Borders / shadows
-  static const cardBorder = Color(0xFFE6E9EB);
+  static const cardBorder = Color(0xFFF7F7F9);
 }

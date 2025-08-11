@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class AppFontWieght {
+abstract class AppFontWeight {
   static FontWeight light = FontWeight.w300;
   static FontWeight regular = FontWeight.w400;
   static FontWeight medium = FontWeight.w500;

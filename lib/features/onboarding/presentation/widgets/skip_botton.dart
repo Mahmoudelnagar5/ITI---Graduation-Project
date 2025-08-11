@@ -18,7 +18,7 @@ class skipBotton extends StatelessWidget {
           onPressed: () {
             AppNavigation.pushWithReplacement(
               context: context,
-              route: AppRoutes.AuthRole,
+              route: AppRoutes.authRole,
             );
           },
           child: Text(

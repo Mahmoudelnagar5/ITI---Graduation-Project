@@ -59,7 +59,7 @@ class AuthRoleView extends StatelessWidget {
                     onTap: () {
                       AppNavigation.pushName(
                         context: context,
-                        route: AppRoutes.loginView,
+                        route: AppRoutes.authView,
                       );
                     },
                   ),
@@ -68,7 +68,7 @@ class AuthRoleView extends StatelessWidget {
                     onTap: () {
                       AppNavigation.pushName(
                         context: context,
-                        route: AppRoutes.loginView,
+                        route: AppRoutes.authView,
                       );
                     },
                   ),

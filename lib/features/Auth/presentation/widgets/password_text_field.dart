@@ -4,9 +4,16 @@ import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:flutter/material.dart';
 
 class PasswordTextFormField extends StatefulWidget {
-  const PasswordTextFormField({super.key, this.controller, required this.hintText});
+  const PasswordTextFormField({
+    super.key,
+    this.controller,
+    required this.hintText,
+    this.validator,
+  });
   final TextEditingController? controller;
   final String hintText;
+
+  final String? Function(String?)? validator;
   @override
   State<PasswordTextFormField> createState() => _AppTextFormFieldState();
 }
@@ -19,6 +26,7 @@ class _AppTextFormFieldState extends State<PasswordTextFormField> {
     return TextFormField(
       style: const TextStyle(color: AppColors.black),
       controller: widget.controller,
+      validator: widget.validator,
       obscureText: obscureText,
       decoration: InputDecoration(
         fillColor: AppColors.white,

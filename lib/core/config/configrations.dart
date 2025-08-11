@@ -1,9 +1,11 @@
 import 'package:final_project_iti/core/functions/transitions/page_route_builder_method.dart';
+import 'package:final_project_iti/features/Auth/controller/register_cubit/register_cubit.dart';
 import 'package:final_project_iti/features/Auth/presentation/views/auth_role_view.dart';
-import 'package:final_project_iti/features/Auth/presentation/views/login_view.dart';
+import 'package:final_project_iti/features/Auth/presentation/views/auth_view.dart';
 import 'package:final_project_iti/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/home/presentation/views/track_content_view.dart';
 
@@ -16,7 +18,7 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const OnboardingView(),
         );
-      case AppRoutes.AuthRole:
+      case AppRoutes.authRole:
         return pageRouteBuilderMethod(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
@@ -28,11 +30,11 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const TrackContentView(),
         );
-      case AppRoutes.loginView:
+      case AppRoutes.authView:
         return pageRouteBuilderMethod(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
-              const LoginView(),
+              const AuthView(),
         );
       case AppRoutes.mainView:
         return pageRouteBuilderMethod(
@@ -54,8 +56,8 @@ class AppRouter {
 abstract class AppRoutes {
   static const String splashView = '/';
   static const String onboardingView = '/onboardingView';
-  static const String AuthRole = '/AuthRole';
-  static const String loginView = '/loginView';
+  static const String authRole = '/AuthRole';
+  static const String authView = '/AuthView';
   static const String mainView = '/mainView';
   static const String tracksView = '/tracksView';
   static const String trackContentView = '/trackContentView';

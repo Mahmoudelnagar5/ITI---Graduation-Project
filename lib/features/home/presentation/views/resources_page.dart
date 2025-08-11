@@ -76,7 +76,7 @@ class _ResourcesPageState extends State<ResourcesPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SearchWidget(),
+              const SearchWidget(hintText: 'Search learning materials...'),
               SizedBox(height: 14.h),
 
               // Selectable scrollable row

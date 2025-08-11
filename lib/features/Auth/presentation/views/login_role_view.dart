@@ -49,8 +49,24 @@ class LoginRoleView extends StatelessWidget {
                       );
                     },
                   ),
-                  RoleCard(roleModel: roleList[1], onTap: () {}),
-                  RoleCard(roleModel: roleList[2], onTap: () {}),
+                  RoleCard(
+                    roleModel: roleList[1],
+                    onTap: () {
+                      AppNavigation.pushName(
+                        context: context,
+                        route: AppRoutes.loginView,
+                      );
+                    },
+                  ),
+                  RoleCard(
+                    roleModel: roleList[2],
+                    onTap: () {
+                      AppNavigation.pushName(
+                        context: context,
+                        route: AppRoutes.loginView,
+                      );
+                    },
+                  ),
                 ],
               ),
               // child: ListView.builder(

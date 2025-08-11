@@ -1,3 +1,4 @@
+import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/utilities/app_colors.dart';
 import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/assets_manager.dart';
@@ -6,6 +7,8 @@ import 'package:final_project_iti/features/Auth/data/login_role_list.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/role_card.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
+import '../../../../core/functions/navigations/navigations.dart';
 
 class LoginRoleView extends StatelessWidget {
   const LoginRoleView({super.key});
@@ -37,7 +40,15 @@ class LoginRoleView extends StatelessWidget {
               child: ListView(
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  RoleCard(roleModel: roleList[0], onTap: () {}),
+                  RoleCard(
+                    roleModel: roleList[0],
+                    onTap: () {
+                      AppNavigation.pushName(
+                        context: context,
+                        route: AppRoutes.mainView,
+                      );
+                    },
+                  ),
                   RoleCard(roleModel: roleList[1], onTap: () {}),
                   RoleCard(roleModel: roleList[2], onTap: () {}),
                 ],
@@ -63,7 +74,7 @@ class LoginRoleView extends StatelessWidget {
                 color: AppColors.acountsubtitle,
               ),
             ),
-            Gap(MediaQuery.sizeOf(context).height * 00.22),
+            Gap(MediaQuery.sizeOf(context).height * 00.09),
           ],
         ),
       ),

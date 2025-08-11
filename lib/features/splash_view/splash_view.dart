@@ -1,5 +1,5 @@
-import 'package:final_project_iti/core/cashe_helper/cashe_helper.dart';
-import 'package:final_project_iti/core/cashe_helper/cashe_helper_keys.dart';
+import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
+import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper_keys.dart';
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/navigations/navigations.dart';
 
@@ -18,7 +18,6 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     bool firstTime =
         CasheHelper().getData(CasheKeys.firstTime) as bool? ?? true;
-    firstTime = true;
 
     Future.delayed(const Duration(seconds: 3), () {
       AppNavigation.pushWithReplacement(

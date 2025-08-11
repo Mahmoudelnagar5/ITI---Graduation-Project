@@ -12,7 +12,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CasheHelper().init();
 
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(enabled: !kReleaseMode, builder: (context) => const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {

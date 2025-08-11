@@ -18,10 +18,8 @@ class _MainViewState extends State<MainView> {
   late PersistentTabController controller;
   final List<Widget> _pages = [
     const TracksView(),
-    const TracksView(),
-    const QuestionsView(),
     const ResourcesPage(),
-    const TracksView(),
+    const QuestionsView(),
     const TracksView(),
   ];
 

@@ -19,6 +19,8 @@ class RegisterForm extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24.0),
       child: Form(
+        key: RegisterCubit.get(context).key,
+
         child: Column(
           children: [
             const TextFieldTitle(title: 'Name'),
@@ -58,7 +60,6 @@ class RegisterForm extends StatelessWidget {
             ),
             Gap(70.h),
             AppBotton(
-              onPressed: () {},
               child: Text(
                 'Register',
                 style: AppTextStyles.textStyleMedium16.copyWith(
@@ -66,6 +67,13 @@ class RegisterForm extends StatelessWidget {
                   fontFamily: AppFontFamily.roboto,
                 ),
               ),
+              onPressed: () {
+                final key = RegisterCubit.get(context).key;
+
+                if (key.currentState!.validate()) {
+                  RegisterCubit.get(context).register();
+                }
+              },
             ),
           ],
         ),

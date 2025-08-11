@@ -10,7 +10,11 @@ class RegisterCubit extends Cubit<RegisterState> {
       TextEditingController();
   final TextEditingController nameController = TextEditingController();
 
-static RegisterCubit get(BuildContext context) => BlocProvider.of(context);
+  final GlobalKey<FormState> key = GlobalKey();
+
+  static RegisterCubit get(BuildContext context) => BlocProvider.of(context);
+
+  void register() {}
 
   @override
   Future<void> close() {

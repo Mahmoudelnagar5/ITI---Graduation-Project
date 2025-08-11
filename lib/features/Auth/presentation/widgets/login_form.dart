@@ -14,12 +14,12 @@ import 'package:gap/gap.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24.0),
       child: Form(
+        key: LoginCubit.get(context).key,
         child: Column(
           children: [
             const TextFieldTitle(title: 'Email'),
@@ -44,7 +44,6 @@ class LoginForm extends StatelessWidget {
             const ForgotPasswordBotton(),
             Gap(222.h),
             AppBotton(
-              onPressed: () {},
               child: Text(
                 'Login',
                 style: AppTextStyles.textStyleMedium16.copyWith(
@@ -52,6 +51,14 @@ class LoginForm extends StatelessWidget {
                   fontFamily: AppFontFamily.roboto,
                 ),
               ),
+
+              onPressed: () {
+                final key = LoginCubit.get(context).key;
+
+                if (key.currentState!.validate()) {
+                  LoginCubit.get(context).login();
+                }
+              },
             ),
           ],
         ),

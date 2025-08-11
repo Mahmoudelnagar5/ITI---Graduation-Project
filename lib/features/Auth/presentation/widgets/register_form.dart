@@ -3,6 +3,8 @@ import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/core/widgets/app_botton.dart';
 import 'package:final_project_iti/core/widgets/app_text_form_field.dart';
+import 'package:final_project_iti/features/Auth/controller/register_cubit/register_cubit.dart';
+import 'package:final_project_iti/features/Auth/helper/validator.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/password_text_field.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/text_field_title.dart';
 import 'package:flutter/material.dart';
@@ -21,20 +23,39 @@ class RegisterForm extends StatelessWidget {
           children: [
             const TextFieldTitle(title: 'Name'),
             const Gap(8),
-            const AppTextFormField(hintText: 'Name'),
+            AppTextFormField(
+              hintText: 'Name',
+              controller: RegisterCubit.get(context).nameController,
+              validator: Validator.signupNameValidator(),
+            ),
             const Gap(16),
 
             const TextFieldTitle(title: 'Email'),
             const Gap(8),
-            const AppTextFormField(hintText: 'Email'),
+            AppTextFormField(
+              hintText: 'Email',
+              controller: RegisterCubit.get(context).emailController,
+              validator: Validator.emailValidator(),
+            ),
             const Gap(16),
             const TextFieldTitle(title: 'Password'),
             const Gap(8),
-            const PasswordTextFormField(hintText: 'Password'),
+            PasswordTextFormField(
+              hintText: 'Password',
+              controller: RegisterCubit.get(context).passwordController,
+              validator: Validator.signupPasswordValidator(),
+            ),
             const Gap(16),
             const TextFieldTitle(title: 'Confirm Password'),
             const Gap(8),
-            const PasswordTextFormField(hintText: 'Confirm Password'),
+            PasswordTextFormField(
+              hintText: 'Confirm Password',
+              controller: RegisterCubit.get(context).confirmPasswordController,
+              validator: Validator.confirmPasswordValidator(
+                orgPasswordGetter: () =>
+                    RegisterCubit.get(context).passwordController.text,
+              ),
+            ),
             Gap(70.h),
             AppBotton(
               onPressed: () {},

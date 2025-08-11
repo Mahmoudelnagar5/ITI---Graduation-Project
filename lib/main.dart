@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: initalRouteMethod(),
 
-          home: const MainView(),
+          home: const SplashView(),
         );
       },
     );

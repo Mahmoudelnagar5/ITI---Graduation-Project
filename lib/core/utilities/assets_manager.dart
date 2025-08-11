@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
+
   Assets._();
 
   /// Assets for imagesData science
@@ -9,6 +10,11 @@ class Assets {
   /// Assets for imagesFlutter
   /// assets/images/flutter.png
   static const String imagesFlutter = "assets/images/flutter.png";
+
+  
+  /// Assets for imagesAdminIcon
+  /// assets/images/adminIcon.svg
+  static const String imagesAdminIcon = "assets/images/adminIcon.svg";
 
   /// Assets for imagesITIfayoumlogo
   /// assets/images/ITIfayoumlogo.png
@@ -45,4 +51,14 @@ class Assets {
   /// Assets for imagesWeb
   /// assets/images/web.png
   static const String imagesWeb = "assets/images/web.png";
+
+
+  /// Assets for imagesSuperAdminIcon
+  /// assets/images/superAdminIcon.svg
+  static const String imagesSuperAdminIcon = "assets/images/superAdminIcon.svg";
+
+  /// Assets for imagesUserIcon
+  /// assets/images/userIcon.svg
+  static const String imagesUserIcon = "assets/images/userIcon.svg";
 }
+

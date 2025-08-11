@@ -70,7 +70,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                   pageIndex == onboardingDataList.length - 1
                       ? AppNavigation.pushWithReplacement(
                           context: context,
-                          route: AppRoutes.loginRole,
+                          route: AppRoutes.AuthRole,
                         )
                       : _pageController.nextPage(
                           duration: const Duration(milliseconds: 300),

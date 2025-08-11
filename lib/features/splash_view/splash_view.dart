@@ -23,7 +23,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(seconds: 3), () {
       AppNavigation.pushWithReplacement(
         context: context,
-        route: firstTime ? AppRoutes.onboardingView : AppRoutes.loginRole,
+        route: firstTime ? AppRoutes.onboardingView : AppRoutes.AuthRole,
       );
     });
     super.initState();

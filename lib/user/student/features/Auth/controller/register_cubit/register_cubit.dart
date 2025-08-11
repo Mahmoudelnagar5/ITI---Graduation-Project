@@ -1,6 +1,4 @@
-import 'package:final_project_iti/user/student/features/Auth/controller/register_cubit/register_state.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit() : super(RegisterInitialState());

@@ -1,5 +1,4 @@
-import 'package:final_project_iti/core/utilities/app_colors.dart';
-import 'package:flutter/material.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class AdminBottomNavBar extends StatefulWidget {
   const AdminBottomNavBar({Key? key}) : super(key: key);

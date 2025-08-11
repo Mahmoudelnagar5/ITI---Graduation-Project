@@ -1,15 +1,4 @@
-import 'package:final_project_iti/core/config/configrations.dart';
-import 'package:final_project_iti/core/utilities/app_colors.dart';
-import 'package:final_project_iti/core/utilities/app_font_family.dart';
-import 'package:final_project_iti/core/utilities/assets_manager.dart';
-import 'package:final_project_iti/core/utilities/styles_manager.dart';
-import 'package:final_project_iti/user/student/features/Auth/data/login_role_list.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/role_card.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
-
-import '../../../../../../core/functions/navigations/navigations.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class AuthRoleView extends StatelessWidget {
   const AuthRoleView({super.key});

@@ -1,25 +1,18 @@
-import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
 
-
-    final TextEditingController emailController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   final GlobalKey<FormState> key = GlobalKey();
 
+  static LoginCubit get(BuildContext context) => BlocProvider.of(context);
 
-static LoginCubit get(BuildContext context) => BlocProvider.of(context);
-
-
-void login(){}
-
+  void login() {}
 
   @override
   Future<void> close() {

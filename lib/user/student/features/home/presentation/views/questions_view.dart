@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../../../../../core/utilities/styles_manager.dart';
-import 'widgets/questions_view_body.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class QuestionsView extends StatelessWidget {
   const QuestionsView({super.key});

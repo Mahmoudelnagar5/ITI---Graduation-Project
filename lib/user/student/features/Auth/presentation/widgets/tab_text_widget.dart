@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class TabTextWidget extends StatelessWidget {
   const TabTextWidget({super.key, required this.text});

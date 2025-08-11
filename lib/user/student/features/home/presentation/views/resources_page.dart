@@ -1,9 +1,4 @@
-import 'package:final_project_iti/core/utilities/app_colors.dart';
-import 'package:final_project_iti/core/utilities/styles_manager.dart';
-import 'package:final_project_iti/user/student/features/home/data/models/cards_data_list.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/search_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class ResourcesPage extends StatefulWidget {
   const ResourcesPage({super.key});

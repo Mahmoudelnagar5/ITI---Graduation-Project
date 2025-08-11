@@ -1,16 +1,4 @@
-import 'package:final_project_iti/core/utilities/app_colors.dart';
-import 'package:final_project_iti/core/utilities/app_font_family.dart';
-import 'package:final_project_iti/core/utilities/assets_manager.dart';
-import 'package:final_project_iti/core/utilities/styles_manager.dart';
-import 'package:final_project_iti/user/student/features/Auth/controller/register_cubit/register_cubit.dart';
-import 'package:final_project_iti/user/student/features/Auth/controller/login_cubit/login_cubit.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/login_form.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/register_form.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/tab_text_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class AuthView extends StatelessWidget {
   const AuthView({super.key});

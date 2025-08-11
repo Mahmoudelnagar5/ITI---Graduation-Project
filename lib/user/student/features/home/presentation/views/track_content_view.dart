@@ -1,8 +1,4 @@
-import 'package:final_project_iti/core/utilities/app_colors.dart';
-import 'package:flutter/material.dart';
-import '../../../../../../core/utilities/styles_manager.dart';
-import '../../data/models/track_model.dart';
-import 'widgets/track_content_view_body.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class TrackContentView extends StatelessWidget {
   const TrackContentView({super.key});

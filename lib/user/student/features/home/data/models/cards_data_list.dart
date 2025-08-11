@@ -1,6 +1,4 @@
-import 'package:final_project_iti/user/student/features/home/presentation/views/resource_card.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class CardsList extends StatelessWidget {
   const CardsList({super.key});

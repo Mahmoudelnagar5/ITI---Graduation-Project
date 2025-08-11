@@ -1,11 +1,5 @@
-import 'package:final_project_iti/user/student/features/home/presentation/views/resources_page.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-
-import '../../../../../../core/utilities/app_colors.dart';
-import '../../../../../../core/utilities/styles_manager.dart';
-import 'questions_view.dart';
-import 'tracks_view.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});

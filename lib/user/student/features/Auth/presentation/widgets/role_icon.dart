@@ -1,6 +1,4 @@
-import 'package:final_project_iti/core/utilities/app_colors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class RoleIcon extends StatelessWidget {
   const RoleIcon({super.key, required this.svgAssets});

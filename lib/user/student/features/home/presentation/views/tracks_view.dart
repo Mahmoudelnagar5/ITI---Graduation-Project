@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'widgets/custom_app_bar.dart';
-import 'widgets/tracks_view_body.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class TracksView extends StatelessWidget {
   const TracksView({super.key});

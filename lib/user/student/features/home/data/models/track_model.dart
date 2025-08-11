@@ -1,4 +1,4 @@
-import '../../../../../../core/utilities/assets_manager.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class TrackModel {
   final String title;

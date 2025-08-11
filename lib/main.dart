@@ -1,6 +1,7 @@
 import 'package:final_project_iti/core/cashe_helper/cashe_helper.dart';
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/network/network.dart';
+import 'package:final_project_iti/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/features/splash_view/splash_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 640),
       minTextAdapt: true,
 
+      // splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: initalRouteMethod(),
 
-          home: const SplashView(),
+          home: const MainView(),
         );
       },
     );

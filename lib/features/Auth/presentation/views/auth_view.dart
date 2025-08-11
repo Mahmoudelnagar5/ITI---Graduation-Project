@@ -52,8 +52,10 @@ class AuthView extends StatelessWidget {
               ),
               const Gap(32),
               Expanded(
-                child: TabBarView(children: [ BlocProvider(create: (BuildContext context) =>LoginCubit(),
-                child: const LoginForm()), BlocProvider(create: (BuildContext context) => RegisterCubit(),
+                child: TabBarView(children: [ 
+                  BlocProvider(create: (BuildContext context) =>LoginCubit(),
+                child: const LoginForm()), 
+                BlocProvider(create: (BuildContext context) => RegisterCubit(),
                 child: const RegisterForm())]),
               ),
             ],

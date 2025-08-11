@@ -12,8 +12,14 @@ class LoginCubit extends Cubit<LoginState> {
     final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  final GlobalKey<FormState> key = GlobalKey();
+
 
 static LoginCubit get(BuildContext context) => BlocProvider.of(context);
+
+
+void login(){}
+
 
   @override
   Future<void> close() {

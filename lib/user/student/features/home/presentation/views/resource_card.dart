@@ -1,4 +1,5 @@
 import 'package:final_project_iti/core/utilities/app_colors.dart';
+import 'package:final_project_iti/core/utilities/font_manager.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -55,7 +56,7 @@ class ResourceCard extends StatelessWidget {
                   title,
                   style: TextStyle(
                     fontSize: 15.sp,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: AppFontWeight.bold,
                     color: AppColors.hometusertitle,
                   ),
                 ),

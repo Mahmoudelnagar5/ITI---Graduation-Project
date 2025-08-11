@@ -1,0 +1,22 @@
+import 'package:final_project_iti/core/utilities/assets_manager.dart';
+import 'package:final_project_iti/user/student/features/Auth/data/login_role_model.dart';
+
+List<LoginRoleModel> roleList = [
+  LoginRoleModel(
+    title: 'User',
+    subTitle: 'Students and course participants',
+    svgAssets: Assets.imagesUserIcon,
+  ),
+  LoginRoleModel(
+    title: 'Admin',
+    subTitle: 'Course instructors and staff members',
+    svgAssets: Assets.imagesAdminIcon,
+  ),
+  LoginRoleModel(
+    title: 'Super Admin ',
+    subTitle: 'System administrators and managers',
+    svgAssets: Assets.imagesSuperAdminIcon,
+  ),
+];
+
+// TODO add onTap to LoginRoleModel

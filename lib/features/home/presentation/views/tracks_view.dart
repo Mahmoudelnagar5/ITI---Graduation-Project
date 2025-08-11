@@ -8,6 +8,8 @@ class TracksView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(appBar: CustomAppBar(), body: TrackViewBody());
+    return const SafeArea(
+      child: Scaffold(appBar: CustomAppBar(), body: TrackViewBody()),
+    );
   }
 }

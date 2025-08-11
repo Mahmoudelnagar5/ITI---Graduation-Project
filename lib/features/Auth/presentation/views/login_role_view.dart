@@ -35,10 +35,11 @@ class LoginRoleView extends StatelessWidget {
             const Gap(32),
             Expanded(
               child: ListView(
+                physics: const NeverScrollableScrollPhysics(),
                 children: [
-                  RoleCard(roleModel: roleList[0], onTap: () {  },),
-                  RoleCard(roleModel: roleList[1], onTap: () {  },),
-                  RoleCard(roleModel: roleList[2], onTap: () {  },),
+                  RoleCard(roleModel: roleList[0], onTap: () {}),
+                  RoleCard(roleModel: roleList[1], onTap: () {}),
+                  RoleCard(roleModel: roleList[2], onTap: () {}),
                 ],
               ),
               // child: ListView.builder(
@@ -69,4 +70,3 @@ class LoginRoleView extends StatelessWidget {
     );
   }
 }
-

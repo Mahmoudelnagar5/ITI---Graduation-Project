@@ -13,6 +13,7 @@ abstract class AppColors {
   static const Color hometusertitle = Color(0xff111827);
   static const Color hometusersubtitle = Color(0xff4B5563);
   static const Color searchfillcolor = Color(0xffF3F4F6);
+  static const Color searchIconcolor = Color(0xff6B7280);
   static const Color adminprimarycolor = Color(0xffFF3B30);
   static const Color backappbar = Color(0xff1F2937);
   static const Color addcontant = Color(0xffF9FAFB);

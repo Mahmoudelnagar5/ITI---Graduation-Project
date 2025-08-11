@@ -1,6 +1,16 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
+
   Assets._();
+
+  /// Assets for imagesData science
+  /// assets/images/data science.png
+  static const String imagesDataScience = "assets/images/data science.png";
+
+  /// Assets for imagesFlutter
+  /// assets/images/flutter.png
+  static const String imagesFlutter = "assets/images/flutter.png";
+
   
   /// Assets for imagesAdminIcon
   /// assets/images/adminIcon.svg
@@ -21,6 +31,27 @@ class Assets {
   /// Assets for imagesOnboarding2
   /// assets/images/onboarding2.png
   static const String imagesOnboarding2 = "assets/images/onboarding2.png";
+
+  /// Assets for imagesSearch icon
+  /// assets/images/search icon.png
+  static const String imagesSearchIcon = "assets/images/search icon.png";
+
+  /// Assets for imagesSecurity
+  /// assets/images/security.png
+  static const String imagesSecurity = "assets/images/security.png";
+
+  /// Assets for imagesTrack logo
+  /// assets/images/track logo.png
+  static const String imagesTrackLogo = "assets/images/track logo.png";
+
+  /// Assets for imagesUi ux
+  /// assets/images/ui ux.png
+  static const String imagesUiUx = "assets/images/ui ux.png";
+
+  /// Assets for imagesWeb
+  /// assets/images/web.png
+  static const String imagesWeb = "assets/images/web.png";
+
 
   /// Assets for imagesSuperAdminIcon
   /// assets/images/superAdminIcon.svg

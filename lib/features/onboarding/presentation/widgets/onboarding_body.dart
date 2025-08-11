@@ -3,6 +3,7 @@ import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/features/onboarding/data/onboarding_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -51,11 +52,11 @@ class OnboardingBody extends StatelessWidget {
               SmoothPageIndicator(
                 controller: pageController,
                 count: onboardingDataList.length,
-                effect: const WormEffect(
+                effect: WormEffect(
                   dotColor: AppColors.onboardindDotColor,
                   activeDotColor: AppColors.mainColorStart,
-                  dotHeight: 12,
-                  dotWidth: 12,
+                  dotHeight: 12.h,
+                  dotWidth: 12.w,
                 ),
               ),
               const Gap(32),

@@ -1,3 +1,4 @@
+import 'package:final_project_iti/features/home/presentation/views/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -14,7 +15,8 @@ class TrackViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SearchTextField(hintText: 'Search tracks...'),
+          SearchWidget(hintText: 'Search Tracks'),
+          // SearchTextField(hintText: 'Search tracks...'),
           Gap(24),
           Expanded(child: TracksListView()),
         ],

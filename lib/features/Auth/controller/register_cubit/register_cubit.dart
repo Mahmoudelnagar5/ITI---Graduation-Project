@@ -1,4 +1,4 @@
-import 'package:final_project_iti/features/Auth/controller/register_cubit/register_state.dart';
+import 'package:final_project_iti/features/Auth/controller/cubit/auth_state.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

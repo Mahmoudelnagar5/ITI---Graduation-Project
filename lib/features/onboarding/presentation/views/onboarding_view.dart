@@ -11,6 +11,7 @@ import 'package:final_project_iti/features/onboarding/data/onboarding_list.dart'
 import 'package:final_project_iti/features/onboarding/presentation/widgets/onboarding_body.dart';
 import 'package:final_project_iti/features/onboarding/presentation/widgets/skip_botton.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class OnboardingView extends StatefulWidget {
@@ -22,7 +23,6 @@ class OnboardingView extends StatefulWidget {
 
 class _OnboardingViewState extends State<OnboardingView> {
   late final PageController _pageController;
-  late double height;
   int pageIndex = 0;
 
   @override
@@ -40,7 +40,6 @@ class _OnboardingViewState extends State<OnboardingView> {
 
   @override
   Widget build(BuildContext context) {
-    height = MediaQuery.sizeOf(context).height;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -56,7 +55,7 @@ class _OnboardingViewState extends State<OnboardingView> {
             ),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: AppBotton(
                 child: Text(
                   pageIndex == onboardingDataList.length - 1
@@ -80,7 +79,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 },
               ),
             ),
-            Gap(height * 0.145),
+            Gap(145.h),
           ],
         ),
       ),

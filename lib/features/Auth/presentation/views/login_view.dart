@@ -6,6 +6,7 @@ import 'package:final_project_iti/features/Auth/presentation/widgets/login_form.
 import 'package:final_project_iti/features/Auth/presentation/widgets/register_form.dart';
 import 'package:final_project_iti/features/Auth/presentation/widgets/tab_text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class LoginView extends StatelessWidget {
@@ -20,7 +21,11 @@ class LoginView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(Assets.imagesITIfayoumlogo, height: 120, width: 120),
+              Image.asset(
+                Assets.imagesITIfayoumlogo,
+                height: 120.r,
+                width: 120.r,
+              ),
 
               Text(
                 'ITI Fayoum',
@@ -29,9 +34,9 @@ class LoginView extends StatelessWidget {
                   color: AppColors.mainColorStart,
                 ),
               ),
-              const SizedBox(
-                height: 50,
-                child: TabBar(
+              SizedBox(
+                height: 50.h,
+                child: const TabBar(
                   tabs: [
                     TabTextWidget(text: 'Login'),
                     TabTextWidget(text: 'Register'),

@@ -14,7 +14,7 @@ class TrackViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SearchTextField(),
+          SearchTextField(hintText: 'Search tracks...'),
           Gap(24),
           Expanded(child: TracksListView()),
         ],

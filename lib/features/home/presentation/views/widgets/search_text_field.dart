@@ -5,8 +5,9 @@ import '../../../../../core/utilities/assets_manager.dart';
 import '../../../../../core/utilities/styles_manager.dart';
 
 class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key});
-
+  const SearchTextField({super.key, this.color, required this.hintText});
+  final Color? color;
+  final String hintText;
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -14,7 +15,7 @@ class SearchTextField extends StatelessWidget {
       decoration: InputDecoration(
         fillColor: AppColors.searchfillcolor,
         filled: true,
-        hintText: 'Search tracks...',
+        hintText: hintText,
         hintStyle: AppTextStyles.textStyleRegular16.copyWith(
           color: const Color(0xff9CA3AF),
         ),
@@ -30,7 +31,7 @@ class SearchTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.0),
           borderSide: BorderSide.none,
         ),
-        prefixIcon: Image.asset(Assets.imagesSearchIcon),
+        prefixIcon: Image.asset(Assets.imagesSearchIcon, color: color),
       ),
     );
   }

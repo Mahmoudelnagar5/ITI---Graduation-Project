@@ -34,19 +34,26 @@ class LoginRoleView extends StatelessWidget {
             ),
             const Gap(32),
             Expanded(
-              child: ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: roleList.length,
-                itemBuilder: (context, index) {
-                  return RoleCard(
-                    title: roleList[index].title,
-                    subTitle: roleList[index].subTitle,
-                    svgAssets: roleList[index].svgAssets,
-
-                    // TODO add onTap to LoginRoleModel in the list
-                  );
-                },
+              child: ListView(
+                children: [
+                  RoleCard(roleModel: roleList[0], onTap: () {  },),
+                  RoleCard(roleModel: roleList[1], onTap: () {  },),
+                  RoleCard(roleModel: roleList[2], onTap: () {  },),
+                ],
               ),
+              // child: ListView.builder(
+              //   physics: const NeverScrollableScrollPhysics(),
+              //   itemCount: roleList.length,
+              //   itemBuilder: (context, index) {
+              //     return RoleCard(
+              //       title: roleList[index].title,
+              //       subTitle: roleList[index].subTitle,
+              //       svgAssets: roleList[index].svgAssets,
+
+              //       // TODO add onTap to LoginRoleModel in the list
+              //     );
+              //   },
+              // ),
             ),
             Text(
               'Select your role to proceed to login',
@@ -62,3 +69,4 @@ class LoginRoleView extends StatelessWidget {
     );
   }
 }
+

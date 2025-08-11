@@ -36,6 +36,7 @@ class LoginView extends StatelessWidget {
                     TabTextWidget(text: 'Login'),
                     TabTextWidget(text: 'Register'),
                   ],
+
                   indicatorColor: AppColors.mainColorStart,
                   indicatorSize: TabBarIndicatorSize.tab,
                   labelColor: AppColors.mainColorStart,
@@ -52,6 +53,3 @@ class LoginView extends StatelessWidget {
     );
   }
 }
-
-
-

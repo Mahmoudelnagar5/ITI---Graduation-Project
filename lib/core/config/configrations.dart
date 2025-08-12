@@ -1,11 +1,9 @@
 import 'package:final_project_iti/core/functions/transitions/page_route_builder_method.dart';
-import 'package:final_project_iti/user/student/features/Auth/controller/register_cubit/register_cubit.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_role_view.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_view.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/user/student/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../user/student/features/home/presentation/views/track_content_view.dart';
 

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-
+  
   /// Assets for imagesAdminIcon
   /// assets/images/adminIcon.svg
   static const String imagesAdminIcon = "assets/images/adminIcon.svg";
@@ -12,7 +12,7 @@ class Assets {
 
   /// Assets for imagesData science
   /// assets/images/data science.png
-  static const String imagesDataScience = "assets/images/data science.png";
+  static const String imagesData science = "assets/images/data science.png";
 
   /// Assets for imagesFlutter
   /// assets/images/flutter.png
@@ -36,7 +36,7 @@ class Assets {
 
   /// Assets for imagesSearch icon
   /// assets/images/search icon.png
-  static const String imagesSearchIcon = "assets/images/search icon.png";
+  static const String imagesSearch icon = "assets/images/search icon.png";
 
   /// Assets for imagesSecurity
   /// assets/images/security.png
@@ -48,11 +48,11 @@ class Assets {
 
   /// Assets for imagesTrack logo
   /// assets/images/track logo.png
-  static const String imagesTrackLogo = "assets/images/track logo.png";
+  static const String imagesTrack logo = "assets/images/track logo.png";
 
   /// Assets for imagesUi ux
   /// assets/images/ui ux.png
-  static const String imagesUiUx = "assets/images/ui ux.png";
+  static const String imagesUi ux = "assets/images/ui ux.png";
 
   /// Assets for imagesUserIcon
   /// assets/images/userIcon.svg
@@ -62,3 +62,4 @@ class Assets {
   /// assets/images/web.png
   static const String imagesWeb = "assets/images/web.png";
 }
+

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import 'search_text_field.dart';
 import 'tracks_list_view.dart';
 
 class TrackViewBody extends StatelessWidget {

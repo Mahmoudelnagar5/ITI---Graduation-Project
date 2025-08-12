@@ -4,14 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppBotton extends StatelessWidget {
-  const AppBotton({
-    super.key,
-    required this.child,
-    required this.onPressed,
-    this.color,
-  });
+  const AppBotton({super.key, required this.child, this.onPressed, this.color});
   final Widget child;
-  final void Function()? onPressed;
+final  void Function()? onPressed;
   final Color? color;
   @override
   Widget build(BuildContext context) {

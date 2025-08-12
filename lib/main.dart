@@ -4,10 +4,7 @@ import 'package:final_project_iti/core/functions/network/network.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/app_cubit.dart';
 import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,9 +12,6 @@ void main() async {
   Bloc.observer = AppBlocObserver();
   runApp(const MyApp());
 
-  runApp(
-    DevicePreview(enabled: !kReleaseMode, builder: (context) => const MyApp()),
-  );
 }
 
 class MyApp extends StatelessWidget {

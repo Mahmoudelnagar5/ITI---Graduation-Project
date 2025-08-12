@@ -1,6 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/home/data/models/cards_data_list.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/search_widget.dart';
 
 class ResourcesPage extends StatefulWidget {
   const ResourcesPage({super.key});
@@ -30,13 +28,16 @@ class _ResourcesPageState extends State<ResourcesPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        title: const Text('ITI Learning Resources'),
+        title: Text(
+          'ITI Learning Resources',
+          style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
+        ),
         actions: [
           IconButton(
             icon: Icon(
               Icons.filter_list,
               size: 22.sp,
-              color: AppColors.searchIconcolor,
+              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
             ),
             onPressed: () {
               showModalBottomSheet(
@@ -65,7 +66,7 @@ class _ResourcesPageState extends State<ResourcesPage> {
             },
           ),
         ],
-        backgroundColor: AppColors.scaffoldBg,
+        backgroundColor: Theme.of(context).colorScheme.background,
       ),
       body: SafeArea(
         child: Padding(
@@ -98,16 +99,18 @@ class _ResourcesPageState extends State<ResourcesPage> {
                         ),
                         decoration: BoxDecoration(
                           color: isActive
-                              ? AppColors.mainColorStart
-                              : AppColors.searchfillcolor,
+                              ? Theme.of(context).colorScheme.primary
+                              : Theme.of(context).colorScheme.surface,
                           borderRadius: BorderRadius.circular(18.r),
                         ),
                         child: Text(
                           tracks[index],
                           style: TextStyle(
                             color: isActive
-                                ? Colors.white
-                                : AppColors.searchIconcolor,
+                                ? Theme.of(context).colorScheme.onPrimary
+                                : Theme.of(
+                                    context,
+                                  ).colorScheme.onSurface.withOpacity(0.7),
                             fontWeight: isActive
                                 ? FontWeight.w600
                                 : FontWeight.w500,

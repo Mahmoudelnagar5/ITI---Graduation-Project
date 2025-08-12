@@ -20,28 +20,27 @@ class _AppTextFormFieldState extends State<PasswordTextFormField> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return TextFormField(
-      style: const TextStyle(color: AppColors.black),
+      style: TextStyle(color: theme.colorScheme.onSurface),
       controller: widget.controller,
       validator: widget.validator,
       obscureText: obscureText,
       decoration: InputDecoration(
-        fillColor: AppColors.white,
+        fillColor: theme.colorScheme.surface,
         filled: true,
         hintText: widget.hintText,
         hintStyle: AppTextStyles.textStyleRegular16.copyWith(
           fontFamily: AppFontFamily.roboto,
-          color: AppColors.hinttextfield,
+          color: theme.colorScheme.onSurface.withOpacity(0.6),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(
-            color: AppColors.unfocusedTextFieldBorder,
-          ),
+          borderSide: BorderSide(color: theme.colorScheme.outline),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AppColors.mainColorStart),
+          borderSide: BorderSide(color: theme.colorScheme.primary),
         ),
         suffixIcon: IconButton(
           onPressed: () {

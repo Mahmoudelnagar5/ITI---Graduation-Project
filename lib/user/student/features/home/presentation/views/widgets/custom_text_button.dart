@@ -11,7 +11,7 @@ class CustomTextButtom extends StatelessWidget {
         height: 0.062.sh,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: AppColors.mainColorStart,
+          color: Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.circular(10),
         ),
         alignment: Alignment.center,
@@ -19,11 +19,11 @@ class CustomTextButtom extends StatelessWidget {
           spacing: 5,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.logout, color: AppColors.white),
+            Icon(Icons.logout, color: Theme.of(context).colorScheme.onPrimary),
             Text(
               'logout',
               style: AppTextStyles.textStyleMedium16.copyWith(
-                color: AppColors.white,
+                color: Theme.of(context).colorScheme.onPrimary,
                 fontFamily: 'Inter',
               ),
             ),

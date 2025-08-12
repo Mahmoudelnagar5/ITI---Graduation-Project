@@ -1,4 +1,3 @@
-import 'package:final_project_iti/core/utilities/app_colors.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppBotton extends StatelessWidget {
   const AppBotton({super.key, required this.child, this.onPressed, this.color});
   final Widget child;
-final  void Function()? onPressed;
+  final void Function()? onPressed;
   final Color? color;
   @override
   Widget build(BuildContext context) {
@@ -16,9 +15,9 @@ final  void Function()? onPressed;
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: color ?? AppColors.mainColorStart,
+          backgroundColor: color ?? Theme.of(context).colorScheme.primary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusGeometry.circular(8.r),
+            borderRadius: BorderRadius.circular(8.r),
           ),
         ),
         child: child,

@@ -29,15 +29,16 @@ class ResourceCard extends StatelessWidget {
     }
   }
 
-  Color _actionColor() => AppColors.mainColorStart;
+  Color _actionColor(BuildContext context) =>
+      Theme.of(context).colorScheme.primary;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(AppTextStyles.cardRadius),
-        border: Border.all(color: AppColors.cardBorder),
+        border: Border.all(color: Theme.of(context).colorScheme.outline),
         boxShadow: AppTextStyles.cardShadow,
       ),
       padding: const EdgeInsets.all(14),
@@ -53,7 +54,7 @@ class ResourceCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 15.sp,
                     fontWeight: AppFontWeight.bold,
-                    color: AppColors.hometusertitle,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
                 SizedBox(height: 6.h),
@@ -61,9 +62,11 @@ class ResourceCard extends StatelessWidget {
                   subtitle,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
-                    color: AppColors.searchIconcolor,
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.onSurface.withOpacity(0.7),
                   ),
                 ),
                 SizedBox(height: 12.h),
@@ -72,14 +75,18 @@ class ResourceCard extends StatelessWidget {
                     Icon(
                       Icons.picture_as_pdf,
                       size: 16.sp,
-                      color: AppColors.hinttextfield,
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.onSurface.withOpacity(0.6),
                     ),
                     SizedBox(width: 8.w),
                     Text(
                       meta,
                       style: TextStyle(
                         fontSize: 12.sp,
-                        color: AppColors.hinttextfield,
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.onSurface.withOpacity(0.6),
                       ),
                     ),
                   ],
@@ -102,7 +109,7 @@ class ResourceCard extends StatelessWidget {
               ),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: _actionColor(),
+              backgroundColor: _actionColor(context),
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.r),

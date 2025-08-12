@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../../../core/utilities/app_colors.dart';
 import '../../../../../../../core/utilities/assets_manager.dart';
 import '../../../../../../../core/utilities/styles_manager.dart';
 import 'institute_answer.dart';
@@ -22,11 +21,11 @@ class _QuestionItemState extends State<QuestionItem> {
     return Container(
       padding: const EdgeInsets.all(20.0),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Theme.of(context).colorScheme.shadow.withOpacity(0.1),
             spreadRadius: 1,
             blurRadius: 5,
             offset: const Offset(0, 3),
@@ -45,14 +44,16 @@ class _QuestionItemState extends State<QuestionItem> {
                     Text(
                       'Why was I marked absent on Monday?',
                       style: AppTextStyles.textStyleMedium16.copyWith(
-                        color: AppColors.hometusertitle,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                     Text(
                       // 'I attended the lecture on time, but my attendance was recorded as absent in the system. Can I review my attendance record and correct the error?',
                       'I was present in class but my attendance shows I was absent.',
                       style: AppTextStyles.textStyleRegular14.copyWith(
-                        color: AppColors.hometusersubtitle,
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.onSurface.withOpacity(0.7),
                       ),
                     ),
                   ],
@@ -62,12 +63,12 @@ class _QuestionItemState extends State<QuestionItem> {
               IconButton(
                 icon: Icon(
                   Icons.star_border_outlined,
-                  color: AppColors.hinttextfield,
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.onSurface.withOpacity(0.6),
                   size: 24.sp,
                 ),
-                onPressed: () {
-                  //TODO: Implement favorite functionality
-                },
+                onPressed: () {},
               ),
             ],
           ),
@@ -82,7 +83,7 @@ class _QuestionItemState extends State<QuestionItem> {
               height: 45.h,
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               decoration: BoxDecoration(
-                color: AppColors.addcontant,
+                color: Theme.of(context).colorScheme.surface,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -92,7 +93,7 @@ class _QuestionItemState extends State<QuestionItem> {
                   Text(
                     'Institute Answer',
                     style: AppTextStyles.textStyleMedium14.copyWith(
-                      color: AppColors.mainColorStart,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                   const Spacer(),
@@ -101,7 +102,9 @@ class _QuestionItemState extends State<QuestionItem> {
                     duration: const Duration(milliseconds: 300),
                     child: Icon(
                       Icons.arrow_forward_ios,
-                      color: AppColors.hinttextfield,
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.onSurface.withOpacity(0.6),
                       size: 20.sp,
                     ),
                   ),

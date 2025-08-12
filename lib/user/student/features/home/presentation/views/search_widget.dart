@@ -5,29 +5,35 @@ class SearchWidget extends StatelessWidget {
   final String? hintText;
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       height: 50.h,
       padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 229, 231, 235),
+        color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: theme.colorScheme.outline),
       ),
       child: Row(
         children: [
-          const Icon(Icons.search, size: 20, color: AppColors.hinttextfield),
+          Icon(
+            Icons.search,
+            size: 20,
+            color: theme.colorScheme.onSurface.withOpacity(0.6),
+          ),
           const SizedBox(width: 10),
           Expanded(
             child: TextField(
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
-                color: AppColors.searchIconcolor,
+                color: theme.colorScheme.onSurface,
               ),
-              cursorColor: AppColors.mainColorStart,
+              cursorColor: theme.colorScheme.primary,
               decoration: InputDecoration(
                 isCollapsed: true,
                 hintText: hintText,
-                hintStyle: const TextStyle(
-                  color: AppColors.hinttextfield,
+                hintStyle: TextStyle(
+                  color: theme.colorScheme.onSurface.withOpacity(0.6),
                   fontSize: 14,
                 ),
                 border: InputBorder.none,

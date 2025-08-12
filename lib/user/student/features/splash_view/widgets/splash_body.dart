@@ -1,4 +1,3 @@
-import 'package:final_project_iti/core/utilities/app_colors.dart';
 import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/assets_manager.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
@@ -20,14 +19,14 @@ class SplashBody extends StatelessWidget {
           Text(
             'المعهد التكنولوجي العالي',
             style: AppTextStyles.textStyleBold24.copyWith(
-              color: AppColors.mainColorStart,
+              color: Theme.of(context).colorScheme.primary,
               fontFamily: AppFontFamily.tajawal,
             ),
           ),
           Text(
             'ITI Fayoum',
             style: AppTextStyles.textStyleMedium20.copyWith(
-              color: AppColors.mainColorStart,
+              color: Theme.of(context).colorScheme.primary,
               fontFamily: AppFontFamily.tajawal,
             ),
           ),

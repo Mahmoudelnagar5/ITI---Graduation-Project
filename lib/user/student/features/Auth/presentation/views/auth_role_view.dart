@@ -1,6 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/Auth/data/login_role_list.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/role_card.dart';
 
 class AuthRoleView extends StatelessWidget {
   const AuthRoleView({super.key});
@@ -22,6 +20,7 @@ class AuthRoleView extends StatelessWidget {
               "Welcome to ITI Fayoum",
               style: AppTextStyles.textStyleBold24.copyWith(
                 fontFamily: AppFontFamily.roboto,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
             Gap(8.h),
@@ -29,6 +28,7 @@ class AuthRoleView extends StatelessWidget {
               "Please select your account type",
               style: AppTextStyles.textStyleRegular16.copyWith(
                 fontFamily: AppFontFamily.roboto,
+                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
               ),
             ),
             Gap(32.h),
@@ -70,7 +70,7 @@ class AuthRoleView extends StatelessWidget {
               'Select your role to proceed to login',
               style: AppTextStyles.textStyleRegular14.copyWith(
                 fontFamily: AppFontFamily.roboto,
-                color: AppColors.acountsubtitle,
+                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
               ),
             ),
             Gap(130.h),

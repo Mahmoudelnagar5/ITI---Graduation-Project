@@ -2,7 +2,9 @@ import 'package:final_project_iti/core/bloc_observer/bloc_observer.dart';
 import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
 import 'package:final_project_iti/core/functions/network/network.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/core/theme/theme_manager.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/app_cubit.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/manager/app_state.dart';
 import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
 
 void main() async {
@@ -26,20 +28,21 @@ class MyApp extends StatelessWidget {
 
         // splitScreenMode: true,
         builder: (context, child) {
-          return BlocProvider(
-            create: (context) => AppCubit(),
-            child: MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData.light(),
-              darkTheme: ThemeData.dark(),
-              themeAnimationCurve: Curves.fastOutSlowIn,
-              themeAnimationDuration: const Duration(milliseconds: 1500),
-              themeMode: AppCubit.get(context).getTheme(),
-              onGenerateRoute: AppRouter.generateRoute,
-              initialRoute: initalRouteMethod(),
+          return BlocBuilder<AppCubit, AppState>(
+            builder: (context, state) {
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: ThemeManager.getLightTheme(),
+                darkTheme: ThemeManager.getDarkTheme(),
+                themeAnimationCurve: Curves.fastOutSlowIn,
+                themeAnimationDuration: const Duration(milliseconds: 1500),
+                themeMode: AppCubit.get(context).getTheme(),
+                onGenerateRoute: AppRouter.generateRoute,
+                initialRoute: initalRouteMethod(),
 
-              home: const SplashView(),
-            ),
+                home: const SplashView(),
+              );
+            },
           );
         },
       ),

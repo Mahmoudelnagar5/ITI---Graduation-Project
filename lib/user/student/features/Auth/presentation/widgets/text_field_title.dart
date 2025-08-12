@@ -11,7 +11,7 @@ class TextFieldTitle extends StatelessWidget {
         title,
         style: AppTextStyles.textStyleMedium14.copyWith(
           fontFamily: AppFontFamily.roboto,
-          color: AppColors.titletextfield,
+          color: Theme.of(context).colorScheme.onSurface,
         ),
       ),
     );

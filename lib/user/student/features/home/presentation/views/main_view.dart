@@ -1,7 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/questions_view.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/resources_page.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/tracks_view.dart';
+
 import 'package:flutter/cupertino.dart';
 
 import 'profile_view.dart';
@@ -61,31 +59,30 @@ List<PersistentBottomNavBarItem> items() {
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.home),
       title: 'Home',
-      activeColorPrimary: AppColors.adminpanelactivateicon,
-      inactiveColorPrimary: AppColors.hometusersubtitle,
+      activeColorPrimary: AppColors.mainColorStart,
+      inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
       textStyle: AppTextStyles.textStyleRegular12,
     ),
-
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.book),
       title: 'Resources',
       textStyle: AppTextStyles.textStyleRegular12,
-      activeColorPrimary: AppColors.adminpanelactivateicon,
-      inactiveColorPrimary: AppColors.hometusersubtitle,
+      activeColorPrimary: AppColors.mainColorStart,
+      inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.question_circle),
       title: 'Questions',
-      activeColorPrimary: AppColors.adminpanelactivateicon,
-      inactiveColorPrimary: AppColors.hometusersubtitle,
+      activeColorPrimary: AppColors.mainColorStart,
+      inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
       textStyle: AppTextStyles.textStyleRegular12,
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.person),
       title: 'Profile',
       textStyle: AppTextStyles.textStyleRegular12,
-      activeColorPrimary: AppColors.adminpanelactivateicon,
-      inactiveColorPrimary: AppColors.hometusersubtitle,
+      activeColorPrimary: AppColors.mainColorStart,
+      inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
     ),
   ];
 }

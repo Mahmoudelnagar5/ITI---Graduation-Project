@@ -1,4 +1,3 @@
-import 'package:final_project_iti/core/utilities/app_colors.dart';
 import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/user/student/features/onboarding/data/onboarding_list.dart';
@@ -34,7 +33,7 @@ class OnboardingBody extends StatelessWidget {
               Text(
                 onboardingDataList[index].title,
                 style: AppTextStyles.textStyleBold24.copyWith(
-                  color: AppColors.accountype,
+                  color: Theme.of(context).colorScheme.onSurface,
                   fontFamily: AppFontFamily.inter,
                 ),
               ),
@@ -44,7 +43,9 @@ class OnboardingBody extends StatelessWidget {
                 onboardingDataList[index].subTitle,
 
                 style: AppTextStyles.textStyleRegular16.copyWith(
-                  color: AppColors.acountsubtitle,
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.onSurface.withOpacity(0.7),
                   fontFamily: AppFontFamily.inter,
                 ),
               ),
@@ -53,8 +54,8 @@ class OnboardingBody extends StatelessWidget {
                 controller: pageController,
                 count: onboardingDataList.length,
                 effect: WormEffect(
-                  dotColor: AppColors.onboardindDotColor,
-                  activeDotColor: AppColors.mainColorStart,
+                  dotColor: Theme.of(context).colorScheme.outline,
+                  activeDotColor: Theme.of(context).colorScheme.primary,
                   dotHeight: 12.h,
                   dotWidth: 12.w,
                 ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../../core/utilities/app_colors.dart';
 import '../../../../../../../core/utilities/styles_manager.dart';
 
 class InstituteAnswer extends StatelessWidget {
@@ -11,11 +10,11 @@ class InstituteAnswer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.addcontant,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Theme.of(context).colorScheme.shadow.withOpacity(0.1),
             spreadRadius: 1,
             blurRadius: 5,
             offset: const Offset(0, 3),
@@ -27,9 +26,9 @@ class InstituteAnswer extends StatelessWidget {
           children: [
             Container(
               width: 8.w,
-              decoration: const BoxDecoration(
-                color: AppColors.mainColorStart,
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(12),
                   bottomLeft: Radius.circular(12),
                 ),
@@ -41,7 +40,7 @@ class InstituteAnswer extends StatelessWidget {
                 child: Text(
                   'Your attendance record has been updated. Please check your profile for the latest status of your attendance record.',
                   style: AppTextStyles.textStyleMedium16.copyWith(
-                    color: AppColors.hometusertitle,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
               ),

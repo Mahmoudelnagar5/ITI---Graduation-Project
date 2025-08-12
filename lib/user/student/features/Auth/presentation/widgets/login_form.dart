@@ -1,9 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/Auth/controller/login_cubit/login_cubit.dart';
-import 'package:final_project_iti/user/student/features/Auth/helper/validator.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/forgot_password_botton.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/password_text_field.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/text_field_title.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -40,7 +35,7 @@ class LoginForm extends StatelessWidget {
               child: Text(
                 'Login',
                 style: AppTextStyles.textStyleMedium16.copyWith(
-                  color: AppColors.white,
+                  color: Theme.of(context).colorScheme.onPrimary,
                   fontFamily: AppFontFamily.roboto,
                 ),
               ),

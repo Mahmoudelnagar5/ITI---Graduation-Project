@@ -1,6 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/home/data/models/track_model.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/track_content_view_body.dart';
 
 class TrackContentView extends StatelessWidget {
   const TrackContentView({super.key});
@@ -13,9 +11,9 @@ class TrackContentView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_ios,
-            color: AppColors.mainColorStart,
+            color: Theme.of(context).colorScheme.primary,
           ),
           onPressed: () => Navigator.of(context).pop(),
         ),
@@ -25,12 +23,16 @@ class TrackContentView extends StatelessWidget {
           children: [
             Text(
               trackModel?.title ?? 'Track Title',
-              style: AppTextStyles.textStyleBold20,
+              style: AppTextStyles.textStyleBold20.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
             ),
 
             Text(
               '5 Topics • 12 Weeks',
-              style: AppTextStyles.textStyleRegular14,
+              style: AppTextStyles.textStyleRegular14.copyWith(
+                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              ),
             ),
           ],
         ),

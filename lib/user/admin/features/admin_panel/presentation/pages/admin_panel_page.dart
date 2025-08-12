@@ -1,8 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/admin/features/admin_panel/presentation/controller/admin_controller.dart';
-import 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/bottom_nav_bar.dart';
-import 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/create_notification_card.dart';
-import 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/previous_notification_card.dart';
 
 class AdminPanelPage extends StatefulWidget {
   const AdminPanelPage({super.key});

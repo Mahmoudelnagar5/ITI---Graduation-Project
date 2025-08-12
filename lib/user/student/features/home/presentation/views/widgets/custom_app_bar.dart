@@ -19,9 +19,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('ITI Fayoum', style: AppTextStyles.textStyleBold20),
+              Text(
+                'ITI Fayoum',
+                style: AppTextStyles.textStyleBold20.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               // const SizedBox(height: 4),
-              Text('Learning Tracks', style: AppTextStyles.textStyleRegular14),
+              Text(
+                'Learning Tracks',
+                style: AppTextStyles.textStyleRegular14.copyWith(
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.onSurface.withOpacity(0.7),
+                ),
+              ),
             ],
           ),
         ],

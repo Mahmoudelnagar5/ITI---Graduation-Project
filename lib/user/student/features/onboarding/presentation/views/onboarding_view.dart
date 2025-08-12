@@ -2,7 +2,6 @@ import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
 import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper_keys.dart';
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/navigations/navigations.dart';
-import 'package:final_project_iti/core/utilities/app_colors.dart';
 import 'package:final_project_iti/core/utilities/app_font_family.dart';
 
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
@@ -44,7 +43,7 @@ class _OnboardingViewState extends State<OnboardingView> {
       body: SafeArea(
         child: Column(
           children: [
-            const skipBotton(),
+            const SkipBotton(),
             OnboardingBody(
               pageController: _pageController,
               onPageChanged: (p0) {
@@ -62,7 +61,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                       ? 'Get Started'
                       : 'Next',
                   style: AppTextStyles.textStyleRegular20.copyWith(
-                    color: AppColors.white,
+                    color: Theme.of(context).colorScheme.onPrimary,
                     fontFamily: AppFontFamily.inter,
                   ),
                 ),

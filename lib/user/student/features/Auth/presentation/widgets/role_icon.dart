@@ -6,7 +6,7 @@ class RoleIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: AppColors.roleIconBackground,
+      backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.1),
       radius: 48,
       child: SvgPicture.asset(svgAssets, width: 30),
     );

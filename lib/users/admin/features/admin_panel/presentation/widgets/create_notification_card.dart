@@ -2,8 +2,7 @@ import 'package:final_project_iti/core/routing/route_export.dart';
 
 class CreateNotificationCard extends StatelessWidget {
   final AdminController controller;
-  const CreateNotificationCard({Key? key, required this.controller})
-    : super(key: key);
+  const CreateNotificationCard({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {

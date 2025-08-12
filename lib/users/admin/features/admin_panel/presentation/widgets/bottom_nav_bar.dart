@@ -1,7 +1,7 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 
 class AdminBottomNavBar extends StatefulWidget {
-  const AdminBottomNavBar({Key? key}) : super(key: key);
+  const AdminBottomNavBar({super.key});
 
   @override
   State<AdminBottomNavBar> createState() => _AdminBottomNavBarState();

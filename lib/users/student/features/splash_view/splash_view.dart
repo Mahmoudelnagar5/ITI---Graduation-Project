@@ -3,7 +3,7 @@ import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper_keys.dar
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/navigations/navigations.dart';
 
-import 'package:final_project_iti/user/student/features/splash_view/widgets/splash_body.dart';
+import 'package:final_project_iti/users/student/features/splash_view/widgets/splash_body.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {

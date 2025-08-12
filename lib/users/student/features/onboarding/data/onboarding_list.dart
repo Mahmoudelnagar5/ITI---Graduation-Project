@@ -1,5 +1,5 @@
 import 'package:final_project_iti/core/utilities/assets_manager.dart';
-import 'package:final_project_iti/user/student/features/onboarding/data/onboarding_model.dart';
+import 'package:final_project_iti/users/student/features/onboarding/data/onboarding_model.dart';
 
 final List<OnboardingModel> onboardingDataList = [
   OnboardingModel(

@@ -1,4 +1,4 @@
-import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/track_item.dart';
+import 'package:final_project_iti/users/student/features/home/presentation/views/widgets/track_item.dart';
 import 'package:flutter/material.dart';
 
 import '../../../data/models/track_model.dart';

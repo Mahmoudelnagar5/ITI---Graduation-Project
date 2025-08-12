@@ -5,11 +5,11 @@ class SendNotificationButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final double radius;
   const SendNotificationButton({
-    Key? key,
+    super.key,
     required this.label,
     this.onPressed,
     this.radius = 8,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

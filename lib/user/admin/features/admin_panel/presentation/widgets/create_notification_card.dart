@@ -1,7 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/admin/features/admin_panel/presentation/controller/admin_controller.dart';
-import 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/send_notification_button.dart';
-import 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/success_dialog.dart';
 
 class CreateNotificationCard extends StatelessWidget {
   final AdminController controller;

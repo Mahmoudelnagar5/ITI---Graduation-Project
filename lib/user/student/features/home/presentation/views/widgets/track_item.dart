@@ -5,7 +5,6 @@ import 'package:gap/gap.dart';
 
 import '../../../../../../../core/config/configrations.dart';
 import '../../../../../../../core/functions/navigations/navigations.dart';
-import '../../../../../../../core/utilities/app_colors.dart';
 import '../../../../../../../core/utilities/styles_manager.dart';
 
 class TrackItem extends StatelessWidget {
@@ -26,11 +25,11 @@ class TrackItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(
-          color: AppColors.white,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(16.0),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: Theme.of(context).colorScheme.shadow.withOpacity(0.1),
               spreadRadius: 1,
               blurRadius: 5,
               offset: const Offset(0, 3), // changes position of shadow
@@ -44,7 +43,7 @@ class TrackItem extends StatelessWidget {
               width: 45.w,
               height: 45.h,
               decoration: ShapeDecoration(
-                color: AppColors.mainColorStart.withOpacity(0.1),
+                color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -59,14 +58,16 @@ class TrackItem extends StatelessWidget {
                   Text(
                     trackModel.title,
                     style: AppTextStyles.textStyleSemiBold16.copyWith(
-                      color: AppColors.hometusertitle,
+                      color: Theme.of(context).colorScheme.onSurface,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   Text(
                     trackModel.description,
                     style: AppTextStyles.textStyleRegular14.copyWith(
-                      color: AppColors.hometusersubtitle,
+                      color: Theme.of(
+                        context,
+                      ).colorScheme.onSurface.withOpacity(0.7),
                     ),
                   ),
                 ],
@@ -75,7 +76,7 @@ class TrackItem extends StatelessWidget {
             IconButton(
               icon: Icon(
                 Icons.arrow_forward_ios,
-                color: AppColors.hinttextfield,
+                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
                 size: 20.sp,
               ),
               onPressed: () {

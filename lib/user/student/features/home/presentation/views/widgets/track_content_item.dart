@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../../../core/utilities/app_colors.dart';
 import '../../../../../../../core/utilities/styles_manager.dart';
 import '../../../data/models/track_content_model.dart';
 
@@ -21,15 +20,15 @@ class TrackContentItem extends StatelessWidget {
         Container(
           width: 45.w,
           height: 45.h,
-          decoration: const BoxDecoration(
-            color: AppColors.mainColorStart,
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
             shape: BoxShape.circle,
           ),
           child: Center(
             child: Text(
               '0$index',
               style: AppTextStyles.textStyleBold16.copyWith(
-                color: AppColors.white,
+                color: Theme.of(context).colorScheme.onPrimary,
               ),
             ),
           ),
@@ -42,14 +41,16 @@ class TrackContentItem extends StatelessWidget {
               Text(
                 trackContent.title,
                 style: AppTextStyles.textStyleSemiBold16.copyWith(
-                  color: AppColors.hometusertitle,
+                  color: Theme.of(context).colorScheme.onSurface,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               Text(
                 trackContent.description,
                 style: AppTextStyles.textStyleRegular14.copyWith(
-                  color: AppColors.hometusersubtitle,
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.onSurface.withOpacity(0.7),
                 ),
               ),
             ],

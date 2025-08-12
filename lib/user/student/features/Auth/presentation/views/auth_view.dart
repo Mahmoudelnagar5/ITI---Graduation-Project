@@ -1,9 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/Auth/controller/login_cubit/login_cubit.dart';
-import 'package:final_project_iti/user/student/features/Auth/controller/register_cubit/register_cubit.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/login_form.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/register_form.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/tab_text_widget.dart';
 
 class AuthView extends StatelessWidget {
   const AuthView({super.key});
@@ -27,20 +22,20 @@ class AuthView extends StatelessWidget {
                 'ITI Fayoum',
                 style: AppTextStyles.textStyleBold20.copyWith(
                   fontFamily: AppFontFamily.roboto,
-                  color: AppColors.mainColorStart,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
               SizedBox(
                 height: 50.h,
-                child: const TabBar(
-                  tabs: [
+                child: TabBar(
+                  tabs: const [
                     TabTextWidget(text: 'Login'),
                     TabTextWidget(text: 'Register'),
                   ],
 
-                  indicatorColor: AppColors.mainColorStart,
+                  indicatorColor: Theme.of(context).colorScheme.primary,
                   indicatorSize: TabBarIndicatorSize.tab,
-                  labelColor: AppColors.mainColorStart,
+                  labelColor: Theme.of(context).colorScheme.primary,
                 ),
               ),
               const Gap(32),

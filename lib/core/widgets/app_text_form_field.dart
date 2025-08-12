@@ -1,36 +1,39 @@
-import 'package:final_project_iti/core/utilities/app_colors.dart';
 import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:flutter/material.dart';
 
 class AppTextFormField extends StatelessWidget {
-  const AppTextFormField({super.key, required this.hintText, this.controller, this.validator});
+  const AppTextFormField({
+    super.key,
+    required this.hintText,
+    this.controller,
+    this.validator,
+  });
   final String hintText;
   final TextEditingController? controller;
-  final String? Function(String?)?  validator;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return TextFormField(
-      style: const TextStyle(color: AppColors.black),
+      style: TextStyle(color: theme.colorScheme.onSurface),
       controller: controller,
-      validator:validator ,
+      validator: validator,
       decoration: InputDecoration(
-        fillColor: AppColors.white,
+        fillColor: theme.colorScheme.surface,
         filled: true,
         hintText: hintText,
         hintStyle: AppTextStyles.textStyleRegular16.copyWith(
           fontFamily: AppFontFamily.roboto,
-          color: AppColors.hinttextfield,
+          color: theme.colorScheme.onSurface.withOpacity(0.6),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(
-            color: AppColors.unfocusedTextFieldBorder,
-          ),
+          borderSide: BorderSide(color: theme.colorScheme.outline),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: AppColors.mainColorStart),
+          borderSide: BorderSide(color: theme.colorScheme.primary),
         ),
       ),
     );

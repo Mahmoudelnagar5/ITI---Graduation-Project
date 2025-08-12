@@ -9,12 +9,12 @@ class ForgotPasswordBotton extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: GestureDetector(
         onTap: () {
-          // TODO  add onTap
+        
         },
         child: Text(
           "Forgot Password",
           style: AppTextStyles.textStyleMedium14.copyWith(
-            color: AppColors.mainColorStart,
+            color: Theme.of(context).colorScheme.primary,
             fontFamily: AppFontFamily.roboto,
           ),
         ),

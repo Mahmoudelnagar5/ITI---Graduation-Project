@@ -1,5 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/Auth/data/login_role_model.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/role_icon.dart';
 
 class RoleCard extends StatelessWidget {
@@ -15,7 +14,9 @@ class RoleCard extends StatelessWidget {
         child: Card(
           elevation: 2,
           shape: RoundedRectangleBorder(
-            side: const BorderSide(color: Color.fromARGB(45, 102, 102, 102)),
+            side: BorderSide(
+              color: Theme.of(context).colorScheme.outline.withOpacity(0.3),
+            ),
             borderRadius: BorderRadiusGeometry.circular(12),
           ),
           child: Padding(
@@ -25,14 +26,16 @@ class RoleCard extends StatelessWidget {
               title: Text(
                 roleModel.title,
                 style: AppTextStyles.textStyleSemiBold18.copyWith(
-                  color: AppColors.accountype,
+                  color: Theme.of(context).colorScheme.onSurface,
                   fontFamily: AppFontFamily.roboto,
                 ),
               ),
               subtitle: Text(
                 roleModel.subTitle,
                 style: AppTextStyles.textStyleRegular14.copyWith(
-                  color: AppColors.acountsubtitle,
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.onSurface.withOpacity(0.7),
                   fontFamily: AppFontFamily.roboto,
                 ),
               ),

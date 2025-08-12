@@ -9,9 +9,7 @@ export 'package:final_project_iti/user/admin/features/admin_panel/presentation/w
 export 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/previous_notification_card.dart';
 export 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/send_notification_button.dart';
 export 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/success_dialog.dart';
-export 'package:bloc/bloc.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
-export 'package:meta/meta.dart';
 export 'package:final_project_iti/user/student/features/Auth/controller/register_cubit/register_state.dart';
 export 'package:final_project_iti/core/utilities/assets_manager.dart';
 export 'package:final_project_iti/user/student/features/Auth/data/login_role_model.dart';

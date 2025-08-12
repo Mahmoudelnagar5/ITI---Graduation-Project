@@ -11,20 +11,20 @@ class SettingItem extends StatelessWidget {
       onTap: onTap,
       leading: CircleAvatar(
         radius: 12,
-        backgroundColor: Colors.white,
-        child: Icon(icon, color: const Color(0xff9D2235)),
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        child: Icon(icon, color: Theme.of(context).colorScheme.primary),
       ),
       title: Text(
         title,
-        style: const TextStyle(
-          color: Color(0xff111827),
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.onSurface,
           fontSize: 16,
           fontWeight: FontWeight.w500,
         ),
       ),
-      trailing: const Icon(
+      trailing: Icon(
         Icons.arrow_forward_ios,
-        color: Color(0xff9CA3AF),
+        color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
         size: 20,
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/Auth/data/login_role_model.dart';
 
 List<LoginRoleModel> roleList = [
   LoginRoleModel(

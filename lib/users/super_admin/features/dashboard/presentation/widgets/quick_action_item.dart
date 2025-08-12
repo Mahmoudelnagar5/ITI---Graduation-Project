@@ -1,10 +1,15 @@
 import '../../../../../../core/routing/route_export.dart';
 
 class QuickActionItem extends StatelessWidget {
-  const QuickActionItem({super.key, this.color, required this.text, this.icon});
+  const QuickActionItem({
+    super.key,
+    this.color,
+    required this.text,
+    required this.icon,
+  });
   final Color? color;
   final String text;
-  final IconData? icon;
+  final Widget icon;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +24,8 @@ class QuickActionItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Icon(
-              icon ?? Icons.add,
-              color: color != null ? AppColors.white : AppColors.titletextfield,
-              size: 28.r,
-            ),
-            const Gap(12),
+            IconButton(onPressed: null, icon: icon),
+            const Gap(8),
             FittedBox(
               child: Text(
                 text,

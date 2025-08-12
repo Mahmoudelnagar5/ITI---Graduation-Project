@@ -48,26 +48,42 @@ class DashboardViewBody extends StatelessWidget {
               ),
             ),
             const Gap(16),
-            const Row(
+            Row(
               children: [
                 QuickActionItem(
                   color: AppColors.mainColorStart,
                   text: 'Add Track',
-                  icon: Icons.add,
+                  icon: Icon(Icons.add, color: AppColors.white, size: 30.r),
                 ),
-                Gap(16),
+                const Gap(16),
                 QuickActionItem(
                   text: 'Manage Rounds',
-                  icon: Icons.school_rounded,
+                  icon: Image.asset(
+                    Assets.imagesTrackLogo,
+                    color: AppColors.hometusersubtitle,
+                  ),
                 ),
               ],
             ),
             const Gap(16),
-            const Row(
+            Row(
               children: [
-                QuickActionItem(text: 'Add Courses', icon: Icons.book),
-                Gap(16),
-                QuickActionItem(text: 'Manage Resources', icon: Icons.book),
+                QuickActionItem(
+                  text: 'Add Courses',
+                  icon: Image.asset(
+                    Assets.imagesBook,
+                    color: AppColors.hometusersubtitle,
+                  ),
+                ),
+                const Gap(16),
+                QuickActionItem(
+                  text: 'Manage Resources',
+                  icon: Icon(
+                    Icons.folder,
+                    color: AppColors.hometusersubtitle,
+                    size: 30.r,
+                  ),
+                ),
               ],
             ),
           ],

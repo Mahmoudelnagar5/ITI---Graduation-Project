@@ -1,7 +1,7 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 
 class AdminPanelPage extends StatefulWidget {
-  const AdminPanelPage({Key? key}) : super(key: key);
+  const AdminPanelPage({super.key});
 
   @override
   State<AdminPanelPage> createState() => _AdminPanelPageState();

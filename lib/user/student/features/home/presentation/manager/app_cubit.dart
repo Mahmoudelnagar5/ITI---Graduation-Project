@@ -4,7 +4,6 @@ import 'package:final_project_iti/user/student/features/home/presentation/manage
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 class AppCubit extends Cubit<AppState> {
   AppCubit() : super(AppInitialState()) {
     _loadTheme();
@@ -36,9 +35,7 @@ class AppCubit extends Cubit<AppState> {
   }
 
   Future<void> _loadTheme() async {
-    String? savedTheme = await CacheHelper().getData(
-      key: CasheKeys.themeMode,
-    );
+    String? savedTheme = await CacheHelper().getData(key: CasheKeys.themeMode);
     if (savedTheme != null) {
       currentTheme = ThemeModeState.values.firstWhere(
         (element) => element.name == savedTheme,

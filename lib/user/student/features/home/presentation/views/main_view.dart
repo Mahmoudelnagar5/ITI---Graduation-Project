@@ -1,6 +1,7 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/profile_view.dart';
 import 'package:flutter/cupertino.dart';
+
+import 'profile_view.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});

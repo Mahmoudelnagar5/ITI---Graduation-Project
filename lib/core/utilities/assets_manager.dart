@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesAdminIcon
   /// assets/images/adminIcon.svg
   static const String imagesAdminIcon = "assets/images/adminIcon.svg";
@@ -12,7 +12,7 @@ class Assets {
 
   /// Assets for imagesData science
   /// assets/images/data science.png
-  static const String imagesData science = "assets/images/data science.png";
+  static const String imagesDataScience = "assets/images/data science.png";
 
   /// Assets for imagesFlutter
   /// assets/images/flutter.png
@@ -26,6 +26,14 @@ class Assets {
   /// assets/images/logo.png
   static const String imagesLogo = "assets/images/logo.png";
 
+  /// Assets for imagesEditIcon
+  /// assets/images/editIcon.png
+  static const String imagesEditIcon = "assets/images/editIcon.png";
+
+  /// Assets for imagesBook
+  /// assets/images/book.png
+  static const String imagesBook = "assets/images/book.png";
+
   /// Assets for imagesOnboarding
   /// assets/images/onboarding.jpg
   static const String imagesOnboarding = "assets/images/onboarding.jpg";
@@ -34,9 +42,13 @@ class Assets {
   /// assets/images/onboarding2.png
   static const String imagesOnboarding2 = "assets/images/onboarding2.png";
 
+  /// Assets for imagesProfile
+  /// assets/images/profile.png
+  static const String imagesProfile = "assets/images/profile.png";
+
   /// Assets for imagesSearch icon
   /// assets/images/search icon.png
-  static const String imagesSearch icon = "assets/images/search icon.png";
+  static const String imagesSearchIcon = "assets/images/search icon.png";
 
   /// Assets for imagesSecurity
   /// assets/images/security.png
@@ -48,11 +60,11 @@ class Assets {
 
   /// Assets for imagesTrack logo
   /// assets/images/track logo.png
-  static const String imagesTrack logo = "assets/images/track logo.png";
+  static const String imagesTrackLogo = "assets/images/track logo.png";
 
   /// Assets for imagesUi ux
   /// assets/images/ui ux.png
-  static const String imagesUi ux = "assets/images/ui ux.png";
+  static const String imagesUiUx = "assets/images/ui ux.png";
 
   /// Assets for imagesUserIcon
   /// assets/images/userIcon.svg
@@ -62,4 +74,3 @@ class Assets {
   /// assets/images/web.png
   static const String imagesWeb = "assets/images/web.png";
 }
-

@@ -6,11 +6,11 @@ class PreviousNotificationCard extends StatelessWidget {
   final String description;
 
   const PreviousNotificationCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.dateTime,
     required this.description,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

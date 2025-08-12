@@ -1,4 +1,5 @@
 import 'package:final_project_iti/core/functions/transitions/page_route_builder_method.dart';
+import 'package:final_project_iti/user/admin/features/admin_panel/presentation/pages/admin_panel_page.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_role_view.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_view.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
@@ -40,6 +41,12 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const MainView(),
         );
+      case AppRoutes.adminPanel:
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const AdminPanelPage(),
+        );
 
       default:
         return pageRouteBuilderMethod(
@@ -59,4 +66,5 @@ abstract class AppRoutes {
   static const String mainView = '/mainView';
   static const String tracksView = '/tracksView';
   static const String trackContentView = '/trackContentView';
+  static const String adminPanel = '/adminPanel';
 }

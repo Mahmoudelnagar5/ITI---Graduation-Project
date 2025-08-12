@@ -1,4 +1,4 @@
-import 'package:final_project_iti/core/routing/route_export.dart';
+import '../../../../../../../core/routing/route_export.dart';
 
 class CustomTextButtom extends StatelessWidget {
   const CustomTextButtom({super.key});

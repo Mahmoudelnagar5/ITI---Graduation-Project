@@ -1,8 +1,8 @@
-import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/custom_text_button.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/image_setion.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/info_section.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/setting_item.dart';
+import '../../../../../../../core/routing/route_export.dart';
+import 'custom_text_button.dart';
+import 'image_setion.dart';
+import 'info_section.dart';
+import 'setting_item.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({super.key});
@@ -27,9 +27,11 @@ class ProfileBody extends StatelessWidget {
             const SettingItem(title: 'Change Language', icon: Icons.language),
             const Divider(height: 20, color: Color(0xff9CA3AF), thickness: 1),
             const SizedBox(height: 15),
-             SettingItem(title: 'Theme Settings', icon: Icons.dark_mode,onTap: (){
-              
-            },),
+            SettingItem(
+              title: 'Theme Settings',
+              icon: Icons.dark_mode,
+              onTap: () {},
+            ),
             const Divider(height: 20, color: Color(0xff9CA3AF), thickness: 1),
             const SizedBox(height: 15),
             const SettingItem(title: 'Starred Questions', icon: Icons.star),
@@ -42,4 +44,3 @@ class ProfileBody extends StatelessWidget {
     );
   }
 }
-

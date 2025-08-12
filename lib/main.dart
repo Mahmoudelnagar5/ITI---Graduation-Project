@@ -1,11 +1,12 @@
 import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/network/network.dart';
-import 'package:final_project_iti/users/super_admin/features/dashboard/presentation/views/dashboard_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'users/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: initalRouteMethod(),
 
-          home: const DashboardView(),
+          home: const SuperAdminView(),
         );
       },
     );

@@ -8,7 +8,6 @@ class DashboardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: AppColors.white,
       appBar: CustonAppBarAdmin(),
       body: DashboardViewBody(),
     );

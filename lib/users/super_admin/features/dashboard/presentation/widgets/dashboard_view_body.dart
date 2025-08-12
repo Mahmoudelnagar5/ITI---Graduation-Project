@@ -50,17 +50,21 @@ class DashboardViewBody extends StatelessWidget {
             const Gap(16),
             Row(
               children: [
-                QuickActionItem(
-                  color: AppColors.mainColorStart,
-                  text: 'Add Track',
-                  icon: Icon(Icons.add, color: AppColors.white, size: 30.r),
+                Expanded(
+                  child: QuickActionItem(
+                    color: AppColors.mainColorStart,
+                    text: 'Add Track',
+                    icon: Icon(Icons.add, color: AppColors.white, size: 30.r),
+                  ),
                 ),
                 const Gap(16),
-                QuickActionItem(
-                  text: 'Manage Rounds',
-                  icon: Image.asset(
-                    Assets.imagesTrackLogo,
-                    color: AppColors.hometusersubtitle,
+                Expanded(
+                  child: QuickActionItem(
+                    text: 'Manage Rounds',
+                    icon: Image.asset(
+                      Assets.imagesTrackLogo,
+                      color: AppColors.hometusersubtitle,
+                    ),
                   ),
                 ),
               ],
@@ -68,20 +72,23 @@ class DashboardViewBody extends StatelessWidget {
             const Gap(16),
             Row(
               children: [
-                QuickActionItem(
-                  text: 'Add Courses',
-                  icon: Image.asset(
-                    Assets.imagesBook,
-                    color: AppColors.hometusersubtitle,
+                Expanded(
+                  child: QuickActionItem(
+                    text: 'Add Courses',
+                    icon: Image.asset(
+                      Assets.imagesBook,
+                      color: AppColors.hometusersubtitle,
+                    ),
                   ),
                 ),
                 const Gap(16),
-                QuickActionItem(
-                  text: 'Manage Resources',
-                  icon: Icon(
-                    Icons.folder,
-                    color: AppColors.hometusersubtitle,
-                    size: 30.r,
+                Expanded(
+                  child: QuickActionItem(
+                    text: 'Manage Resources',
+                    icon: Image.asset(
+                      Assets.imagesBook,
+                      color: AppColors.hometusersubtitle,
+                    ),
                   ),
                 ),
               ],

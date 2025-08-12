@@ -14,7 +14,7 @@ class ResendEmailRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Haven’t got the email yet? ",
+          "Haven't got the email yet? ",
           style: TextStyle(fontSize: 14.sp, color: Colors.grey),
         ),
         GestureDetector(

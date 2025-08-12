@@ -8,13 +8,11 @@ class AppTextFormField extends StatelessWidget {
     required this.hintText,
     this.controller,
     this.validator,
-    required this.obscureText,
-    this.suffixIcon,
+    this.maxLines,
   });
 
   final String hintText;
-  final bool obscureText;
-  final Widget? suffixIcon;
+  final int? maxLines;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
 
@@ -22,7 +20,7 @@ class AppTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return TextFormField(
-      obscureText: obscureText,
+      maxLines: maxLines,
       style: TextStyle(color: theme.colorScheme.onSurface),
       controller: controller,
       validator: validator,
@@ -34,7 +32,7 @@ class AppTextFormField extends StatelessWidget {
           fontFamily: AppFontFamily.roboto,
           color: theme.colorScheme.onSurface.withOpacity(0.6),
         ),
-        suffixIcon: suffixIcon, // ✅ now added here
+
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: theme.colorScheme.outline),

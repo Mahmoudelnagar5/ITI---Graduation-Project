@@ -1,7 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import '../widgets/new_password_field.dart';
-import '../widgets/confirm_password_field.dart';
-import '../widgets/password_update_button.dart';
+
 
 class SetNewPasswordPage extends StatelessWidget {
   const SetNewPasswordPage({super.key});
@@ -34,21 +32,23 @@ class SetNewPasswordPage extends StatelessWidget {
             SizedBox(height: 24.h),
 
             /// New Password
-            NewPasswordField(controller: passwordController),
+            PasswordTextFormField(
+              controller: passwordController,
+              hintText: "Enter New Password",
+            ),
 
             SizedBox(height: 16.h),
 
             /// Confirm Password
-            ConfirmPasswordField(controller: confirmPasswordController),
+            PasswordTextFormField(
+              controller: confirmPasswordController,
+              hintText: "Confirm Password",
+            ),
 
             SizedBox(height: 24.h),
 
             /// Update Button
-            PasswordUpdateButton(
-              onPressed: () {
-                // TODO: add logic later
-              },
-            ),
+            const AppBotton(child: Text('Update Password')),
           ],
         ),
       ),

@@ -18,6 +18,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     bool firstTime =
         CacheHelper().getData(key: CasheKeys.firstTime) as bool? ?? true;
+    firstTime = true;
     Future.delayed(const Duration(seconds: 3), () {
       AppNavigation.pushWithReplacement(
         context: context,

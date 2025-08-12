@@ -8,6 +8,7 @@ class AuthView extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

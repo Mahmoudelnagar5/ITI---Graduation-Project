@@ -1,3 +1,4 @@
+import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/core/utilities/font_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +11,12 @@ class ForgotPasswordHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        IconButton(icon: const Icon(Icons.arrow_back), onPressed: () {}),
+        IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            AppNavigation.pop(context: context);
+          },
+        ),
         SizedBox(height: 16.h),
         Text(
           "Forgot password",

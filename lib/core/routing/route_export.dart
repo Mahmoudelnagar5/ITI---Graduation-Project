@@ -30,7 +30,10 @@ export 'package:final_project_iti/core/widgets/app_text_form_field.dart';
 export 'package:final_project_iti/user/student/features/Auth/helper/validator.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/forgot_password_botton.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/password_text_field.dart';
-export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/text_field_title.dart';
+ 
+ 
+  export  'package:final_project_iti/core/widgets/text_field_title.dart';
+ 
 
 export 'package:flutter_svg/svg.dart';
 export 'package:final_project_iti/user/student/features/home/presentation/views/resource_card.dart';

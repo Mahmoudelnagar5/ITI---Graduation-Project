@@ -6,6 +6,7 @@ import 'package:final_project_iti/core/theme/theme_manager.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/app_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/app_state.dart';
 import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
+import 'package:final_project_iti/user/super_admin/features/add_item/presentation/views/add_item_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,0 +1,38 @@
+
+import 'package:final_project_iti/core/routing/route_export.dart';
+
+class AddItemAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const AddItemAppBar({super.key, this.title});
+  final String? title;
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 12.0),
+          child: InkWell(
+            onTap: () {},
+            child: SvgPicture.asset(
+              Assets.imagesDetailsIcon,
+              color: Colors.black,
+              height: 24.r,
+              width: 24.r,
+            ),
+          ),
+        ),
+      ],
+      backgroundColor: AppColors.white,
+      title: Text(
+        title ?? '',
+        style: AppTextStyles.textStyleMedium18.copyWith(
+          fontFamily: AppFontFamily.inter,
+          color: Colors.black,
+        ),
+      ),
+    );
+  }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}

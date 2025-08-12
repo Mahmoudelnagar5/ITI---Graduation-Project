@@ -1,5 +1,7 @@
 import 'package:final_project_iti/core/utilities/app_colors.dart';
 import 'package:final_project_iti/core/widgets/app_text_form_field.dart';
+import 'package:final_project_iti/user/student/features/Auth/helper/validator.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,15 +25,8 @@ class ForgotPasswordPage extends StatelessWidget {
             AppTextFormField(
               hintText: "Enter Your Email",
               controller: TextEditingController(),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "Please enter your email";
-                }
-                return null;
-              },
-              obscureText: false,
+              validator:Validator.emailValidator(),
             ),
-
             SizedBox(height: 50.h),
 
             SizedBox(

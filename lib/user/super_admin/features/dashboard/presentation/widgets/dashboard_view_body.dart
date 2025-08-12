@@ -62,7 +62,7 @@ class DashboardViewBody extends StatelessWidget {
                   child: QuickActionItem(
                     text: 'Manage Rounds',
                     icon: Image.asset(
-                      Assets.imagesTrackLogo,
+                      Assets.imagesTracklogo,
                       color: AppColors.hometusersubtitle,
                     ),
                   ),

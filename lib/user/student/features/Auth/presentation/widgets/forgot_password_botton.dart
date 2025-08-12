@@ -9,7 +9,10 @@ class ForgotPasswordBotton extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: GestureDetector(
         onTap: () {
-        
+          AppNavigation.pushName(
+            context: context,
+            route: AppRoutes.fogotPassword,
+          );
         },
         child: Text(
           "Forgot Password",

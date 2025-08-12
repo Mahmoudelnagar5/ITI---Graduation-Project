@@ -62,6 +62,7 @@ abstract class Validator {
       if (trimmedPassword == null || trimmedPassword.isEmpty) {
         return "please Enter Your Password";
       }
+      return null;
     };
   }
 }

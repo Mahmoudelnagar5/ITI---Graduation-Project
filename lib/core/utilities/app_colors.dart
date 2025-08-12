@@ -15,7 +15,7 @@ abstract class AppColors {
   // ─────────────────────────────
   static const Color lightScaffoldBg = Color(0xFFF6F7F8);
   static const Color lightCardBorder = Color(0xFFF7F7F9);
-  static const Color lightRoleIconBackground = Color(0xffF6E9EB);
+  static const Color lightRoleIconBackground = Color.fromRGBO(246, 233, 235, 1);
   static const Color lightAccountType = Color(0xff1A1A1A);
   static const Color lightAccountSubtitle = Color(0xff666666);
   static const Color lightSemiBrown = Color(0xff6B7280);

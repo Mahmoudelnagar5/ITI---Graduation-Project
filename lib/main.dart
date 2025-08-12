@@ -1,9 +1,7 @@
 import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/network/network.dart';
-import 'package:final_project_iti/users/admin/features/admin_panel/presentation/pages/admin_panel_page.dart';
-import 'package:final_project_iti/users/student/features/home/presentation/views/main_view.dart';
-import 'package:final_project_iti/users/student/features/splash_view/splash_view.dart';
+import 'package:final_project_iti/users/super_admin/features/dashboard/presentation/views/dashboard_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
@@ -13,7 +11,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CasheHelper().init();
 
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(enabled: !kReleaseMode, builder: (context) => const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           onGenerateRoute: AppRouter.generateRoute,
           initialRoute: initalRouteMethod(),
 
-          home: const AdminPanelPage(),
+          home: const DashboardView(),
         );
       },
     );

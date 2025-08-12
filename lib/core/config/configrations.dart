@@ -1,12 +1,11 @@
 import 'package:final_project_iti/core/functions/transitions/page_route_builder_method.dart';
-import 'package:final_project_iti/users/student/features/Auth/controller/register_cubit/register_cubit.dart';
 import 'package:final_project_iti/users/student/features/Auth/presentation/views/auth_role_view.dart';
 import 'package:final_project_iti/users/student/features/Auth/presentation/views/auth_view.dart';
 import 'package:final_project_iti/users/student/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/users/student/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../users/admin/features/admin_panel/presentation/pages/admin_panel_page.dart';
 import '../../users/student/features/home/presentation/views/track_content_view.dart';
 
 class AppRouter {
@@ -42,6 +41,12 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const MainView(),
         );
+      case AppRoutes.adminPanel:
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const AdminPanelPage(),
+        );
 
       default:
         return pageRouteBuilderMethod(
@@ -61,4 +66,5 @@ abstract class AppRoutes {
   static const String mainView = '/mainView';
   static const String tracksView = '/tracksView';
   static const String trackContentView = '/trackContentView';
+  static const String adminPanel = '/adminPanel';
 }

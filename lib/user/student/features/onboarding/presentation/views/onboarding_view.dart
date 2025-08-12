@@ -28,7 +28,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   void initState() {
     _pageController = PageController(initialPage: 0);
-    CasheHelper().saveData(key: CasheKeys.firstTime, value: false);
+    CacheHelper().saveData(key: CasheKeys.firstTime, value: false);
     super.initState();
   }
 

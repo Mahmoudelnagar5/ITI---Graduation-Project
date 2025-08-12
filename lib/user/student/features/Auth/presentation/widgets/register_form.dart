@@ -15,6 +15,7 @@ class RegisterForm extends StatelessWidget {
             const TextFieldTitle(title: 'Name'),
             const Gap(8),
             AppTextFormField(
+              obscureText: false,
               hintText: 'Name',
               controller: RegisterCubit.get(context).nameController,
               validator: Validator.signupNameValidator(),
@@ -24,6 +25,7 @@ class RegisterForm extends StatelessWidget {
             const TextFieldTitle(title: 'Email'),
             const Gap(8),
             AppTextFormField(
+              obscureText: false,
               hintText: 'Email',
               controller: RegisterCubit.get(context).emailController,
               validator: Validator.emailValidator(),

@@ -7,9 +7,9 @@ import 'package:final_project_iti/core/utilities/app_font_family.dart';
 
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/core/widgets/app_botton.dart';
-import 'package:final_project_iti/users/student/features/onboarding/data/onboarding_list.dart';
-import 'package:final_project_iti/users/student/features/onboarding/presentation/widgets/onboarding_body.dart';
-import 'package:final_project_iti/users/student/features/onboarding/presentation/widgets/skip_botton.dart';
+import 'package:final_project_iti/user/student/features/onboarding/data/onboarding_list.dart';
+import 'package:final_project_iti/user/student/features/onboarding/presentation/widgets/onboarding_body.dart';
+import 'package:final_project_iti/user/student/features/onboarding/presentation/widgets/skip_botton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -28,7 +28,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   void initState() {
     _pageController = PageController(initialPage: 0);
-    CasheHelper().saveData(key: CasheKeys.firstTime, value: false);
+    CacheHelper().saveData(key: CasheKeys.firstTime, value: false);
     super.initState();
   }
 

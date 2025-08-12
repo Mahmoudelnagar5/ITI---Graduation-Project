@@ -1,6 +1,8 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'profile_view.dart';
+
 class MainView extends StatefulWidget {
   const MainView({super.key});
 
@@ -14,7 +16,7 @@ class _MainViewState extends State<MainView> {
     const TracksView(),
     const ResourcesPage(),
     const QuestionsView(),
-    const TracksView(),
+    const ProfileView(),
   ];
 
   @override

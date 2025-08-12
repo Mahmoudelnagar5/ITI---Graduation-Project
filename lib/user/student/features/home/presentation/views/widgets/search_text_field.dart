@@ -31,7 +31,7 @@ class SearchTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(16.0),
           borderSide: BorderSide.none,
         ),
-        prefixIcon: Image.asset(Assets.imagesSearchIcon, color: color),
+        prefixIcon: Image.asset(Assets.imagesUserIcon, color: color),
       ),
     );
   }

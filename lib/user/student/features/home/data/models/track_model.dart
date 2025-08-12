@@ -25,13 +25,13 @@ class TrackModel {
     ),
     TrackModel(
       title: 'Data Science',
-      image: Assets.imagesDataScience,
+      image: Assets.imagesAdminIcon,
       description:
           'Learn data analysis, machine learning, and statistical modeling.',
     ),
     TrackModel(
       title: 'UI/UX Design',
-      image: Assets.imagesUiUx,
+      image: Assets.imagesAnsIcon,
       description:
           'Master user interface design principles and user experience methodologies.',
     ),

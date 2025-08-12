@@ -1,4 +1,4 @@
-import 'package:final_project_iti/users/student/features/home/data/models/track_model.dart';
+import 'package:final_project_iti/user/student/features/home/data/models/track_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';

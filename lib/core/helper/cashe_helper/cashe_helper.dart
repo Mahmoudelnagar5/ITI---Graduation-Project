@@ -1,32 +1,36 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class CasheHelper {
-  static late SharedPreferences sharedPreferences;
-  CasheHelper._internal();
-  static final CasheHelper _instance = CasheHelper._internal();
-  factory CasheHelper() => _instance;
+class CacheHelper {
+  // ───── Singleton Pattern ─────
+  static final CacheHelper _instance = CacheHelper._internal();
 
-  Future<SharedPreferences> init() async {
-    sharedPreferences = await SharedPreferences.getInstance();
-    return sharedPreferences;
+  factory CacheHelper() => _instance;
+
+  CacheHelper._internal();
+
+  // ───── Storage Instances ─────
+  late SharedPreferences _sharedPreferences;
+
+  // ───── Initialization ─────
+  Future<void> init() async {
+    _sharedPreferences = await SharedPreferences.getInstance();
   }
 
-  Future<bool> saveData({required String key, required value}) async {
-    if (value is int) {
-      return await sharedPreferences.setInt(key, value);
-    } else if (value is String) {
-      return await sharedPreferences.setString(key, value);
-    } else if (value is bool) {
-      return await sharedPreferences.setBool(key, value);
-    } else if (value is double) {
-      return await sharedPreferences.setDouble(key, value);
-    } else {
-      return await sharedPreferences.setStringList(key, value);
-    }
+  // ───── Shared Preferences Methods ─────
+
+  Future<bool> saveData({required String key, required dynamic value}) async {
+    if (value is String) return await _sharedPreferences.setString(key, value);
+    if (value is int) return await _sharedPreferences.setInt(key, value);
+    if (value is bool) return await _sharedPreferences.setBool(key, value);
+    if (value is double) return await _sharedPreferences.setDouble(key, value);
+    throw Exception("Unsupported value type");
   }
 
-  Object? getData(String key) => sharedPreferences.get(key);
+  dynamic getData( {required String key}) {
+    return _sharedPreferences.get(key);
+  }
 
-  Future<bool> removeData(String key) async =>
-      await sharedPreferences.remove(key);
+  Future<bool> removeData({required String key}) async {
+    return await _sharedPreferences.remove(key);
+  }
 }

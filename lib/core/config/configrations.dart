@@ -1,12 +1,12 @@
 import 'package:final_project_iti/core/functions/transitions/page_route_builder_method.dart';
-import 'package:final_project_iti/users/student/features/Auth/presentation/views/auth_role_view.dart';
-import 'package:final_project_iti/users/student/features/Auth/presentation/views/auth_view.dart';
-import 'package:final_project_iti/users/student/features/home/presentation/views/main_view.dart';
-import 'package:final_project_iti/users/student/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:final_project_iti/user/admin/features/admin_panel/presentation/pages/admin_panel_page.dart';
+import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_role_view.dart';
+import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_view.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
+import 'package:final_project_iti/user/student/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
-import '../../users/admin/features/admin_panel/presentation/pages/admin_panel_page.dart';
-import '../../users/student/features/home/presentation/views/track_content_view.dart';
+import '../../user/student/features/home/presentation/views/track_content_view.dart';
 
 class AppRouter {
   static Route? generateRoute(RouteSettings settings) {

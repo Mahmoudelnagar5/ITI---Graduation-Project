@@ -1,4 +1,6 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/user/student/features/home/data/models/track_model.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/track_content_view_body.dart';
 
 class TrackContentView extends StatelessWidget {
   const TrackContentView({super.key});

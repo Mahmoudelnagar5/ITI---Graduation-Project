@@ -1,4 +1,6 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/user/student/features/home/data/models/cards_data_list.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/search_widget.dart';
 
 class ResourcesPage extends StatefulWidget {
   const ResourcesPage({super.key});

@@ -33,7 +33,7 @@ class CustonAppBarAdmin extends StatelessWidget implements PreferredSizeWidget {
               style: TextStyle(color: Colors.white, fontSize: 12.sp),
             ),
             backgroundColor: Colors.red,
-            child: Icon(Icons.notifications, size: 30.sp),
+            child: Icon(Icons.notifications, size: 40.r),
           ),
         ),
       ],

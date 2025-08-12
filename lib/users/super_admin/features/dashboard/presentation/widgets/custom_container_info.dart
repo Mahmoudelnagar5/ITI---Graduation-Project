@@ -12,15 +12,14 @@ class CustomContainerInfo extends StatelessWidget {
   final String value;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Card(
+      elevation: 1,
       child: Container(
+        width: 160.w,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: AppColors.white,
-          boxShadow: const [
-            BoxShadow(color: Colors.grey, blurRadius: 2, offset: Offset(0, 1)),
-          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

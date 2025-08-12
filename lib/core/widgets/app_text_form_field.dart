@@ -8,14 +8,21 @@ class AppTextFormField extends StatelessWidget {
     required this.hintText,
     this.controller,
     this.validator,
+    required this.obscureText,
+    this.suffixIcon,
   });
+
   final String hintText;
+  final bool obscureText;
+  final Widget? suffixIcon;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return TextFormField(
+      obscureText: obscureText,
       style: TextStyle(color: theme.colorScheme.onSurface),
       controller: controller,
       validator: validator,
@@ -27,6 +34,7 @@ class AppTextFormField extends StatelessWidget {
           fontFamily: AppFontFamily.roboto,
           color: theme.colorScheme.onSurface.withOpacity(0.6),
         ),
+        suffixIcon: suffixIcon, // ✅ now added here
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: theme.colorScheme.outline),

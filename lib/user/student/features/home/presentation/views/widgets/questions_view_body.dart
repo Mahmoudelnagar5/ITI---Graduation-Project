@@ -1,9 +1,7 @@
+import 'package:final_project_iti/user/student/features/home/presentation/views/search_widget.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/question_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
-import '../../../../../../../core/utilities/app_colors.dart';
-import 'question_list_view.dart';
-import 'search_text_field.dart';
 
 class QuestionsViewBody extends StatelessWidget {
   const QuestionsViewBody({super.key});
@@ -15,10 +13,12 @@ class QuestionsViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SearchTextField(
-            hintText: 'Search for questions...',
-            color: AppColors.mainColorStart,
-          ),
+          // SearchTextField(
+          //   hintText: 'Search for questions...',
+          //   color: AppColors.mainColorStart,
+          // ),
+          SearchWidget(hintText: 'Search for questions...'),
+
           Gap(15),
           Expanded(child: QuestionListView()),
         ],

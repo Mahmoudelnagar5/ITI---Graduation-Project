@@ -25,7 +25,7 @@ class TrackModel {
     ),
     TrackModel(
       title: 'Data Science',
-      image: Assets.imagesAdminIcon,
+      image: Assets.imagesDataScience,
       description:
           'Learn data analysis, machine learning, and statistical modeling.',
     ),

@@ -5,13 +5,11 @@ import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/app_cubit.dart';
 import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper().init();
   Bloc.observer = AppBlocObserver();
   runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {

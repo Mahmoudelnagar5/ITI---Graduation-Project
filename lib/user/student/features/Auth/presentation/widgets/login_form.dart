@@ -13,6 +13,7 @@ class LoginForm extends StatelessWidget {
             const TextFieldTitle(title: 'Email'),
             const Gap(8),
             AppTextFormField(
+              obscureText: false,
               hintText: 'Email',
               controller: LoginCubit.get(context).emailController,
               validator: Validator.emailValidator(),

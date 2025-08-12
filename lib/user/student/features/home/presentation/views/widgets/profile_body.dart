@@ -1,11 +1,121 @@
+import 'package:final_project_iti/user/student/features/home/presentation/manager/app_cubit.dart';
+
 import '../../../../../../../core/routing/route_export.dart';
 import 'custom_text_button.dart';
 import 'image_setion.dart';
 import 'info_section.dart';
 import 'setting_item.dart';
 
-class ProfileBody extends StatelessWidget {
+class ProfileBody extends StatefulWidget {
   const ProfileBody({super.key});
+
+  @override
+  State<ProfileBody> createState() => _ProfileBodyState();
+}
+
+class _ProfileBodyState extends State<ProfileBody> {
+  late String _selectedTheme; // Default selection
+  @override
+  void initState() {
+    _selectedTheme = AppCubit.get(context).getTheme().name.toString();
+    print('soooooooooooooooooooooooo $_selectedTheme');
+    super.initState();
+  }
+
+  void _showThemeSelectorSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setStateSheet) {
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: 40,
+                    height: 4,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Select Theme',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ListTile(
+                    title: const Text('Dark Mode'),
+                    trailing: Radio<String>(
+                      value: 'dark',
+                      groupValue: _selectedTheme,
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedTheme = value!;
+                          AppCubit.get(
+                            context,
+                          ).selectTheme(ThemeModeState.dark);
+                        });
+                        setStateSheet(() {});
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                  ListTile(
+                    title: const Text('Light Mode'),
+                    trailing: Radio<String>(
+                      value: 'light',
+                      groupValue: _selectedTheme,
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedTheme = value!;
+                          AppCubit.get(
+                            context,
+                          ).selectTheme(ThemeModeState.light);
+                        });
+                        setStateSheet(() {});
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                  ListTile(
+                    title: const Text('System Settings'),
+                    trailing: Radio<String>(
+                      value: 'system',
+                      groupValue: _selectedTheme,
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedTheme = value!;
+                          AppCubit.get(
+                            context,
+                          ).selectTheme(ThemeModeState.system);
+                        });
+                        setStateSheet(() {});
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +152,7 @@ class ProfileBody extends StatelessWidget {
             SettingItem(
               title: 'Theme Settings',
               icon: Icons.dark_mode,
-              onTap: () {},
+              onTap: () => _showThemeSelectorSheet(context),
             ),
             Divider(
               height: 20,

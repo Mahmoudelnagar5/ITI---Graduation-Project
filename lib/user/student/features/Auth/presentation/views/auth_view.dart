@@ -1,4 +1,9 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/user/student/features/Auth/controller/login_cubit/login_cubit.dart';
+import 'package:final_project_iti/user/student/features/Auth/controller/register_cubit/register_cubit.dart';
+import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/login_form.dart';
+import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/register_form.dart';
+import 'package:final_project_iti/user/student/features/Auth/presentation/widgets/tab_text_widget.dart';
 
 class AuthView extends StatelessWidget {
   const AuthView({super.key});

@@ -4,16 +4,12 @@ import 'package:final_project_iti/core/functions/network/network.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/app_cubit.dart';
 import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
-import 'package:flutter/foundation.dart';
-import 'package:device_preview/device_preview.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper().init();
   Bloc.observer = AppBlocObserver();
-  runApp(
-    DevicePreview(enabled: !kReleaseMode, builder: (context) => const MyApp()),
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

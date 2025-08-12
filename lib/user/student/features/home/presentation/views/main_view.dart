@@ -1,4 +1,7 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/questions_view.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/resources_page.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/tracks_view.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'profile_view.dart';

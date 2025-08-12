@@ -35,11 +35,10 @@ class MyApp extends StatelessWidget {
                 theme: ThemeManager.getLightTheme(),
                 darkTheme: ThemeManager.getDarkTheme(),
                 themeAnimationCurve: Curves.fastOutSlowIn,
-                themeAnimationDuration: const Duration(milliseconds: 1500),
+                themeAnimationDuration: const Duration(milliseconds: 2000),
                 themeMode: AppCubit.get(context).getTheme(),
                 onGenerateRoute: AppRouter.generateRoute,
                 initialRoute: initalRouteMethod(),
-
                 home: const SplashView(),
               );
             },

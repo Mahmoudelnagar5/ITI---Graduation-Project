@@ -6,6 +6,8 @@ class CustonAppBarAdmin extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
+      backgroundColor: Colors.transparent,
       title: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: Row(

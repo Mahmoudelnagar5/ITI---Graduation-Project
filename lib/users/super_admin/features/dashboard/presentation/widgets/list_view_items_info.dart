@@ -28,6 +28,7 @@ class ListViewItemsInfo extends StatelessWidget {
     return SizedBox(
       height: 200.h,
       child: ListView.builder(
+        padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
         itemCount: items.length,

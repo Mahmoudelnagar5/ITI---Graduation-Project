@@ -14,6 +14,7 @@ class CustomContainerInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 1,
+
       child: Container(
         width: 160.w,
         padding: const EdgeInsets.all(16),

@@ -1,4 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/l10n/app_localizations.dart';
 
 class QuestionsView extends StatelessWidget {
   const QuestionsView({super.key});
@@ -8,7 +9,8 @@ class QuestionsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Common Questions',
+          AppLocalizations.of(context)!.commonQuestions,
+
           style: AppTextStyles.textStyleMedium20.copyWith(
             color: Theme.of(context).colorScheme.onSurface,
           ),

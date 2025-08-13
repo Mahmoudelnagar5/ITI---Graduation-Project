@@ -1,3 +1,5 @@
+import 'package:final_project_iti/l10n/app_localizations.dart';
+
 import '../../../../../../../core/routing/route_export.dart';
 
 class CustomTextButtom extends StatelessWidget {
@@ -21,7 +23,7 @@ class CustomTextButtom extends StatelessWidget {
           children: [
             Icon(Icons.logout, color: Theme.of(context).colorScheme.onPrimary),
             Text(
-              'logout',
+              AppLocalizations.of(context)!.logout,
               style: AppTextStyles.textStyleMedium16.copyWith(
                 color: Theme.of(context).colorScheme.onPrimary,
                 fontFamily: 'Inter',

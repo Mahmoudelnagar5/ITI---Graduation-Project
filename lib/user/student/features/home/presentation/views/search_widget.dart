@@ -34,7 +34,7 @@ class SearchWidget extends StatelessWidget {
                 hintText: hintText,
                 hintStyle: TextStyle(
                   color: theme.colorScheme.onSurface.withOpacity(0.6),
-                  fontSize: 14,
+                  fontSize: 16,
                 ),
                 border: InputBorder.none,
               ),

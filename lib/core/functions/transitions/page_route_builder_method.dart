@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 PageRouteBuilder<dynamic> pageRouteBuilderMethod({
   required Widget Function(BuildContext, Animation<double>, Animation<double>)
-      pageBuilder,
-  required RouteSettings settings, 
+  pageBuilder,
+  required RouteSettings settings,
 }) {
   return PageRouteBuilder(
-    settings: settings, 
-    transitionDuration: const Duration(milliseconds: 350),
+    settings: settings,
+    transitionDuration: const Duration(milliseconds: 550),
     transitionsBuilder: slideTransitionBuilder,
     pageBuilder: pageBuilder,
   );

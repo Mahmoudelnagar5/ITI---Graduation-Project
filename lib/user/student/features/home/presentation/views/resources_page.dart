@@ -1,4 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/l10n/app_localizations.dart';
 
 class ResourcesPage extends StatefulWidget {
   const ResourcesPage({super.key});
@@ -29,7 +30,7 @@ class _ResourcesPageState extends State<ResourcesPage> {
       appBar: AppBar(
         centerTitle: false,
         title: Text(
-          'ITI Learning Resources',
+          AppLocalizations.of(context)!.itiLearningResources,
           style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
         ),
         actions: [
@@ -74,7 +75,9 @@ class _ResourcesPageState extends State<ResourcesPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SearchWidget(hintText: 'Search learning materials...'),
+              SearchWidget(
+                hintText: AppLocalizations.of(context)!.searchLearningMaterials,
+              ),
               SizedBox(height: 14.h),
 
               // Selectable scrollable row

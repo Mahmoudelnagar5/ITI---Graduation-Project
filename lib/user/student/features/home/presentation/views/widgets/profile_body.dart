@@ -1,4 +1,6 @@
-import 'package:final_project_iti/user/student/features/home/presentation/manager/app_cubit.dart';
+import 'package:final_project_iti/l10n/app_localizations.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_cubit.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
 
 import '../../../../../../../core/routing/route_export.dart';
 import 'custom_text_button.dart';
@@ -15,9 +17,11 @@ class ProfileBody extends StatefulWidget {
 
 class _ProfileBodyState extends State<ProfileBody> {
   late String _selectedTheme; // Default selection
+  late String _selectedLanguage;
   @override
   void initState() {
     _selectedTheme = AppCubit.get(context).getTheme().name.toString();
+    _selectedLanguage = LocalizationCubit.get(context).getLanguage();
     print('soooooooooooooooooooooooo $_selectedTheme');
     super.initState();
   }
@@ -117,6 +121,84 @@ class _ProfileBodyState extends State<ProfileBody> {
     );
   }
 
+  void _showSelectedLanguage(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setStateSheet) {
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    width: 40,
+                    height: 4,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  const Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Select Language',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ListTile(
+                    title: const Text('English'),
+                    trailing: Radio<String>(
+                      value: 'en',
+                      groupValue: _selectedLanguage,
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedLanguage = value!;
+                          LocalizationCubit.get(
+                            context,
+                          ).selectLanguage('en');
+                        });
+                        setStateSheet(() {});
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                  ListTile(
+                    title: const Text('Arabic'),
+                    trailing: Radio<String>(
+                      value: 'ar',
+                      groupValue: _selectedLanguage,
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedLanguage = value!;
+                          LocalizationCubit.get(
+                            context,
+                          ).selectLanguage('ar');
+                        });
+                        setStateSheet(() {});
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -135,14 +217,10 @@ class _ProfileBodyState extends State<ProfileBody> {
               thickness: 1,
             ),
             const SizedBox(height: 15),
-            const SettingItem(title: 'Edit Profile', icon: Icons.person),
-            Divider(
-              height: 20,
-              color: Theme.of(context).colorScheme.outline,
-              thickness: 1,
+            SettingItem(
+              title: AppLocalizations.of(context)!.editProfile,
+              icon: Icons.person,
             ),
-            const SizedBox(height: 15),
-            const SettingItem(title: 'Change Language', icon: Icons.language),
             Divider(
               height: 20,
               color: Theme.of(context).colorScheme.outline,
@@ -150,7 +228,19 @@ class _ProfileBodyState extends State<ProfileBody> {
             ),
             const SizedBox(height: 15),
             SettingItem(
-              title: 'Theme Settings',
+              title: AppLocalizations.of(context)!.changeLanguage,
+              icon: Icons.language,
+               onTap: () => _showSelectedLanguage(context),
+            ),
+            Divider(
+              height: 20,
+              color: Theme.of(context).colorScheme.outline,
+              thickness: 1,
+            ),
+            const SizedBox(height: 15),
+            SettingItem(
+              title: AppLocalizations.of(context)!.themeSetting,
+
               icon: Icons.dark_mode,
               onTap: () => _showThemeSelectorSheet(context),
             ),
@@ -160,7 +250,10 @@ class _ProfileBodyState extends State<ProfileBody> {
               thickness: 1,
             ),
             const SizedBox(height: 15),
-            const SettingItem(title: 'Starred Questions', icon: Icons.star),
+            SettingItem(
+              title: AppLocalizations.of(context)!.starredQuestions,
+              icon: Icons.star,
+            ),
             Divider(
               height: 20,
               color: Theme.of(context).colorScheme.outline,

@@ -1,3 +1,4 @@
+import 'package:final_project_iti/l10n/app_localizations.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/search_widget.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/question_list_view.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +9,8 @@ class QuestionsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -17,10 +18,10 @@ class QuestionsViewBody extends StatelessWidget {
           //   hintText: 'Search for questions...',
           //   color: AppColors.mainColorStart,
           // ),
-          SearchWidget(hintText: 'Search for questions...'),
+          SearchWidget(hintText: AppLocalizations.of(context)!.searchForQuestions),
 
-          Gap(15),
-          Expanded(child: QuestionListView()),
+          const Gap(15),
+          const Expanded(child: QuestionListView()),
         ],
       ),
     );

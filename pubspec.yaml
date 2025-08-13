@@ -33,13 +33,16 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.2.0
   gap: ^3.0.1
+  
   persistent_bottom_nav_bar: ^6.2.1
   shared_preferences: ^2.5.3
   smooth_page_indicator: ^1.2.1
-
 dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
@@ -49,7 +52,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -114,3 +117,5 @@ flutter_assets:
   output_path: lib/core/utilities
   filename: assets_manager.dart
   field_prefix: null
+flutter_intl:
+  enabled: true

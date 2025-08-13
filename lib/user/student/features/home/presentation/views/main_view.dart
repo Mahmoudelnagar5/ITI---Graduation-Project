@@ -1,4 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/l10n/app_localizations.dart';
 
 import 'package:flutter/cupertino.dart';
 
@@ -38,7 +39,36 @@ class _MainViewState extends State<MainView> {
       context,
       controller: controller,
       screens: _pages,
-      items: items(),
+      items: [
+        PersistentBottomNavBarItem(
+          icon: const Icon(CupertinoIcons.home),
+          title: '  ${AppLocalizations.of(context)!.home}',
+          activeColorPrimary: AppColors.mainColorStart,
+          inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
+          textStyle: AppTextStyles.textStyleRegular16,
+        ),
+        PersistentBottomNavBarItem(
+          icon: const Icon(CupertinoIcons.book),
+          title: '  ${AppLocalizations.of(context)!.resources}',
+          textStyle: AppTextStyles.textStyleRegular16,
+          activeColorPrimary: AppColors.mainColorStart,
+          inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
+        ),
+        PersistentBottomNavBarItem(
+          icon: const Icon(CupertinoIcons.question_circle),
+          title: '  ${AppLocalizations.of(context)!.questions}',
+          activeColorPrimary: AppColors.mainColorStart,
+          inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
+          textStyle: AppTextStyles.textStyleRegular16,
+        ),
+        PersistentBottomNavBarItem(
+          icon: const Icon(CupertinoIcons.person),
+          title: '  ${AppLocalizations.of(context)!.profile}',
+          textStyle: AppTextStyles.textStyleRegular16,
+          activeColorPrimary: AppColors.mainColorStart,
+          inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
+        ),
+      ],
       animationSettings: const NavBarAnimationSettings(
         navBarItemAnimation: ItemAnimationSettings(
           duration: Duration(milliseconds: 500),
@@ -52,37 +82,4 @@ class _MainViewState extends State<MainView> {
       ),
     );
   }
-}
-
-List<PersistentBottomNavBarItem> items() {
-  return [
-    PersistentBottomNavBarItem(
-      icon: const Icon(CupertinoIcons.home),
-      title: 'Home',
-      activeColorPrimary: AppColors.mainColorStart,
-      inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
-      textStyle: AppTextStyles.textStyleRegular12,
-    ),
-    PersistentBottomNavBarItem(
-      icon: const Icon(CupertinoIcons.book),
-      title: 'Resources',
-      textStyle: AppTextStyles.textStyleRegular12,
-      activeColorPrimary: AppColors.mainColorStart,
-      inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
-    ),
-    PersistentBottomNavBarItem(
-      icon: const Icon(CupertinoIcons.question_circle),
-      title: 'Questions',
-      activeColorPrimary: AppColors.mainColorStart,
-      inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
-      textStyle: AppTextStyles.textStyleRegular12,
-    ),
-    PersistentBottomNavBarItem(
-      icon: const Icon(CupertinoIcons.person),
-      title: 'Profile',
-      textStyle: AppTextStyles.textStyleRegular12,
-      activeColorPrimary: AppColors.mainColorStart,
-      inactiveColorPrimary: AppColors.lightHomeUserSubtitle,
-    ),
-  ];
 }

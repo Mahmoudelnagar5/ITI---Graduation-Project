@@ -15,7 +15,6 @@ export 'package:final_project_iti/core/utilities/assets_manager.dart';
 export 'package:final_project_iti/user/student/features/Auth/data/login_role_model.dart';
 export 'package:final_project_iti/core/config/configrations.dart';
 export 'package:final_project_iti/core/utilities/app_font_family.dart';
-export 'package:final_project_iti/user/student/features/Auth/data/login_role_list.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/role_card.dart';
 export 'package:gap/gap.dart';
 

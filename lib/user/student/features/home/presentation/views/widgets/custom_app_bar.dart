@@ -1,3 +1,4 @@
+import 'package:final_project_iti/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -20,14 +21,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'ITI Fayoum',
+                AppLocalizations.of(context)!.itiFayoum,
                 style: AppTextStyles.textStyleBold20.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
               // const SizedBox(height: 4),
               Text(
-                'Learning Tracks',
+                AppLocalizations.of(context)!.learningTracks,
+
                 style: AppTextStyles.textStyleRegular14.copyWith(
                   color: Theme.of(
                     context,

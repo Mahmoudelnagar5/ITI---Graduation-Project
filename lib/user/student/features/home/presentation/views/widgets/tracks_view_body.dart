@@ -1,3 +1,4 @@
+import 'package:final_project_iti/l10n/app_localizations.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +17,7 @@ class TrackViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Gap(12.h),
-          const SearchWidget(hintText: 'Search Tracks'),
+          SearchWidget(hintText: AppLocalizations.of(context)!.searchTracks),
           // SearchTextField(hintText: 'Search tracks...'),
           const Gap(24),
           const Expanded(child: TracksListView()),

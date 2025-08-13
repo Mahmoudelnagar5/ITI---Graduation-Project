@@ -1,6 +1,7 @@
 import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/assets_manager.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
+import 'package:final_project_iti/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -17,7 +18,7 @@ class SplashBody extends StatelessWidget {
           Image.asset(Assets.imagesLogo, height: 200.h),
           const Gap(13),
           Text(
-            'المعهد التكنولوجي العالي',
+            AppLocalizations.of(context)!.appTitle,
             style: AppTextStyles.textStyleBold24.copyWith(
               color: Theme.of(context).colorScheme.primary,
               fontFamily: AppFontFamily.tajawal,

@@ -36,11 +36,11 @@ dependencies:
   flutter_bloc: ^9.1.1
   flutter_localizations:
     sdk: flutter
-  intl: ^0.20.2
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.2.0
   gap: ^3.0.1
-  
+  image_picker: ^1.1.2
+  intl: ^0.20.2
   persistent_bottom_nav_bar: ^6.2.1
   shared_preferences: ^2.5.3
   smooth_page_indicator: ^1.2.1

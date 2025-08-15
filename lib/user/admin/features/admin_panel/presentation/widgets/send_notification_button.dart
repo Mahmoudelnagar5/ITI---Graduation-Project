@@ -19,7 +19,7 @@ class SendNotificationButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.mainColorStart,
-          padding: EdgeInsets.symmetric(vertical: 14.h),
+          padding: EdgeInsets.symmetric(vertical: 22.h),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius.r),
           ),

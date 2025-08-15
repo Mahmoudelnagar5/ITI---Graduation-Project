@@ -22,7 +22,13 @@ class CustonAppBarAdmin extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
             const Gap(10),
-            Text('ITI Admin', style: AppTextStyles.textStyleMedium20),
+            Text(
+              'ITI Admin',
+              style: AppTextStyles.textStyleMedium20.copyWith(
+                color: AppColors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),
@@ -35,7 +41,11 @@ class CustonAppBarAdmin extends StatelessWidget implements PreferredSizeWidget {
               style: TextStyle(color: Colors.white, fontSize: 12.sp),
             ),
             backgroundColor: Colors.red,
-            child: Icon(Icons.notifications, size: 38.r),
+            child: Icon(
+              Icons.notifications,
+              size: 38.r,
+              color: AppColors.hometusersubtitle,
+            ),
           ),
         ),
       ],

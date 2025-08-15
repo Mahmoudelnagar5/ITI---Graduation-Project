@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:final_project_iti/core/bloc_observer/bloc_observer.dart';
 import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
 import 'package:final_project_iti/core/functions/network/network.dart';
@@ -20,7 +21,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await CacheHelper().init();
   Bloc.observer = AppBlocObserver();
-  runApp(const MyApp());
+  runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
                     themeMode: AppCubit.get(context).getTheme(),
                     onGenerateRoute: AppRouter.generateRoute,
                     initialRoute: initalRouteMethod(),
-                    home: const SuperAdminView(),
+                    home: const SplashView(),
                   );
                 },
               );

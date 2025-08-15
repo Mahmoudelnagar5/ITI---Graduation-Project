@@ -14,7 +14,7 @@ class GirdViewActiveTrackItem extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 12.0,
         crossAxisSpacing: 12.0,
-        childAspectRatio: 1,
+        childAspectRatio: .9,
       ),
       itemCount: 4,
       itemBuilder: (context, index) => const ActiveTrackItem(),

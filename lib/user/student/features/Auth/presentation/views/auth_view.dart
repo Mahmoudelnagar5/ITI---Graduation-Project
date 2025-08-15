@@ -1,5 +1,7 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 
+import '../../data/login_repo.dart';
+
 class AuthView extends StatelessWidget {
   const AuthView({super.key});
 
@@ -44,7 +46,8 @@ class AuthView extends StatelessWidget {
                 child: TabBarView(
                   children: [
                     BlocProvider(
-                      create: (BuildContext context) => LoginCubit(),
+                      create: (BuildContext context) =>
+                          LoginCubit(LoginRepoImpl()),
                       child: const LoginForm(),
                     ),
                     BlocProvider(

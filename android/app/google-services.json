@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "367325102619",
+    "project_id": "iti-graduation-project-3f641",
+    "storage_bucket": "iti-graduation-project-3f641.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367325102619:android:e92023c3b96d484b15eebe",
+        "android_client_info": {
+          "package_name": "com.example.final_project_iti"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxeIQqggp4LgzYEaVKMIaM380bRPY0Nxo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

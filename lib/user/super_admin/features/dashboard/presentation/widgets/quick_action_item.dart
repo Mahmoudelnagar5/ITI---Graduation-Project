@@ -14,7 +14,13 @@ class QuickActionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        AppNavigation.pushName(
+          context: context,
+          route: AppRoutes.addItemView,
+          argument: text,
+        );
+      },
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(

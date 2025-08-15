@@ -1,4 +1,3 @@
-
 import 'package:final_project_iti/core/routing/route_export.dart';
 
 class AddItemAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -21,7 +20,8 @@ class AddItemAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ],
-      backgroundColor: AppColors.white,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       title: Text(
         title ?? '',
         style: AppTextStyles.textStyleMedium18.copyWith(
@@ -33,6 +33,5 @@ class AddItemAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

@@ -73,7 +73,9 @@ class AuthRoleView extends StatelessWidget {
                   RoleCard(
                     roleModel: LoginRoleModel(
                       title: AppLocalizations.of(context)!.superAdmin,
-                      subTitle: AppLocalizations.of(context)!.systemAdministratorsAndManagers,
+                      subTitle: AppLocalizations.of(
+                        context,
+                      )!.systemAdministratorsAndManagers,
                       svgAssets: Assets.imagesSuperAdminIcon,
                     ),
                     onTap: () {
@@ -87,7 +89,7 @@ class AuthRoleView extends StatelessWidget {
               ),
             ),
             Text(
-             AppLocalizations.of(context)!.selectYourRoleToProceedToLogin,
+              AppLocalizations.of(context)!.selectYourRoleToProceedToLogin,
               style: AppTextStyles.textStyleRegular14.copyWith(
                 fontFamily: AppFontFamily.roboto,
                 color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),

@@ -6,6 +6,7 @@ import 'package:final_project_iti/user/student/features/forget_password/presenta
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/user/student/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:final_project_iti/user/super_admin/features/add_item/presentation/views/add_item_view.dart';
+import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../user/student/features/home/presentation/views/track_content_view.dart';
@@ -49,13 +50,20 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const AdminPanelPage(),
         );
+
+      case AppRoutes.superAdminPanel:
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const SuperAdminView(),
+        );
       case AppRoutes.fogotPassword:
         return pageRouteBuilderMethod(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
               const ForgotPasswordPage(),
         );
-              case AppRoutes.addItemView:
+      case AppRoutes.addItemView:
         return pageRouteBuilderMethod(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
@@ -81,6 +89,7 @@ abstract class AppRoutes {
   static const String tracksView = '/tracksView';
   static const String trackContentView = '/trackContentView';
   static const String adminPanel = '/adminPanel';
+  static const String superAdminPanel = '/superAdminPanel';
   static const String fogotPassword = '/fogotPassword';
-  static const String  addItemView= '/addItemView';
+  static const String addItemView = '/addItemView';
 }

@@ -25,11 +25,13 @@ class AddItemRepoImpl implements AddItemRepo {
         'title': title,
         'description': description,
         'contents': contents,
+        'image': Assets.imagesFlutter, // Default image
         'createdAt': FieldValue.serverTimestamp(),
       });
       debugPrint("Track added successfully");
     } catch (e) {
       debugPrint("Error adding track: $e");
+      throw Exception("Failed to add track: $e");
     }
   }
 }

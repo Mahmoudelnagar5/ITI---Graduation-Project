@@ -10,6 +10,7 @@ import 'package:final_project_iti/user/student/features/home/presentation/manage
 import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_state.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_state.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
 import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
                     themeMode: AppCubit.get(context).getTheme(),
                     onGenerateRoute: AppRouter.generateRoute,
                     initialRoute: initalRouteMethod(),
-                    home: const SuperAdminView(),
+                    home: const MainView(),
                   );
                 },
               );

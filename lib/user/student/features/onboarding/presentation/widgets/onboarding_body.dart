@@ -27,9 +27,10 @@ class OnboardingBody extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 14, bottom: 32),
+                padding: const EdgeInsets.only(top: 14),
                 child: Image.asset(onboardingDataList[index].image),
               ),
+              Gap(16.h),
               Text(
                 onboardingDataList[index].title,
                 style: AppTextStyles.textStyleBold24.copyWith(
@@ -37,7 +38,7 @@ class OnboardingBody extends StatelessWidget {
                   fontFamily: AppFontFamily.inter,
                 ),
               ),
-              const Gap(16),
+               Gap(16.h),
               Text(
                 textAlign: TextAlign.center,
                 onboardingDataList[index].subTitle,
@@ -60,7 +61,6 @@ class OnboardingBody extends StatelessWidget {
                   dotWidth: 12.w,
                 ),
               ),
-              const Gap(32),
             ],
           ),
         ),

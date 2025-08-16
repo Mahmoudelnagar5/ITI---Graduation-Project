@@ -1,9 +1,9 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/manager/tracks/tracks_cubit.dart';
 
 class SearchWidget extends StatefulWidget {
-  const SearchWidget({super.key, this.hintText});
+  const SearchWidget({super.key, this.hintText, this.onSearchChanged});
   final String? hintText;
+  final Function(String)? onSearchChanged;
 
   @override
   State<SearchWidget> createState() => _SearchWidgetState();
@@ -19,7 +19,7 @@ class _SearchWidgetState extends State<SearchWidget> {
   }
 
   void _onSearchChanged(String query) {
-    TracksCubit.of(context).searchTracks(query);
+    widget.onSearchChanged?.call(query);
   }
 
   @override
@@ -65,7 +65,7 @@ class _SearchWidgetState extends State<SearchWidget> {
             IconButton(
               onPressed: () {
                 _searchController.clear();
-                TracksCubit.of(context).searchTracks('');
+                _onSearchChanged('');
               },
               icon: Icon(
                 Icons.clear,

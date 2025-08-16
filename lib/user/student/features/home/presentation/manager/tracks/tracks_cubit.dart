@@ -12,19 +12,18 @@ class TracksCubit extends Cubit<TracksState> {
 
   static TracksCubit of(context) => BlocProvider.of(context);
 
-  // Stream tracks from Firestore (real-time updates)
-  void streamTracks() {
+  // Get tracks once
+  Future<void> getTracks() async {
     emit(TracksLoading());
 
-    _repository.getTracksStream().listen(
-      (tracks) {
-        emit(TracksLoaded(tracks));
-      },
-      onError: (error) {
-        debugPrint('Error streaming tracks: $error');
-        emit(TracksError(error.toString()));
-      },
-    );
+    try {
+      final tracks = await _repository.getTracks();
+
+      emit(TracksLoaded(tracks));
+    } catch (error) {
+      debugPrint('Error getting tracks: $error');
+      emit(TracksError(error.toString()));
+    }
   }
 
   // Search tracks by title
@@ -32,8 +31,8 @@ class TracksCubit extends Cubit<TracksState> {
     final currentState = state;
     if (currentState is TracksLoaded) {
       if (query.trim().isEmpty) {
-        // If search is empty, restart stream to get all tracks
-        streamTracks();
+        // If search is empty, reload tracks
+        getTracks();
       } else {
         final filteredTracks = currentState.tracks
             .where(
@@ -45,18 +44,5 @@ class TracksCubit extends Cubit<TracksState> {
         emit(TracksLoaded(filteredTracks));
       }
     }
-  }
-
-  // Get track by ID
-  TrackModel? getTrackById(String id) {
-    final currentState = state;
-    if (currentState is TracksLoaded) {
-      try {
-        return currentState.tracks.firstWhere((track) => track.id == id);
-      } catch (e) {
-        return null;
-      }
-    }
-    return null;
   }
 }

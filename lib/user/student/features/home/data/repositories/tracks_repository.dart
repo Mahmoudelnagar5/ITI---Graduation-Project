@@ -4,6 +4,7 @@ import '../models/track_model.dart';
 
 abstract class TracksRepository {
   Stream<List<TrackModel>> getTracksStream();
+  Future<List<TrackModel>> getTracks();
 }
 
 class TracksRepositoryImpl implements TracksRepository {
@@ -20,5 +21,17 @@ class TracksRepositoryImpl implements TracksRepository {
             return TrackModel.fromFirestore(doc);
           }).toList();
         });
+  }
+
+  @override
+  Future<List<TrackModel>> getTracks() async {
+    final snapshot = await _firestore
+        .collection('Add Track')
+        .orderBy('createdAt', descending: true)
+        .get();
+
+    return snapshot.docs.map((doc) {
+      return TrackModel.fromFirestore(doc);
+    }).toList();
   }
 }

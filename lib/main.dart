@@ -6,13 +6,11 @@ import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/core/theme/theme_manager.dart';
 import 'package:final_project_iti/firebase_options.dart';
 import 'package:final_project_iti/l10n/app_localizations.dart';
-import 'package:final_project_iti/user/admin/features/admin_panel/presentation/pages/admin_panel_page.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_state.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_state.dart';
 import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
-import 'package:final_project_iti/user/super_admin/features/add_item/presentation/views/add_item_view.dart';
 import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -24,6 +22,7 @@ void main() async {
   runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
 }
 
+//27.0.12077973
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -60,7 +59,7 @@ class MyApp extends StatelessWidget {
                     themeMode: AppCubit.get(context).getTheme(),
                     onGenerateRoute: AppRouter.generateRoute,
                     initialRoute: initalRouteMethod(),
-                    home: const SplashView(),
+                    home: const SuperAdminView(),
                   );
                 },
               );

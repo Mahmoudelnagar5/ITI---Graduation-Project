@@ -1,45 +1,48 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
 
 class TrackModel {
+  final String id;
   final String title;
   final String image;
   final String description;
+  final List<String> contents;
+  final DateTime? createdAt;
 
   TrackModel({
+    required this.id,
     required this.title,
     required this.image,
     required this.description,
+    this.contents = const [],
+    this.createdAt,
   });
-  static List<TrackModel> tracks = [
-    TrackModel(
-      title: 'Flutter Development',
-      image: Assets.imagesFlutter,
-      description:
-          'Complete Flutter development program covering mobile app development fundamentals to advanced concepts.',
-    ),
-    TrackModel(
-      title: 'Web Development',
-      image: Assets.imagesWeb,
-      description:
-          'Comprehensive web development track covering frontend and backend technologies.',
-    ),
-    TrackModel(
-      title: 'Data Science',
-      image: Assets.imagesDataScience,
-      description:
-          'Learn data analysis, machine learning, and statistical modeling.',
-    ),
-    TrackModel(
-      title: 'UI/UX Design',
-      image: Assets.imagesAnsIcon,
-      description:
-          'Master user interface design principles and user experience methodologies.',
-    ),
-    TrackModel(
-      title: 'Cyber Security',
-      image: Assets.imagesSecurity,
-      description:
-          'Essential security concepts and practical defense strategies.',
-    ),
-  ];
+
+  // Constructor from Firestore document
+  factory TrackModel.fromFirestore(DocumentSnapshot doc) {
+    final data = doc.data() as Map<String, dynamic>;
+    return TrackModel(
+      id: doc.id,
+      title: data['title'] ?? '',
+      image: data['image'] ?? Assets.imagesFlutter, // Default image
+      description: data['description'] ?? '',
+      contents: List<String>.from(data['contents'] ?? []),
+      createdAt: data['createdAt'] != null
+          ? (data['createdAt'] as Timestamp).toDate()
+          : null,
+    );
+  }
+
+  // Convert to Map for Firestore
+  Map<String, dynamic> toFirestore() {
+    return {
+      'title': title,
+      'image': image,
+      'description': description,
+      'contents': contents,
+      'createdAt': createdAt != null
+          ? Timestamp.fromDate(createdAt!)
+          : FieldValue.serverTimestamp(),
+    };
+  }
 }

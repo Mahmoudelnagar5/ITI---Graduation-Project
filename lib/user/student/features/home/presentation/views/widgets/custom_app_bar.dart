@@ -1,3 +1,4 @@
+import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -14,7 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.only(left: 20),
       child: Row(
         children: [
-          Image.asset(Assets.imagesFlutter),
+          Image.asset(Assets.imagesTracklogo),
           const Gap(10),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -26,14 +27,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
-              // const SizedBox(height: 4),
-              Text(
-                AppLocalizations.of(context)!.learningTracks,
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  AppLocalizations.of(context)!.learningTracks,
 
-                style: AppTextStyles.textStyleRegular14.copyWith(
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.onSurface.withOpacity(0.7),
+                  style: AppTextStyles.textStyleRegular14.copyWith(
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.onSurface.withOpacity(0.7),
+                  ),
                 ),
               ),
             ],
@@ -44,5 +47,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 5);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight + 10.h);
 }

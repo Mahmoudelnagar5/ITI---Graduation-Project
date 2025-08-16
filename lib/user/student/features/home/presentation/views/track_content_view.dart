@@ -7,6 +7,7 @@ class TrackContentView extends StatelessWidget {
   Widget build(BuildContext context) {
     final trackModel =
         ModalRoute.of(context)?.settings.arguments as TrackModel?;
+    final List<String> contents = trackModel!.contents;
 
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +30,7 @@ class TrackContentView extends StatelessWidget {
             ),
 
             Text(
-              '5 Topics • 12 Weeks',
+              '${contents.length} Topics • 12 Weeks',
               style: AppTextStyles.textStyleRegular14.copyWith(
                 color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
               ),

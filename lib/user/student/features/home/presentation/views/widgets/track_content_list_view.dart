@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../data/models/track_content_model.dart';
+import '../../../data/models/track_model.dart';
 import 'track_content_item.dart';
 
 class TrackContentListView extends StatelessWidget {
@@ -9,16 +9,17 @@ class TrackContentListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<TrackContentModel> tracksContent =
-        TrackContentModel.trackContents;
+    final trackModel =
+        ModalRoute.of(context)?.settings.arguments as TrackModel?;
+    final List<String> contents = trackModel!.contents;
     return ListView.separated(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      itemCount: tracksContent.length,
+      itemCount: contents.length,
       separatorBuilder: (context, index) => const Gap(16),
       itemBuilder: (context, index) {
         return TrackContentItem(
-          trackContent: tracksContent[index],
+          content: contents[index],
           index: (index + 1).toString(),
         );
       },

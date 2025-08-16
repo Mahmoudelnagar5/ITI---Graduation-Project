@@ -3,15 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../../../../core/utilities/styles_manager.dart';
-import '../../../data/models/track_content_model.dart';
 
 class TrackContentItem extends StatelessWidget {
   const TrackContentItem({
     super.key,
-    required this.trackContent,
+    required this.content,
     required this.index,
   });
-  final TrackContentModel trackContent;
+  final String content;
   final String index;
   @override
   Widget build(BuildContext context) {
@@ -35,25 +34,12 @@ class TrackContentItem extends StatelessWidget {
         ),
         const Gap(16),
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                trackContent.title,
-                style: AppTextStyles.textStyleSemiBold16.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              Text(
-                trackContent.description,
-                style: AppTextStyles.textStyleRegular14.copyWith(
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.onSurface.withOpacity(0.7),
-                ),
-              ),
-            ],
+          child: Text(
+            content,
+            style: AppTextStyles.textStyleSemiBold16.copyWith(
+              color: Theme.of(context).colorScheme.onSurface,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ],

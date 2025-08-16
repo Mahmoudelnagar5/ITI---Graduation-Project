@@ -164,9 +164,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                       onChanged: (value) {
                         setState(() {
                           _selectedLanguage = value!;
-                          LocalizationCubit.get(
-                            context,
-                          ).selectLanguage('en');
+                          LocalizationCubit.get(context).selectLanguage('en');
                         });
                         setStateSheet(() {});
                         Navigator.pop(context);
@@ -181,9 +179,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                       onChanged: (value) {
                         setState(() {
                           _selectedLanguage = value!;
-                          LocalizationCubit.get(
-                            context,
-                          ).selectLanguage('ar');
+                          LocalizationCubit.get(context).selectLanguage('ar');
                         });
                         setStateSheet(() {});
                         Navigator.pop(context);
@@ -202,66 +198,69 @@ class _ProfileBodyState extends State<ProfileBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
-        alignment: Alignment.center,
-        margin: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-        child: Column(
-          children: [
-            const ImageSection(),
-            const SizedBox(height: 20),
-            const InfoSection(),
-            const SizedBox(height: 32),
-            Divider(
-              height: 20,
-              color: Theme.of(context).colorScheme.outline,
-              thickness: 1,
-            ),
-            const SizedBox(height: 15),
-            SettingItem(
-              title: AppLocalizations.of(context)!.editProfile,
-              icon: Icons.person,
-            ),
-            Divider(
-              height: 20,
-              color: Theme.of(context).colorScheme.outline,
-              thickness: 1,
-            ),
-            const SizedBox(height: 15),
-            SettingItem(
-              title: AppLocalizations.of(context)!.changeLanguage,
-              icon: Icons.language,
-               onTap: () => _showSelectedLanguage(context),
-            ),
-            Divider(
-              height: 20,
-              color: Theme.of(context).colorScheme.outline,
-              thickness: 1,
-            ),
-            const SizedBox(height: 15),
-            SettingItem(
-              title: AppLocalizations.of(context)!.themeSetting,
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Container(
+          alignment: Alignment.center,
+          margin: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+          child: Column(
+            children: [
+              const ImageSection(),
+              const SizedBox(height: 20),
+              const InfoSection(),
+              const SizedBox(height: 32),
+              Divider(
+                height: 20,
+                color: Theme.of(context).colorScheme.outline,
+                thickness: 1,
+              ),
+              const SizedBox(height: 15),
+              SettingItem(
+                title: AppLocalizations.of(context)!.editProfile,
+                icon: Icons.person,
+              ),
+              Divider(
+                height: 20,
+                color: Theme.of(context).colorScheme.outline,
+                thickness: 1,
+              ),
+              const SizedBox(height: 15),
+              SettingItem(
+                title: AppLocalizations.of(context)!.changeLanguage,
+                icon: Icons.language,
+                onTap: () => _showSelectedLanguage(context),
+              ),
+              Divider(
+                height: 20,
+                color: Theme.of(context).colorScheme.outline,
+                thickness: 1,
+              ),
+              const SizedBox(height: 15),
+              SettingItem(
+                title: AppLocalizations.of(context)!.themeSetting,
 
-              icon: Icons.dark_mode,
-              onTap: () => _showThemeSelectorSheet(context),
-            ),
-            Divider(
-              height: 20,
-              color: Theme.of(context).colorScheme.outline,
-              thickness: 1,
-            ),
-            const SizedBox(height: 15),
-            SettingItem(
-              title: AppLocalizations.of(context)!.starredQuestions,
-              icon: Icons.star,
-            ),
-            Divider(
-              height: 20,
-              color: Theme.of(context).colorScheme.outline,
-              thickness: 1,
-            ),
-            SizedBox(height: 0.06.sh),
-            const CustomTextButtom(),
-          ],
+                icon: Icons.dark_mode,
+                onTap: () => _showThemeSelectorSheet(context),
+              ),
+              Divider(
+                height: 20,
+                color: Theme.of(context).colorScheme.outline,
+                thickness: 1,
+              ),
+              const SizedBox(height: 15),
+              SettingItem(
+                title: AppLocalizations.of(context)!.starredQuestions,
+                icon: Icons.star,
+              ),
+              Divider(
+                height: 20,
+                color: Theme.of(context).colorScheme.outline,
+                thickness: 1,
+              ),
+              SizedBox(height: 0.06.sh),
+              const CustomTextButtom(),
+            ],
+          ),
         ),
       ),
     );

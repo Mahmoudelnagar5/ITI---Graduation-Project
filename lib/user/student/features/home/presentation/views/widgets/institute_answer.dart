@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../../core/utilities/styles_manager.dart';
 
 class InstituteAnswer extends StatelessWidget {
-  const InstituteAnswer({super.key});
+  const InstituteAnswer({super.key, required this.instituteAnswer});
+  final String instituteAnswer;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class InstituteAnswer extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  'Your attendance record has been updated. Please check your profile for the latest status of your attendance record.',
+                  instituteAnswer,
                   style: AppTextStyles.textStyleMedium16.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),

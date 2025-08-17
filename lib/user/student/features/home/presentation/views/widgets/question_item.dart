@@ -4,10 +4,12 @@ import 'package:gap/gap.dart';
 
 import '../../../../../../../core/utilities/assets_manager.dart';
 import '../../../../../../../core/utilities/styles_manager.dart';
+import '../../../data/models/question_,model.dart';
 import 'institute_answer.dart';
 
 class QuestionItem extends StatefulWidget {
-  const QuestionItem({super.key});
+  const QuestionItem({super.key, required this.questionModel});
+  final QuestionModel questionModel;
 
   @override
   State<QuestionItem> createState() => _QuestionItemState();
@@ -42,13 +44,13 @@ class _QuestionItemState extends State<QuestionItem> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Why was I marked absent on Monday?',
+                      widget.questionModel.title,
                       style: AppTextStyles.textStyleMedium16.copyWith(
                         color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                     Text(
-                      'I was present in class but my attendance shows I was absent.',
+                      widget.questionModel.desc,
                       style: AppTextStyles.textStyleRegular14.copyWith(
                         color: Theme.of(
                           context,
@@ -111,7 +113,10 @@ class _QuestionItemState extends State<QuestionItem> {
               ),
             ),
           ),
-          if (_isAnswerVisible) ...[const Gap(16), const InstituteAnswer()],
+          if (_isAnswerVisible) ...[
+            const Gap(16),
+            InstituteAnswer(instituteAnswer: widget.questionModel.answer),
+          ],
         ],
       ),
     );

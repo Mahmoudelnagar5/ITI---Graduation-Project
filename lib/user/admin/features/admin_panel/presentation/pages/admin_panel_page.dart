@@ -1,7 +1,7 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 
 import '../../data/admin_repo/admin_repo.dart';
-import '../controller/admin_cubit/cubit/admin_cubit.dart';
+import '../controller/admin_cubit/admin_cubit.dart';
 
 class AdminPanelPage extends StatefulWidget {
   const AdminPanelPage({super.key});

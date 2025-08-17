@@ -3,6 +3,7 @@ import 'package:final_project_iti/user/student/features/home/presentation/manage
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
 
 import '../../../../../../../core/routing/route_export.dart';
+import '../starred_questions_view.dart';
 import 'custom_text_button.dart';
 import 'image_setion.dart';
 import 'info_section.dart';
@@ -249,6 +250,13 @@ class _ProfileBodyState extends State<ProfileBody> {
               ),
               const SizedBox(height: 15),
               SettingItem(
+                onTap: () {
+                  AppNavigation.pushName(
+                    context: context,
+                    route: AppRoutes.starredQuestionsView,
+                    rootNavigator: true,
+                  );
+                },
                 title: AppLocalizations.of(context)!.starredQuestions,
                 icon: Icons.star,
               ),

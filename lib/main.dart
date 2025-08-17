@@ -9,6 +9,7 @@ import 'package:final_project_iti/l10n/app_localizations.dart';
 import 'package:final_project_iti/user/admin/features/admin_panel/presentation/pages/admin_panel_page.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_state.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/manager/starred_questions/starred_questions_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_state.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => AppCubit()),
         BlocProvider(create: (context) => LocalizationCubit()),
+        BlocProvider(create: (context) => StarredQuestionsCubit()),
       ],
       child: BlocBuilder<LocalizationCubit, LocalizationState>(
         builder: (context, state) {

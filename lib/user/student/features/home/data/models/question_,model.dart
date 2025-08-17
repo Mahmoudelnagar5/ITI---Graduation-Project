@@ -14,6 +14,7 @@ class QuestionModel {
     required this.answer,
     required this.createdAt,
   });
+
   factory QuestionModel.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
 
@@ -23,6 +24,28 @@ class QuestionModel {
       desc: data['desc'],
       answer: data['answer'],
       createdAt: data['createdAt'],
+    );
+  }
+
+  // Convert to JSON for cache storage
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'desc': desc,
+      'answer': answer,
+      'createdAt': createdAt.millisecondsSinceEpoch,
+    };
+  }
+
+  // Create from JSON for cache retrieval
+  factory QuestionModel.fromJson(Map<String, dynamic> json) {
+    return QuestionModel(
+      id: json['id'],
+      title: json['title'],
+      desc: json['desc'],
+      answer: json['answer'],
+      createdAt: Timestamp.fromMillisecondsSinceEpoch(json['createdAt']),
     );
   }
 }

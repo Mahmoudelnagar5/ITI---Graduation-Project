@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../../../../core/utilities/assets_manager.dart';
 import '../../../../../../../core/utilities/styles_manager.dart';
 import '../../../data/models/question_,model.dart';
+import '../../manager/starred_questions/starred_questions_cubit.dart';
+import '../../manager/starred_questions/starred_questions_state.dart';
 import 'institute_answer.dart';
 
 class QuestionItem extends StatefulWidget {
@@ -17,6 +20,17 @@ class QuestionItem extends StatefulWidget {
 
 class _QuestionItemState extends State<QuestionItem> {
   bool _isAnswerVisible = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Future<void> _toggleStar() async {
+    context.read<StarredQuestionsCubit>().toggleStarredQuestion(
+      widget.questionModel,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,15 +75,25 @@ class _QuestionItemState extends State<QuestionItem> {
                 ),
               ),
 
-              IconButton(
-                icon: Icon(
-                  Icons.star_border_outlined,
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.onSurface.withOpacity(0.6),
-                  size: 24.sp,
-                ),
-                onPressed: () {},
+              BlocBuilder<StarredQuestionsCubit, StarredQuestionsState>(
+                builder: (context, state) {
+                  final isStarred = context
+                      .read<StarredQuestionsCubit>()
+                      .isQuestionStarred(widget.questionModel.id);
+
+                  return IconButton(
+                    icon: Icon(
+                      isStarred ? Icons.star : Icons.star_border_outlined,
+                      color: isStarred
+                          ? Colors.amber
+                          : Theme.of(
+                              context,
+                            ).colorScheme.onSurface.withOpacity(0.6),
+                      size: 24.sp,
+                    ),
+                    onPressed: _toggleStar,
+                  );
+                },
               ),
             ],
           ),

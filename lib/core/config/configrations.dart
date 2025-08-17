@@ -6,6 +6,7 @@ import 'package:final_project_iti/user/student/features/forget_password/presenta
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/user/student/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:final_project_iti/user/super_admin/features/add_item/presentation/views/add_item_view.dart';
+import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/add_resource_view.dart';
 import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:flutter/material.dart';
 
@@ -69,6 +70,12 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const AddItemView(),
         );
+      case AppRoutes.addResourceView:
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              AddResourceView(),
+        );
 
       default:
         return pageRouteBuilderMethod(
@@ -92,4 +99,5 @@ abstract class AppRoutes {
   static const String superAdminPanel = '/superAdminPanel';
   static const String fogotPassword = '/fogotPassword';
   static const String addItemView = '/addItemView';
+  static const String addResourceView = '/addResourceView';
 }

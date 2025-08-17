@@ -6,13 +6,13 @@ import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/core/theme/theme_manager.dart';
 import 'package:final_project_iti/firebase_options.dart';
 import 'package:final_project_iti/l10n/app_localizations.dart';
+import 'package:final_project_iti/user/admin/features/admin_panel/presentation/pages/admin_panel_page.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_state.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/manager/starred_questions/starred_questions_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_state.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
-import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
-import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => AppCubit()),
         BlocProvider(create: (context) => LocalizationCubit()),
+        BlocProvider(create: (context) => StarredQuestionsCubit()),
       ],
       child: BlocBuilder<LocalizationCubit, LocalizationState>(
         builder: (context, state) {
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
                     themeMode: AppCubit.get(context).getTheme(),
                     onGenerateRoute: AppRouter.generateRoute,
                     initialRoute: initalRouteMethod(),
-                    home: const SplashView(),
+                    home: const MainView(),
                   );
                 },
               );

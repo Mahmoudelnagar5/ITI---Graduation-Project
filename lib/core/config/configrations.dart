@@ -10,6 +10,7 @@ import 'package:final_project_iti/user/super_admin/features/add_resource/present
 import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../user/student/features/home/presentation/views/starred_questions_view.dart';
 import '../../user/student/features/home/presentation/views/track_content_view.dart';
 
 class AppRouter {
@@ -70,11 +71,19 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const AddItemView(),
         );
+
       case AppRoutes.addResourceView:
         return pageRouteBuilderMethod(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
               AddResourceView(),
+
+      case AppRoutes.starredQuestionsView:
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const StarredQuestionsView(),
+
         );
 
       default:
@@ -99,5 +108,9 @@ abstract class AppRoutes {
   static const String superAdminPanel = '/superAdminPanel';
   static const String fogotPassword = '/fogotPassword';
   static const String addItemView = '/addItemView';
+
   static const String addResourceView = '/addResourceView';
+
+  static const String starredQuestionsView = '/starredQuestionsView';
+
 }

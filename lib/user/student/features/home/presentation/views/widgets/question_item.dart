@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../../../../core/utilities/assets_manager.dart';
 import '../../../../../../../core/utilities/styles_manager.dart';
+import '../../../data/models/question_,model.dart';
+import '../../manager/starred_questions/starred_questions_cubit.dart';
+import '../../manager/starred_questions/starred_questions_state.dart';
 import 'institute_answer.dart';
 
 class QuestionItem extends StatefulWidget {
-  const QuestionItem({super.key});
+  const QuestionItem({super.key, required this.questionModel});
+  final QuestionModel questionModel;
 
   @override
   State<QuestionItem> createState() => _QuestionItemState();
@@ -15,6 +20,17 @@ class QuestionItem extends StatefulWidget {
 
 class _QuestionItemState extends State<QuestionItem> {
   bool _isAnswerVisible = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Future<void> _toggleStar() async {
+    context.read<StarredQuestionsCubit>().toggleStarredQuestion(
+      widget.questionModel,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,14 +58,13 @@ class _QuestionItemState extends State<QuestionItem> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Why was I marked absent on Monday?',
+                      widget.questionModel.title,
                       style: AppTextStyles.textStyleMedium16.copyWith(
                         color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                     Text(
-                      // 'I attended the lecture on time, but my attendance was recorded as absent in the system. Can I review my attendance record and correct the error?',
-                      'I was present in class but my attendance shows I was absent.',
+                      widget.questionModel.desc,
                       style: AppTextStyles.textStyleRegular14.copyWith(
                         color: Theme.of(
                           context,
@@ -60,15 +75,25 @@ class _QuestionItemState extends State<QuestionItem> {
                 ),
               ),
 
-              IconButton(
-                icon: Icon(
-                  Icons.star_border_outlined,
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.onSurface.withOpacity(0.6),
-                  size: 24.sp,
-                ),
-                onPressed: () {},
+              BlocBuilder<StarredQuestionsCubit, StarredQuestionsState>(
+                builder: (context, state) {
+                  final isStarred = context
+                      .read<StarredQuestionsCubit>()
+                      .isQuestionStarred(widget.questionModel.id);
+
+                  return IconButton(
+                    icon: Icon(
+                      isStarred ? Icons.star : Icons.star_border_outlined,
+                      color: isStarred
+                          ? Colors.amber
+                          : Theme.of(
+                              context,
+                            ).colorScheme.onSurface.withOpacity(0.6),
+                      size: 24.sp,
+                    ),
+                    onPressed: _toggleStar,
+                  );
+                },
               ),
             ],
           ),
@@ -112,7 +137,10 @@ class _QuestionItemState extends State<QuestionItem> {
               ),
             ),
           ),
-          if (_isAnswerVisible) ...[const Gap(16), const InstituteAnswer()],
+          if (_isAnswerVisible) ...[
+            const Gap(16),
+            InstituteAnswer(instituteAnswer: widget.questionModel.answer),
+          ],
         ],
       ),
     );

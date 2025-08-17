@@ -77,13 +77,13 @@ class AppRouter {
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
               AddResourceView(),
+        );
 
       case AppRoutes.starredQuestionsView:
         return pageRouteBuilderMethod(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
               const StarredQuestionsView(),
-
         );
 
       default:
@@ -112,5 +112,4 @@ abstract class AppRoutes {
   static const String addResourceView = '/addResourceView';
 
   static const String starredQuestionsView = '/starredQuestionsView';
-
 }

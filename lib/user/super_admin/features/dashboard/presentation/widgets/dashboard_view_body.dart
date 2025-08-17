@@ -52,6 +52,13 @@ class DashboardViewBody extends StatelessWidget {
               children: [
                 Expanded(
                   child: QuickActionItem(
+                    onTap: () {
+                      AppNavigation.pushName(
+                        context: context,
+                        route: AppRoutes.addItemView,
+                        argument: 'Add Track',
+                      );
+                    },
                     color: AppColors.mainColorStart,
                     text: 'Add Track',
                     icon: Icon(Icons.add, color: AppColors.white, size: 30.r),
@@ -60,6 +67,13 @@ class DashboardViewBody extends StatelessWidget {
                 const Gap(16),
                 Expanded(
                   child: QuickActionItem(
+                    onTap: () {
+                      AppNavigation.pushName(
+                        context: context,
+                        route: AppRoutes.addItemView,
+                        argument: 'Manage Rounds',
+                      );
+                    },
                     text: 'Manage Rounds',
                     icon: Image.asset(
                       Assets.imagesTracklogo,
@@ -74,6 +88,13 @@ class DashboardViewBody extends StatelessWidget {
               children: [
                 Expanded(
                   child: QuickActionItem(
+                    onTap: () {
+                      AppNavigation.pushName(
+                        context: context,
+                        route: AppRoutes.addItemView,
+                        argument: 'Add Courses',
+                      );
+                    },
                     text: 'Add Courses',
                     icon: Image.asset(
                       Assets.imagesBook,
@@ -84,6 +105,13 @@ class DashboardViewBody extends StatelessWidget {
                 const Gap(16),
                 Expanded(
                   child: QuickActionItem(
+                    onTap: () {
+                      AppNavigation.pushName(
+                        context: context,
+                        route: AppRoutes.addResourceView,
+                        argument: 'Manage Resources',
+                      );
+                    },
                     text: 'Manage Resources',
                     icon: Image.asset(
                       Assets.imagesBook,

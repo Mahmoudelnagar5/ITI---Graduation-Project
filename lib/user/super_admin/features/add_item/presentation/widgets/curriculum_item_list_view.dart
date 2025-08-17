@@ -1,5 +1,5 @@
 import '../../../../../../core/routing/route_export.dart';
-import 'package:final_project_iti/user/super_admin/features/add_item/presentation/controller/track_cubit/add_item_cubit.dart';
+import 'package:final_project_iti/user/super_admin/features/add_item/presentation/controller/add_item_cubit/add_item_cubit.dart';
 import 'curriculum_item_container.dart';
 
 class CurriculumItemListView extends StatelessWidget {

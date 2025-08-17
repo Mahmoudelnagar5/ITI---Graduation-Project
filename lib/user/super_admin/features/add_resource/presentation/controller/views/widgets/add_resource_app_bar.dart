@@ -1,0 +1,43 @@
+import 'package:final_project_iti/core/routing/route_export.dart';
+
+class AddResourceAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const AddResourceAppBar({super.key, this.title});
+  final String? title;
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 12.0),
+          child: InkWell(
+            onTap: () {},
+            child: SvgPicture.asset(
+              Assets.imagesDetailsIcon,
+              color: Colors.black,
+              height: 24.r,
+              width: 24.r,
+            ),
+          ),
+        ),
+      ],
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      title: Text(
+        title ?? '',
+        style: AppTextStyles.textStyleMedium18.copyWith(
+          fontFamily: AppFontFamily.inter,
+          color: Colors.black,
+        ),
+      ),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}

@@ -6,28 +6,24 @@ class TitleAndDescriptionSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AddItemCubit, AddItemState>(
-      builder: (context, state) {
-        final cubit = AddItemCubit.of(context);
-        return Column(
-          children: [
-            const TextFieldTitle(title: 'Title'),
-            Gap(11.h),
-            AppTextFormField(
-              controller: cubit.titleController,
-              hintText: 'Enter Title',
-            ),
-            Gap(24.h),
-            const TextFieldTitle(title: 'Description'),
-            Gap(11.h),
-            AppTextFormField(
-              controller: cubit.descriptionController,
-              hintText: 'Enter description',
-              maxLines: 5,
-            ),
-          ],
-        );
-      },
+    final cubit = AddItemCubit.of(context);
+    return Column(
+      children: [
+        const TextFieldTitle(title: 'Title'),
+        Gap(11.h),
+        AppTextFormField(
+          controller: cubit.titleController,
+          hintText: 'Enter Title',
+        ),
+        Gap(24.h),
+        const TextFieldTitle(title: 'Description'),
+        Gap(11.h),
+        AppTextFormField(
+          controller: cubit.descriptionController,
+          hintText: 'Enter description',
+          maxLines: 5,
+        ),
+      ],
     );
   }
 }

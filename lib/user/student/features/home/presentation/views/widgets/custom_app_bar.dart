@@ -1,10 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/l10n/app_localizations.dart';
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-
-import '../../../../../../../core/utilities/assets_manager.dart';
-import '../../../../../../../core/utilities/styles_manager.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -21,10 +16,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                AppLocalizations.of(context)!.itiFayoum,
-                style: AppTextStyles.textStyleBold20.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  AppLocalizations.of(context)!.itiFayoum,
+                  style: AppTextStyles.textStyleBold16.copyWith(
+                    fontSize: 18.sp,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
               ),
               FittedBox(

@@ -28,7 +28,7 @@ class AppTextFormField extends StatelessWidget {
         fillColor: theme.colorScheme.surface,
         filled: true,
         hintText: hintText,
-        hintStyle: AppTextStyles.textStyleRegular16.copyWith(
+        hintStyle: AppTextStyles.textStyleRegular14.copyWith(
           fontFamily: AppFontFamily.roboto,
           color: theme.colorScheme.onSurface.withOpacity(0.6),
         ),

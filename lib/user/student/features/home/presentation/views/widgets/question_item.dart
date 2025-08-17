@@ -48,7 +48,6 @@ class _QuestionItemState extends State<QuestionItem> {
                       ),
                     ),
                     Text(
-                      // 'I attended the lecture on time, but my attendance was recorded as absent in the system. Can I review my attendance record and correct the error?',
                       'I was present in class but my attendance shows I was absent.',
                       style: AppTextStyles.textStyleRegular14.copyWith(
                         color: Theme.of(

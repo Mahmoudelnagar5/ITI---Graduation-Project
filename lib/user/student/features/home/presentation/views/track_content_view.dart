@@ -11,6 +11,7 @@ class TrackContentView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.surface,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
@@ -23,7 +24,7 @@ class TrackContentView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              trackModel?.title ?? 'Track Title',
+              trackModel.title,
               style: AppTextStyles.textStyleBold20.copyWith(
                 color: Theme.of(context).colorScheme.onSurface,
               ),

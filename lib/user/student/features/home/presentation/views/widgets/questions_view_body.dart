@@ -14,11 +14,9 @@ class QuestionsViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // SearchTextField(
-          //   hintText: 'Search for questions...',
-          //   color: AppColors.mainColorStart,
-          // ),
-          SearchWidget(hintText: AppLocalizations.of(context)!.searchForQuestions),
+          SearchWidget(
+            hintText: AppLocalizations.of(context)!.searchForQuestions,
+          ),
 
           const Gap(15),
           const Expanded(child: QuestionListView()),

@@ -1,17 +1,18 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/user/student/features/home/data/repositories/tracks_repository.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/track_item.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TracksListView extends StatefulWidget {
-  const TracksListView({super.key, this.onSearchCallback});
-  final Function(Function(String))? onSearchCallback;
+  const TracksListView({super.key});
 
   @override
-  State<TracksListView> createState() => _TracksListViewState();
+  State<TracksListView> createState() => TracksListViewState();
 }
 
-class _TracksListViewState extends State<TracksListView> {
+class TracksListViewState extends State<TracksListView> {
   String _searchQuery = '';
+  final HomeRepositoryImpl _repository = HomeRepositoryImpl();
 
   void onSearchChanged(String query) {
     setState(() {
@@ -20,15 +21,9 @@ class _TracksListViewState extends State<TracksListView> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    widget.onSearchCallback?.call(onSearchChanged);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return StreamBuilder<List<TrackModel>>(
-      stream: HomeRepositoryImpl().getTracksStream(),
+      stream: _repository.searchTracks(_searchQuery),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -65,22 +60,7 @@ class _TracksListViewState extends State<TracksListView> {
           );
         }
 
-        final allTracks = snapshot.data ?? [];
-
-        // Filter tracks based on search query
-        final tracks = _searchQuery.trim().isEmpty
-            ? allTracks
-            : allTracks
-                  .where(
-                    (track) =>
-                        track.title.toLowerCase().contains(
-                          _searchQuery.toLowerCase(),
-                        ) ||
-                        track.description.toLowerCase().contains(
-                          _searchQuery.toLowerCase(),
-                        ),
-                  )
-                  .toList();
+        final tracks = snapshot.data ?? [];
 
         if (tracks.isEmpty) {
           return Center(
@@ -107,7 +87,7 @@ class _TracksListViewState extends State<TracksListView> {
                 Text(
                   _searchQuery.trim().isEmpty
                       ? 'No tracks have been added yet.\nCheck back later or contact admin.'
-                      : 'Try adjusting your search terms.',
+                      : 'Try searching with different keywords',
                   style: AppTextStyles.textStyleRegular12.copyWith(
                     color: AppColors.lightHintTextField,
                   ),

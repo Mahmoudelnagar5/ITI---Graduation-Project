@@ -11,14 +11,11 @@ class TrackViewBody extends StatefulWidget {
 }
 
 class _TrackViewBodyState extends State<TrackViewBody> {
-  Function(String)? _onSearchChanged;
+  final GlobalKey<TracksListViewState> _tracksListViewKey =
+      GlobalKey<TracksListViewState>();
 
-  void _setSearchCallback(Function(String) callback) {
-    _onSearchChanged = callback;
-  }
-
-  void _handleSearchChanged(String query) {
-    _onSearchChanged?.call(query);
+  void _onSearchChanged(String query) {
+    _tracksListViewKey.currentState?.onSearchChanged(query);
   }
 
   @override
@@ -31,10 +28,10 @@ class _TrackViewBodyState extends State<TrackViewBody> {
           Gap(12.h),
           SearchWidget(
             hintText: AppLocalizations.of(context)!.searchTracks,
-            onSearchChanged: _handleSearchChanged,
+            onSearchChanged: _onSearchChanged,
           ),
           const Gap(24),
-          Expanded(child: TracksListView(onSearchCallback: _setSearchCallback)),
+          Expanded(child: TracksListView(key: _tracksListViewKey)),
         ],
       ),
     );

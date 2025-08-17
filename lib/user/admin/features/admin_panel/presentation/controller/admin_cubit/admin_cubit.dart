@@ -1,5 +1,5 @@
-import '../../../../../../../../core/routing/route_export.dart';
-import '../../../../data/admin_repo/admin_repo.dart';
+import '../../../../../../../core/routing/route_export.dart';
+import '../../../data/admin_repo/admin_repo.dart';
 
 part 'admin_state.dart';
 

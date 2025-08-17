@@ -1,6 +1,6 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 
-import '../controller/admin_cubit/cubit/admin_cubit.dart';
+import '../controller/admin_cubit/admin_cubit.dart';
 
 class CreateNotificationCard extends StatelessWidget {
   final AdminController controller;

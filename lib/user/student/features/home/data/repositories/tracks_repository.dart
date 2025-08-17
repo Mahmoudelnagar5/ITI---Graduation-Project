@@ -1,13 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
+import '../models/question_,model.dart';
 import '../models/track_model.dart';
 
-abstract class TracksRepository {
+abstract class HomeRepository {
   Stream<List<TrackModel>> getTracksStream();
   Future<List<TrackModel>> getTracks();
+  Stream<List<QuestionModel>> getQuestionsStream();
 }
 
-class TracksRepositoryImpl implements TracksRepository {
+class HomeRepositoryImpl implements HomeRepository {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
@@ -33,5 +35,18 @@ class TracksRepositoryImpl implements TracksRepository {
     return snapshot.docs.map((doc) {
       return TrackModel.fromFirestore(doc);
     }).toList();
+  }
+
+  @override
+  Stream<List<QuestionModel>> getQuestionsStream() {
+    return _firestore
+        .collection('questions')
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) {
+          return snapshot.docs.map((doc) {
+            return QuestionModel.fromFirestore(doc);
+          }).toList();
+        });
   }
 }

@@ -4,10 +4,10 @@ import '../../../data/repositories/tracks_repository.dart';
 part 'tracks_state.dart';
 
 class TracksCubit extends Cubit<TracksState> {
-  final TracksRepository _repository;
+  final HomeRepository _repository;
 
-  TracksCubit({TracksRepository? repository})
-    : _repository = repository ?? TracksRepositoryImpl(),
+  TracksCubit({HomeRepository? repository})
+    : _repository = repository ?? HomeRepositoryImpl(),
       super(TracksInitial());
 
   static TracksCubit of(context) => BlocProvider.of(context);

@@ -28,7 +28,7 @@ class _TracksListViewState extends State<TracksListView> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<List<TrackModel>>(
-      stream: TracksRepositoryImpl().getTracksStream(),
+      stream: HomeRepositoryImpl().getTracksStream(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

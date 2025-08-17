@@ -13,6 +13,7 @@ import 'package:final_project_iti/user/student/features/home/presentation/manage
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_state.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
+import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
 import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/add_resource_view.dart';
 import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -22,7 +23,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await CacheHelper().init();
   Bloc.observer = AppBlocObserver();
-  runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
+  runApp(DevicePreview(enabled: false, builder: (context) => const MyApp()));
 }
 
 //27.0.12077973
@@ -63,7 +64,7 @@ class MyApp extends StatelessWidget {
                     themeMode: AppCubit.get(context).getTheme(),
                     onGenerateRoute: AppRouter.generateRoute,
                     initialRoute: initalRouteMethod(),
-                    home: const SuperAdminView(),
+                    home: const SplashView(),
                   );
                 },
               );

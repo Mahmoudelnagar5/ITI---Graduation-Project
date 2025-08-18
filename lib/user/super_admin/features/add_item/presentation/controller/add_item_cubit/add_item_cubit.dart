@@ -15,6 +15,15 @@ class AddItemCubit extends Cubit<AddItemState> {
   // List to store curriculum items
   List<String> curriculumItems = [];
 
+  // Prefill for edit mode
+  void prefillFromTrack(TrackModel? track) {
+    if (track == null) return;
+    titleController.text = track.title;
+    descriptionController.text = track.description;
+    curriculumItems = List<String>.from(track.contents);
+    emit(AddItemCurriculumItemsUpdated(curriculumItems));
+  }
+
   // Add new curriculum item
   void addCurriculumItem(String item) {
     if (item.trim().isNotEmpty) {
@@ -68,6 +77,41 @@ class AddItemCubit extends Cubit<AddItemState> {
 
       emit(AddItemSuccess());
       clearData(); // Clear form after successful save
+    } catch (e) {
+      emit(AddItemFailure(e.toString()));
+    }
+  }
+
+  Future<void> updateItem({
+    required String collectionName,
+    required String id,
+  }) async {
+    try {
+      emit(AddItemLoading());
+
+      if (titleController.text.trim().isEmpty) {
+        emit(AddItemFailure('Title is required'));
+        return;
+      }
+      if (descriptionController.text.trim().isEmpty) {
+        emit(AddItemFailure('Description is required'));
+        return;
+      }
+      if (curriculumItems.isEmpty) {
+        emit(AddItemFailure('At least one curriculum item is required'));
+        return;
+      }
+
+      await AddItemRepoImpl().updateItem(
+        collectionName: collectionName,
+        id: id,
+        title: titleController.text.trim(),
+        description: descriptionController.text.trim(),
+        contents: curriculumItems,
+      );
+
+      emit(AddItemSuccess());
+      clearData();
     } catch (e) {
       emit(AddItemFailure(e.toString()));
     }

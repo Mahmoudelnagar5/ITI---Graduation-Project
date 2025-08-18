@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
 import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper_keys.dart';
+import 'package:final_project_iti/core/utilities/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:final_project_iti/core/utilities/pick_images.dart';
 
@@ -54,7 +55,7 @@ class _ImageSectionState extends State<ImageSection> {
       clipBehavior: Clip.none,
       children: [
         CircleAvatar(
-          backgroundColor: Colors.brown,
+          backgroundColor: AppColors.mainColorStart,
           radius: 50,
           backgroundImage: ImageSection.image != null
               ? FileImage(ImageSection.image!)
@@ -110,11 +111,7 @@ class _ImageSectionState extends State<ImageSection> {
                   ],
                 ),
                 padding: const EdgeInsets.all(6),
-                child: const Icon(
-                  Icons.delete,
-                  color: Colors.white,
-                  size: 18,
-                ),
+                child: const Icon(Icons.delete, color: Colors.white, size: 18),
               ),
             ),
           ),

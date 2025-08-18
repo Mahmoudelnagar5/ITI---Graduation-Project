@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
                     themeMode: AppCubit.get(context).getTheme(),
                     onGenerateRoute: AppRouter.generateRoute,
                     initialRoute: initalRouteMethod(),
-                    home: const SplashView(),
+                    home: const SuperAdminView(),
                   );
                 },
               );

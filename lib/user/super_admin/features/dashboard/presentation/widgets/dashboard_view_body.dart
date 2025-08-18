@@ -17,26 +17,11 @@ class DashboardViewBody extends StatelessWidget {
           children: [
             const ListViewItemsInfo(),
             const Gap(16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Active Tracks',
-                  style: AppTextStyles.textStyleSemiBold18.copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'View All',
-                    style: AppTextStyles.textStyleMedium14.copyWith(
-                      color: AppColors.mainColorStart,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ],
+            Text(
+              'Active Tracks',
+              style: AppTextStyles.textStyleSemiBold18.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
             ),
             const Gap(16),
             const GirdViewActiveTrackItem(),

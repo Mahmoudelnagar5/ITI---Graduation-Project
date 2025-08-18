@@ -10,7 +10,10 @@ class AddItemAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () {
           Navigator.pop(context);
         },
-        icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+        icon: Icon(
+          Icons.arrow_back_ios,
+          color: Theme.of(context).colorScheme.onSurface,
+        ),
       ),
       actions: [
         Padding(
@@ -32,7 +35,7 @@ class AddItemAppBar extends StatelessWidget implements PreferredSizeWidget {
         title ?? '',
         style: AppTextStyles.textStyleMedium18.copyWith(
           fontFamily: AppFontFamily.inter,
-          color: Colors.black,
+          color: Theme.of(context).colorScheme.onSurface,
         ),
       ),
     );

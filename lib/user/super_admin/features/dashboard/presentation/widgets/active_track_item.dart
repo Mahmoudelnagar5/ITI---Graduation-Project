@@ -123,7 +123,7 @@ class ActiveTrackItem extends StatelessWidget {
               ],
             ),
 
-            const Gap(8),
+            const Gap(16),
 
             Text(
               track.title,
@@ -134,7 +134,7 @@ class ActiveTrackItem extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const Gap(6),
+            const Gap(8),
             Text(
               track.description,
               maxLines: 2,
@@ -143,7 +143,7 @@ class ActiveTrackItem extends StatelessWidget {
                 color: AppColors.searchIconcolor,
               ),
             ),
-            const Gap(4),
+            const Gap(8),
             FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(

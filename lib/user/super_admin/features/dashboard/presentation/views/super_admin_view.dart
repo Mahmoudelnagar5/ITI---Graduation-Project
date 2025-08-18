@@ -1,5 +1,8 @@
+import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+
 import '../../../../../../core/routing/route_export.dart';
-import 'admin_profile_view.dart';
+import '../widgets/custom_app_bar_admin.dart';
+import '../widgets/my_slider.dart';
 import 'dashboard_view.dart';
 
 class SuperAdminView extends StatefulWidget {
@@ -11,49 +14,20 @@ class SuperAdminView extends StatefulWidget {
 
 class _SuperAdminViewState extends State<SuperAdminView> {
   int currentIndex = 0;
-  List<Widget> pages = [const DashboardView(), const AdminProfileView()];
+  final GlobalKey<SliderDrawerState> _sliderDrawerKey =
+      GlobalKey<SliderDrawerState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentIndex],
-      bottomNavigationBar: BottomNavBarAdmin(
-        currentIndex: currentIndex,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
+      appBar: CustonAppBarAdmin(sliderDrawerKey: _sliderDrawerKey),
+      body: SliderDrawer(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        appBar: CustonAppBarAdmin(sliderDrawerKey: _sliderDrawerKey),
+        slider: MySlider(sliderDrawerKey: _sliderDrawerKey),
+        key: _sliderDrawerKey,
+        child: const DashboardView(),
       ),
-    );
-  }
-}
-
-class BottomNavBarAdmin extends StatelessWidget {
-  const BottomNavBarAdmin({
-    super.key,
-    required this.currentIndex,
-    required this.onTap,
-  });
-
-  final int currentIndex;
-  final ValueChanged<int> onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      backgroundColor: AppColors.white,
-      selectedItemColor: AppColors.mainColorStart,
-      unselectedItemColor: AppColors.lightGrey,
-      currentIndex: currentIndex,
-      onTap: onTap,
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.dashboard),
-          label: 'Dashboard',
-        ),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-      ],
     );
   }
 }

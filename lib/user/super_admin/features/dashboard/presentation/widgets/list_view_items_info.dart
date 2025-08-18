@@ -1,30 +1,56 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../../../../../core/routing/route_export.dart';
 import 'custom_container_info.dart' show CustomContainerInfo;
 
 class ListViewItemsInfo extends StatelessWidget {
   const ListViewItemsInfo({super.key});
-  final List<CustomContainerInfo> items = const [
-    CustomContainerInfo(
-      text: 'Active Tracks',
-      value: '8',
-      icon: Icons.track_changes,
-    ),
-    CustomContainerInfo(text: 'Total Users', value: '256', icon: Icons.people),
-    CustomContainerInfo(text: 'Total Courses', value: '12', icon: Icons.school),
-    CustomContainerInfo(
-      text: 'Total Tasks',
-      value: '100',
-      icon: Icons.task_alt,
-    ),
-    CustomContainerInfo(
-      text: 'Total Resources',
-      value: '15',
-      icon: Icons.library_books,
-    ),
-  ];
+
+  Stream<int> _countOf(String collection) {
+    return FirebaseFirestore.instance
+        .collection(collection)
+        .snapshots()
+        .map((s) => s.docs.length);
+  }
+
+  Widget _counterCard({
+    required String label,
+    required IconData icon,
+    required Stream<int> stream,
+  }) {
+    return StreamBuilder<int>(
+      stream: stream,
+      builder: (context, snapshot) {
+        final value = snapshot.hasError ? '0' : (snapshot.data ?? 0).toString();
+        return CustomContainerInfo(text: label, icon: icon, value: value);
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
+    final items = <Widget>[
+      _counterCard(
+        label: 'Active Tracks',
+        icon: Icons.track_changes,
+        stream: _countOf('Add Track'),
+      ),
+      _counterCard(
+        label: 'Total Resources',
+        icon: Icons.library_books,
+        stream: _countOf('resources'),
+      ),
+      _counterCard(
+        label: 'Total Rounds',
+        icon: Icons.school_sharp,
+        stream: _countOf('Manage Rounds'),
+      ),
+      _counterCard(
+        label: 'Total Courses',
+        icon: Icons.school,
+        stream: _countOf('Add Courses'),
+      ),
+    ];
+
     return SizedBox(
       height: 200.h,
       child: ListView.builder(

@@ -35,9 +35,12 @@ dependencies:
   equatable: ^2.0.5
   file_picker: ^10.3.1
   firebase_core: ^4.0.0
+  floating_draggable_widget: ^2.3.0
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
+  flutter_chat_core: ^2.8.0
+  flutter_chat_ui: ^2.9.0
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.4.6

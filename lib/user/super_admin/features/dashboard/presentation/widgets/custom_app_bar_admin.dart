@@ -1,7 +1,10 @@
+import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+
 import '../../../../../../core/routing/route_export.dart';
 
 class CustonAppBarAdmin extends StatelessWidget implements PreferredSizeWidget {
-  const CustonAppBarAdmin({super.key});
+  const CustonAppBarAdmin({super.key, required this.sliderDrawerKey});
+  final GlobalKey<SliderDrawerState> sliderDrawerKey;
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +16,15 @@ class CustonAppBarAdmin extends StatelessWidget implements PreferredSizeWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const CircleAvatar(
-              backgroundColor: Color(0xffE5E7EB),
-              radius: 26,
-              child: CircleAvatar(
-                radius: 20,
-                backgroundImage: AssetImage(Assets.imagesProfile),
+            InkWell(
+              onTap: () => sliderDrawerKey.currentState?.toggle(),
+              child: const CircleAvatar(
+                backgroundColor: Color(0xffE5E7EB),
+                radius: 26,
+                child: CircleAvatar(
+                  radius: 20,
+                  backgroundImage: AssetImage(Assets.imagesProfile),
+                ),
               ),
             ),
             const Gap(10),

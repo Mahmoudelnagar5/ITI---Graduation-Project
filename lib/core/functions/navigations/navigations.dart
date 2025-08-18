@@ -25,6 +25,17 @@ abstract class AppNavigation {
     ).pushReplacementNamed(route);
   }
 
+  static void pushAndRemoveUntil({
+    required BuildContext context,
+    required String route,
+    bool rootNavigator = false,
+  }) {
+    Navigator.of(
+      context,
+      rootNavigator: rootNavigator,
+    ).pushNamedAndRemoveUntil(route, (Route<dynamic> route) => false);
+  }
+
   //? navigation with delay time
   static void navigationdelay({
     required BuildContext context,

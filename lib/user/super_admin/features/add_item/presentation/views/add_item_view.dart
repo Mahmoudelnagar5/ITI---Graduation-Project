@@ -10,9 +10,22 @@ class AddItemView extends StatelessWidget {
   const AddItemView({super.key});
   @override
   Widget build(BuildContext context) {
-    final title = ModalRoute.of(context)?.settings.arguments as String?;
+    final args = ModalRoute.of(context)?.settings.arguments;
+    String? headerTitle;
+    TrackModel? editTrack;
+
+    if (args is String) {
+      headerTitle = args;
+    } else if (args is Map) {
+      headerTitle = (args['title'] as String?) ?? 'Edit Track';
+      editTrack = args['track'] as TrackModel?;
+    }
+
+    // collection name for tracks is "Add Track" in the repo usage
+    const String collectionName = 'Add Track';
+
     return BlocProvider(
-      create: (context) => AddItemCubit(),
+      create: (context) => AddItemCubit()..prefillFromTrack(editTrack),
       child: BlocConsumer<AddItemCubit, AddItemState>(
         listener: (context, state) {
           if (state is AddItemSuccess) {
@@ -22,7 +35,7 @@ class AddItemView extends StatelessWidget {
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
                     child: Text(
-                      'Track added successfully!',
+                      'Track ${editTrack == null ? 'added' : 'updated'} successfully!',
                       style: AppTextStyles.textStyleMedium14.copyWith(
                         color: Colors.white,
                       ),
@@ -50,7 +63,7 @@ class AddItemView extends StatelessWidget {
         builder: (context, state) {
           final cubit = AddItemCubit.of(context);
           return Scaffold(
-            appBar: AddItemAppBar(title: title),
+            appBar: AddItemAppBar(title: headerTitle),
             body: Stack(
               children: [
                 SingleChildScrollView(
@@ -62,8 +75,6 @@ class AddItemView extends StatelessWidget {
                       children: [
                         const TitleAndDescriptionSection(),
                         Gap(34.h),
-                        // const CoverImageSection(),
-                        // const Gap(28),
                         Text(
                           'Curriculum Items',
                           style: AppTextStyles.textStyleMedium14.copyWith(
@@ -77,10 +88,21 @@ class AddItemView extends StatelessWidget {
                         const AddItemButton(),
                         Gap(18.h),
                         SendNotificationButton(
-                          label: 'Save Changes',
+                          label: editTrack == null ? 'Save Changes' : 'Update',
                           onPressed: state is AddItemLoading
                               ? null
-                              : () => cubit.addItem(title ?? ''),
+                              : () {
+                                  if (editTrack == null) {
+                                    cubit.addItem(
+                                      headerTitle ?? collectionName,
+                                    );
+                                  } else {
+                                    cubit.updateItem(
+                                      collectionName: collectionName,
+                                      id: editTrack.id,
+                                    );
+                                  }
+                                },
                         ),
                         Gap(16.h),
                       ],

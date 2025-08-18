@@ -11,12 +11,12 @@ class LoginForm extends StatelessWidget {
         if (state is LoginSuccess) {
           // التنقل بناءً على الدور
           if (state.role == 'admin') {
-            AppNavigation.pushName(
+            AppNavigation.pushAndRemoveUntil(
               context: context,
               route: AppRoutes.adminPanel,
             );
           } else {
-            AppNavigation.pushName(
+            AppNavigation.pushAndRemoveUntil(
               context: context,
               route: AppRoutes.superAdminPanel,
             );

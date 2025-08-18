@@ -25,7 +25,7 @@ class CustonAppBarAdmin extends StatelessWidget implements PreferredSizeWidget {
             Text(
               'ITI Admin',
               style: AppTextStyles.textStyleMedium20.copyWith(
-                color: AppColors.black,
+                color: Theme.of(context).colorScheme.onSurface,
                 fontWeight: FontWeight.bold,
               ),
             ),

@@ -79,7 +79,7 @@ class AddItemView extends StatelessWidget {
                           'Curriculum Items',
                           style: AppTextStyles.textStyleMedium14.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: AppColors.black,
+                            color: Theme.of(context).colorScheme.onSurface,
                             fontSize: 16.sp,
                           ),
                         ),

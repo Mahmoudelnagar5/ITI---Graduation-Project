@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:final_project_iti/user/student/features/home/data/models/question_,model.dart';
+import 'package:final_project_iti/user/student/features/home/data/models/question_model.dart';
 
 abstract class StarredQuestionsState extends Equatable {
   const StarredQuestionsState();

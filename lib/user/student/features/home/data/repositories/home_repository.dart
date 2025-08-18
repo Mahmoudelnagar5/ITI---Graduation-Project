@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
-import '../models/question_,model.dart';
+import '../models/question_model.dart';
 import '../models/track_model.dart';
 
 abstract class HomeRepository {

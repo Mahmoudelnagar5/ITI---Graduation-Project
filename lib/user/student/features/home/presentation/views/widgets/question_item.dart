@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 
 import '../../../../../../../core/utilities/assets_manager.dart';
 import '../../../../../../../core/utilities/styles_manager.dart';
-import '../../../data/models/question_,model.dart';
+import '../../../data/models/question_model.dart';
 import '../../manager/starred_questions/starred_questions_cubit.dart';
 import '../../manager/starred_questions/starred_questions_state.dart';
 import 'institute_answer.dart';

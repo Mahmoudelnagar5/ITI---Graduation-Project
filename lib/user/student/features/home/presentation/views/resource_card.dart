@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/user/student/features/home/data/functions/functions.dart';
 
 enum ResourceAction { view, download, open }
 
@@ -7,24 +9,26 @@ class ResourceCard extends StatelessWidget {
   final String subtitle;
   final String meta;
   final String actionLabel;
+  final String type;
   final ResourceAction actionType;
+  final String urlPath;
 
   const ResourceCard({
-    super.key,
+    Key? key,
     required this.title,
     required this.subtitle,
     required this.meta,
     required this.actionLabel,
+    required this.type,
     required this.actionType,
-  });
+    required this.urlPath,
+  }) : super(key: key);
 
-  IconData _actionIcon() {
-    switch (actionType) {
-      case ResourceAction.view:
+  IconData _actionIcon(type) {
+    switch (type) {
+      case "Pdf":
         return Icons.remove_red_eye_outlined;
-      case ResourceAction.download:
-        return Icons.download_outlined;
-      case ResourceAction.open:
+      default:
         return Icons.launch_outlined;
     }
   }
@@ -98,8 +102,10 @@ class ResourceCard extends StatelessWidget {
           // Action button
           SizedBox(width: 14.w),
           ElevatedButton.icon(
-            onPressed: () {},
-            icon: Icon(_actionIcon(), size: 16, color: Colors.white),
+            onPressed: () {
+              type != "Pdf" ? openYoutubeVideo(urlPath) : openAnyLink(urlPath);
+            },
+            icon: Icon(_actionIcon(type), size: 16, color: Colors.white),
             label: Text(
               actionLabel,
               style: TextStyle(

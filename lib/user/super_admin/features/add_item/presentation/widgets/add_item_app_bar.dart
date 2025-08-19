@@ -24,7 +24,8 @@ class AddItemAppBar extends StatelessWidget implements PreferredSizeWidget {
             onTap: () {},
             child: SvgPicture.asset(
               Assets.imagesDetailsIcon,
-              color: Colors.black,
+              color: Theme.of(context).colorScheme.onSurface,
+
               height: 24.r,
               width: 24.r,
             ),

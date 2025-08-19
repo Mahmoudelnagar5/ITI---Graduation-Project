@@ -38,7 +38,7 @@ class OnboardingBody extends StatelessWidget {
                   fontFamily: AppFontFamily.inter,
                 ),
               ),
-               Gap(16.h),
+              Gap(16.h),
               Text(
                 textAlign: TextAlign.center,
                 onboardingDataList[index].subTitle,
@@ -50,7 +50,7 @@ class OnboardingBody extends StatelessWidget {
                   fontFamily: AppFontFamily.inter,
                 ),
               ),
-              const Gap(32),
+              const Gap(16),
               SmoothPageIndicator(
                 controller: pageController,
                 count: onboardingDataList.length,

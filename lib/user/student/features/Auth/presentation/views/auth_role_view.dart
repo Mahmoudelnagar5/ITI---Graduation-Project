@@ -88,6 +88,7 @@ class AuthRoleView extends StatelessWidget {
                 ],
               ),
             ),
+            Gap(24.h),
             Text(
               AppLocalizations.of(context)!.selectYourRoleToProceedToLogin,
               style: AppTextStyles.textStyleRegular14.copyWith(
@@ -95,7 +96,7 @@ class AuthRoleView extends StatelessWidget {
                 color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
               ),
             ),
-            Gap(130.h),
+            Gap(120.h),
           ],
         ),
       ),

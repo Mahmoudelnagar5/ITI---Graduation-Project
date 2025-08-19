@@ -31,7 +31,7 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
           title: Text(
             'ITI Admin Panel',
             style: AppTextStyles.textStyleBold20.copyWith(
-              color: AppColors.black,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           backgroundColor: AppColors.white,
@@ -72,7 +72,7 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
             ],
           ),
         ),
-        bottomNavigationBar: const AdminBottomNavBar(),
+        // bottomNavigationBar: const AdminBottomNavBar(),
       ),
     );
   }

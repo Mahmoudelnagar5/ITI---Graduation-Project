@@ -32,6 +32,12 @@ class _MessagesListViewState extends State<MessagesListView>
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ListView.builder(
       controller: widget.scrollController, // Attach ScrollController

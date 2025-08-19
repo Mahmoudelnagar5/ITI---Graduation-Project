@@ -52,6 +52,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 });
               },
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: AppBotton(

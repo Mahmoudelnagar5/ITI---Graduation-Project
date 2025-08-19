@@ -1,6 +1,6 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 
-import '../../data/login_repo.dart';
+import '../../../data/login_repo.dart';
 
 part 'login_state.dart';
 
@@ -10,6 +10,7 @@ class LoginCubit extends Cubit<LoginState> {
   final TextEditingController passwordController = TextEditingController();
 
   final GlobalKey<FormState> key = GlobalKey();
+  final AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   static LoginCubit get(BuildContext context) => BlocProvider.of(context);
   LoginCubit(this.loginRepo) : super(LoginInitial());

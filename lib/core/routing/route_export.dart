@@ -10,7 +10,7 @@ export 'package:final_project_iti/user/admin/features/admin_panel/presentation/w
 export 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/send_notification_button.dart';
 export 'package:final_project_iti/user/admin/features/admin_panel/presentation/widgets/success_dialog.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
-export 'package:final_project_iti/user/student/features/Auth/controller/register_cubit/register_state.dart';
+export 'package:final_project_iti/user/student/features/Auth/presentation/manager/register_cubit/register_state.dart';
 export 'package:final_project_iti/core/utilities/assets_manager.dart';
 export 'package:final_project_iti/user/student/features/Auth/data/login_role_model.dart';
 export 'package:final_project_iti/core/config/configrations.dart';
@@ -19,8 +19,8 @@ export 'package:final_project_iti/user/student/features/Auth/presentation/widget
 export 'package:gap/gap.dart';
 
 export '../../../../../../core/functions/navigations/navigations.dart';
-export 'package:final_project_iti/user/student/features/Auth/controller/login_cubit/login_cubit.dart';
-export 'package:final_project_iti/user/student/features/Auth/controller/register_cubit/register_cubit.dart';
+export 'package:final_project_iti/user/student/features/Auth/presentation/manager/login_cubit/login_cubit.dart';
+export 'package:final_project_iti/user/student/features/Auth/presentation/manager/register_cubit/register_cubit.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/login_form.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/register_form.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/tab_text_widget.dart';
@@ -29,10 +29,8 @@ export 'package:final_project_iti/core/widgets/app_text_form_field.dart';
 export 'package:final_project_iti/user/student/features/Auth/helper/validator.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/forgot_password_botton.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/password_text_field.dart';
- 
- 
-  export  'package:final_project_iti/core/widgets/text_field_title.dart';
- 
+
+export 'package:final_project_iti/core/widgets/text_field_title.dart';
 
 export 'package:flutter_svg/svg.dart';
 export 'package:final_project_iti/user/student/features/home/presentation/views/resource_card.dart';

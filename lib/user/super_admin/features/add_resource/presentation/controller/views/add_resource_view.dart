@@ -1,9 +1,7 @@
-import 'package:file_picker/file_picker.dart';
 import 'package:final_project_iti/user/super_admin/features/add_resource/data/add_resource_repo.dart';
 import 'package:final_project_iti/user/super_admin/features/add_resource/data/models/resource_model.dart';
 import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/widgets/add_resource_app_bar.dart';
 import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/widgets/notification_bottom_sheet.dart';
-import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/widgets/pdf_picker_field.dart';
 import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/widgets/resource_title_and_description_section.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
 
@@ -22,14 +20,9 @@ class _AddResourceViewState extends State<AddResourceView> {
   final TextEditingController _linkCtrl = TextEditingController();
 
   String? _selectedType;
-  String? _pickedFile;
   String? _selectedTrack;
 
-  final List<String> _resourceTypes = [
-    "Article (Link)",
-    "YouTube Video",
-    "PDF File",
-  ];
+  final List<String> _resourceTypes = ["Article (Link)", "YouTube Video"];
 
   final List<String> _tracks = [
     'All',
@@ -50,19 +43,6 @@ class _AddResourceViewState extends State<AddResourceView> {
     _descCtrl.dispose();
     _linkCtrl.dispose();
     super.dispose();
-  }
-
-  Future<void> _pickPdf() async {
-    final result = await FilePicker.platform.pickFiles(
-      type: FileType.custom,
-      allowedExtensions: ["pdf"],
-    );
-
-    if (result != null) {
-      setState(() {
-        _pickedFile = result.files.single.name;
-      });
-    }
   }
 
   @override
@@ -100,22 +80,7 @@ class _AddResourceViewState extends State<AddResourceView> {
                   setState(() {
                     _selectedType = newValue!;
                     _linkCtrl.clear();
-                    _pickedFile = null;
                   });
-
-                  if (_selectedType == "PDF File") {
-                    FilePickerResult? result = await FilePicker.platform
-                        .pickFiles(
-                          type: FileType.custom,
-                          allowedExtensions: ['pdf'],
-                        );
-
-                    if (result != null) {
-                      setState(() {
-                        _pickedFile = result.files.single.path;
-                      });
-                    }
-                  }
                 },
                 decoration: InputDecoration(
                   hintText: "Select type",
@@ -174,15 +139,6 @@ class _AddResourceViewState extends State<AddResourceView> {
                   ),
                 ),
                 Gap(20.h),
-              ] else if (_selectedType == "PDF File") ...[
-                PdfPickerField(
-                  onFilePicked: (file) {
-                    setState(() {
-                      _pickedFile = file;
-                    });
-                  },
-                ),
-                Gap(20.h),
               ],
 
               /// Save Button
@@ -203,9 +159,7 @@ class _AddResourceViewState extends State<AddResourceView> {
                     title: _titleCtrl.text.trim(),
                     description: _descCtrl.text.trim(),
                     type: _selectedType!,
-                    url: _selectedType == "PDF File"
-                        ? (_pickedFile ?? '')
-                        : _linkCtrl.text.trim(),
+                    url: _linkCtrl.text.trim(),
                     track: _selectedTrack,
                     createdAt: DateTime.now(),
                   );
@@ -223,12 +177,9 @@ class _AddResourceViewState extends State<AddResourceView> {
                     _descCtrl.clear();
                     _linkCtrl.clear();
                     setState(() {
-                      _pickedFile = null;
                       _selectedType = null;
                       _selectedTrack = null;
                     });
-
-                    NotificationBottomSheet.show(context);
                   } catch (e) {
                     debugPrint('Error adding resource: $e');
                     ScaffoldMessenger.of(context).showSnackBar(

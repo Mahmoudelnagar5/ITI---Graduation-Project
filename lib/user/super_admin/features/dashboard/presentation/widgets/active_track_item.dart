@@ -143,7 +143,6 @@ class ActiveTrackItem extends StatelessWidget {
                 color: AppColors.searchIconcolor,
               ),
             ),
-            const Gap(8),
             FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(

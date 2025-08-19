@@ -50,7 +50,16 @@ class MySlider extends StatelessWidget {
               itemBuilder: (ctx, i) {
                 return ListTile(
                   contentPadding: const EdgeInsetsGeometry.all(8),
-                  onTap: () => sliderDrawerKey.currentState?.toggle(),
+                  onTap: () {
+                    if (texts[i] == "Logout") {
+                      AppNavigation.pushWithReplacement(
+                        context: context,
+                        route: AppRoutes.authRole,
+                      );
+                    } else {
+                      sliderDrawerKey.currentState?.toggle();
+                    }
+                  },
                   leading: Icon(icons[i], color: Colors.white, size: 30),
                   title: Text(
                     texts[i],

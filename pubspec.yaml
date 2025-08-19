@@ -142,10 +142,16 @@ flutter_intl:
 flutter_native_splash:
   android: true
   ios: true
+  web: false
 
+  # خلفية السبلش
   color: "#FFFFFF"
   color_dark: "#000000"
 
-  # Explicitly disable image
-  image: null
-  android_gravity: center
+  # Android 12+ support
+  android_12:
+    color: "#FFFFFF"
+    color_dark: "#000000"
+    image: assets/images/backcolor_splash.jpg
+    image_dark: assets/images/backcolor_splash2.jpg
+    icon_background_color: "#FFFFFF"

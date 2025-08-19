@@ -21,13 +21,13 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   try {
     await dotenv.load(fileName: '.env');
     debugPrint('Environment variables loaded successfully');
   } catch (e) {
     debugPrint('Warning: Could not load .env file: $e');
   }
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await CacheHelper().init();
   Bloc.observer = AppBlocObserver();
   runApp(DevicePreview(enabled: false, builder: (context) => const MyApp()));

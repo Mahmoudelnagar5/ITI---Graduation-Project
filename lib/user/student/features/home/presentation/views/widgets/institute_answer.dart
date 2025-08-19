@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../../core/utilities/styles_manager.dart';
@@ -45,6 +46,15 @@ class InstituteAnswer extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            IconButton(
+              icon: const Icon(Icons.copy),
+              onPressed: () {
+                Clipboard.setData(ClipboardData(text: instituteAnswer));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Answer copied to clipboard!')),
+                );
+              },
             ),
           ],
         ),

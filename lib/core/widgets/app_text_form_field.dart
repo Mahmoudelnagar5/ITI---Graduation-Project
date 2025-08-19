@@ -9,22 +9,27 @@ class AppTextFormField extends StatelessWidget {
     this.controller,
     this.validator,
     this.maxLines,
+    this.onSaved,
+    this.suffixIcon,
   });
 
   final String hintText;
   final int? maxLines;
+  final void Function(String?)? onSaved;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
-
+  final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return TextFormField(
+      onSaved: onSaved,
       maxLines: maxLines,
       style: TextStyle(color: theme.colorScheme.onSurface),
       controller: controller,
       validator: validator,
       decoration: InputDecoration(
+        suffixIcon: suffixIcon,
         fillColor: theme.colorScheme.surface,
         filled: true,
         hintText: hintText,

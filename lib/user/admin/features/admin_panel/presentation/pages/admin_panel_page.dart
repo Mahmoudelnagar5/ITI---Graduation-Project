@@ -25,6 +25,8 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
       create: (_) => AdminCubit(AdminRepoImpl()),
       child: Scaffold(
         appBar: AppBar(
+          scrolledUnderElevation: 0,
+          surfaceTintColor: Colors.transparent,
           centerTitle: false,
           title: Text(
             'ITI Admin Panel',

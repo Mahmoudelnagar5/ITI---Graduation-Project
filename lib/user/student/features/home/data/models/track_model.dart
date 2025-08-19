@@ -45,4 +45,15 @@ class TrackModel {
           : FieldValue.serverTimestamp(),
     };
   }
+
+  // Convert to Map for AI context (without Timestamp)
+  Map<String, dynamic> toAIContext() {
+    return {
+      'title': title,
+      'image': image,
+      'description': description,
+      'contents': contents,
+      'createdAt': createdAt?.toString() ?? 'Unknown',
+    };
+  }
 }

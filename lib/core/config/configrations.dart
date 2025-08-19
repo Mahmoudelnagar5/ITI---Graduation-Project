@@ -90,7 +90,7 @@ class AppRouter {
         return pageRouteBuilderMethod(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
-              const ChatAI(),
+              const ChatAIView(),
         );
 
       default:

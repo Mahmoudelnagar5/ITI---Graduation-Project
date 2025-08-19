@@ -17,12 +17,11 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     bool firstTime =
-        CacheHelper().getData(key: CasheKeys.firstTime) as bool? ?? true;
-    firstTime = true;
+        CacheHelper().getData(key: CasheKeys.firstTime) as bool? ?? false;
     Future.delayed(const Duration(seconds: 3), () {
       AppNavigation.pushWithReplacement(
         context: context,
-        route: firstTime ? AppRoutes.onboardingView : AppRoutes.authRole,
+        route: firstTime ? AppRoutes.authRole : AppRoutes.onboardingView,
       );
     });
     super.initState();

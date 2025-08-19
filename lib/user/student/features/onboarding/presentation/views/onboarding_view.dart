@@ -65,7 +65,13 @@ class _OnboardingViewState extends State<OnboardingView> {
                     fontFamily: AppFontFamily.inter,
                   ),
                 ),
-                onPressed: () {
+                onPressed: () async {
+                  if (pageIndex == onboardingDataList.length - 1) {
+                    await CacheHelper().saveData(
+                      key: CasheKeys.firstTime,
+                      value: true,
+                    );
+                  }
                   pageIndex == onboardingDataList.length - 1
                       ? AppNavigation.pushWithReplacement(
                           context: context,

@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/user/super_admin/features/add_resource/data/models/resource_model.dart';
 import '../models/question_model.dart';
 import '../models/track_model.dart';
 
@@ -9,6 +10,8 @@ abstract class HomeRepository {
   Stream<List<QuestionModel>> getQuestionsStream();
   Stream<List<QuestionModel>> searchQuestions(String query);
   Stream<List<TrackModel>> searchTracks(String query);
+  Stream<List<ResourceModel>> getResourcesStream();
+  Stream<List<ResourceModel>> searchResources(String query);
 }
 
 class HomeRepositoryImpl implements HomeRepository {
@@ -98,6 +101,44 @@ class HomeRepositoryImpl implements HomeRepository {
               .where((track) {
                 return track.title.toLowerCase().contains(lowercaseQuery) ||
                     track.description.toLowerCase().contains(lowercaseQuery);
+              })
+              .toList();
+        });
+  }
+
+  @override
+  Stream<List<ResourceModel>> getResourcesStream() {
+    return _firestore
+        .collection('resources')
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) {
+          return snapshot.docs.map((doc) {
+            return ResourceModel.fromFirestore(doc);
+          }).toList();
+        });
+  }
+
+  @override
+  Stream<List<ResourceModel>> searchResources(String query) {
+    if (query.trim().isEmpty || query == 'All') {
+      return getResourcesStream();
+    }
+
+    final lowercaseQuery = query.toLowerCase();
+
+    return _firestore
+        .collection('resources')
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) {
+          return snapshot.docs
+              .map((doc) {
+                return ResourceModel.fromFirestore(doc);
+              })
+              .where((resource) {
+                return resource.title.toLowerCase().contains(lowercaseQuery) ||
+                    resource.description.toLowerCase().contains(lowercaseQuery);
               })
               .toList();
         });

@@ -9,6 +9,8 @@ class ResourcesPage extends StatefulWidget {
 }
 
 class _ResourcesPageState extends State<ResourcesPage> {
+  final GlobalKey<CardsListState> _cardListKey = GlobalKey<CardsListState>();
+
   final tracks = [
     'All',
     'Flutter',
@@ -77,6 +79,9 @@ class _ResourcesPageState extends State<ResourcesPage> {
             children: [
               SearchWidget(
                 hintText: AppLocalizations.of(context)!.searchLearningMaterials,
+                onSearchChanged: (query) {
+                  _cardListKey.currentState?.onSearchChanged(query);
+                },
               ),
               SizedBox(height: 14.h),
 
@@ -90,7 +95,10 @@ class _ResourcesPageState extends State<ResourcesPage> {
                   itemBuilder: (context, index) {
                     final isActive = index == selectedIndex;
                     return GestureDetector(
-                      onTap: () {
+                      onTap: () async {
+                        _cardListKey.currentState?.onSearchChanged(
+                          tracks[index],
+                        );
                         setState(() {
                           selectedIndex = index;
                         });
@@ -126,7 +134,7 @@ class _ResourcesPageState extends State<ResourcesPage> {
               ),
               SizedBox(height: 10.h),
 
-              const Expanded(child: CardsList()),
+              Expanded(child: CardsList(key: _cardListKey)),
             ],
           ),
         ),

@@ -53,7 +53,11 @@ class ChatAIViewState extends State<ChatAIView> {
                   onPressed: () {
                     ChatAiCubit.of(context).clearChat();
                   },
-                  icon: const Icon(Icons.clear_all),
+                  icon: Icon(
+                    Icons.clear_all,
+
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
               ],
             ),

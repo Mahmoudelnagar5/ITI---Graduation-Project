@@ -10,6 +10,7 @@ class LoginCubit extends Cubit<LoginState> {
   final TextEditingController passwordController = TextEditingController();
 
   final GlobalKey<FormState> key = GlobalKey();
+  final AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   static LoginCubit get(BuildContext context) => BlocProvider.of(context);
   LoginCubit(this.loginRepo) : super(LoginInitial());

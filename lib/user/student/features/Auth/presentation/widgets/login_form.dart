@@ -2,8 +2,15 @@ import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../controller/login_cubit/login_cubit.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
+
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
@@ -32,7 +39,7 @@ class LoginForm extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Form(
-              autovalidateMode: AutovalidateMode.onUserInteraction,
+              autovalidateMode: autovalidateMode,
               key: LoginCubit.get(context).key,
               child: Column(
                 children: [
@@ -67,6 +74,10 @@ class LoginForm extends StatelessWidget {
                                 context,
                               ).passwordController.text;
                               LoginCubit.get(context).login(email, password);
+                            } else {
+                              setState(() {
+                                autovalidateMode = AutovalidateMode.always;
+                              });
                             }
                           },
                     child: state is LoginLoading

@@ -8,7 +8,13 @@ class CustomTextButtom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        AppNavigation.pushWithReplacement(
+          rootNavigator: true,
+          context: context,
+          route: AppRoutes.authRole,
+        );
+      },
       child: Container(
         height: 0.062.sh,
         padding: const EdgeInsets.all(8),

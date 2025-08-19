@@ -1,5 +1,7 @@
 import 'package:final_project_iti/core/config/configrations.dart';
 import 'package:final_project_iti/core/functions/navigations/navigations.dart';
+import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
+import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper_keys.dart';
 import 'package:final_project_iti/core/utilities/app_font_family.dart';
 import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,8 @@ class SkipBotton extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerRight,
         child: TextButton(
-          onPressed: () {
+          onPressed: () async {
+            await CacheHelper().saveData(key: CasheKeys.firstTime, value: true);
             AppNavigation.pushWithReplacement(
               context: context,
               route: AppRoutes.authRole,

@@ -39,13 +39,15 @@ class _MainViewState extends State<MainView> {
     return FloatingDraggableWidget(
       // isDraggable: true,
       floatingWidget: FloatingActionButton(
+        backgroundColor: Colors.white,
         onPressed: () {
           AppNavigation.pushName(context: context, route: AppRoutes.chatAI);
         },
-        child: const Icon(Icons.add, size: 20, color: Colors.red),
+        child: Image.asset(Assets.imagesBot, width: 50.w, height: 50.h),
       ),
-      floatingWidgetHeight: 55.h,
-      floatingWidgetWidth: 55.h,
+      floatingWidgetHeight: 50.h,
+      floatingWidgetWidth: 50.h,
+
       mainScreenWidget: SizedBox(
         height: double.maxFinite,
         width: double.maxFinite,

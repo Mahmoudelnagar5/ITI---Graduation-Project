@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 
 class GeminiService {
   static final Gemini _gemini = Gemini.init(
-    apiKey: 'AIzaSyDFjBxLS51ve9YMyLhdvdGHjBcJY23DseA',
+    apiKey: dotenv.env['GEMINI_API_KEY'] ?? '',
   );
 
   static Future<String?> sendQuery({

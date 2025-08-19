@@ -1,6 +1,6 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 
-import '../../data/login_repo.dart';
+import '../../../data/login_repo.dart';
 
 part 'login_state.dart';
 

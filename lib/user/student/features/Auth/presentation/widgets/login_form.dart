@@ -1,6 +1,6 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../controller/login_cubit/login_cubit.dart';
+import '../manager/login_cubit/login_cubit.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});

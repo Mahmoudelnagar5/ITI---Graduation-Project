@@ -26,7 +26,7 @@ class ResourceCard extends StatelessWidget {
 
   IconData _actionIcon(type) {
     switch (type) {
-      case "Pdf":
+      case "Article (Link)":
         return Icons.remove_red_eye_outlined;
       default:
         return Icons.launch_outlined;
@@ -77,7 +77,7 @@ class ResourceCard extends StatelessWidget {
                 Row(
                   children: [
                     Icon(
-                      Icons.picture_as_pdf,
+                    type=="Article (Link)"? Icons.picture_as_pdf:Icons.video_library_outlined,
                       size: 16.sp,
                       color: Theme.of(
                         context,
@@ -103,7 +103,9 @@ class ResourceCard extends StatelessWidget {
           SizedBox(width: 14.w),
           ElevatedButton.icon(
             onPressed: () {
-              type != "Pdf" ? openYoutubeVideo(urlPath) : openAnyLink(urlPath);
+              type != "Article (Link)"
+                  ? openYoutubeVideo(urlPath)
+                  : openAnyLink(urlPath);
             },
             icon: Icon(_actionIcon(type), size: 16, color: Colors.white),
             label: Text(

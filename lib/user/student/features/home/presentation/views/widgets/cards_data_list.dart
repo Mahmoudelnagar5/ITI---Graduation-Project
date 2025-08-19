@@ -99,9 +99,13 @@ class CardsListState extends State<CardsList> {
                 type: resources[index].type,
                 title: resources[index].title,
                 subtitle: resources[index].description,
-                meta: '${resources[index].type}• 2.5 hours',
-                actionLabel: resources[index].type == "Pdf" ? 'View' : 'open',
-                actionType: resources[index].type != 'pdf'
+                meta: resources[index].type != "Article (Link)"
+                    ? '${resources[index].type}• 2.5 hours'
+                    : '${resources[index].type}',
+                actionLabel: resources[index].type == "Article (Link)"
+                    ? 'View'
+                    : 'open',
+                actionType: resources[index].type == "Article (Link)"
                     ? ResourceAction.view
                     : ResourceAction.open,
                 urlPath: resources[index].url,

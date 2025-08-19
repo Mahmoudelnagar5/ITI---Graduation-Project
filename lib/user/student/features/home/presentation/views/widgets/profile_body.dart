@@ -22,7 +22,6 @@ class _ProfileBodyState extends State<ProfileBody> {
   void initState() {
     _selectedTheme = AppCubit.get(context).getTheme().name.toString();
     _selectedLanguage = LocalizationCubit.get(context).getLanguage();
-    print('soooooooooooooooooooooooo $_selectedTheme');
     super.initState();
   }
 
@@ -214,16 +213,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                 color: Theme.of(context).colorScheme.outline,
                 thickness: 1,
               ),
-              const SizedBox(height: 15),
-              SettingItem(
-                title: AppLocalizations.of(context)!.editProfile,
-                icon: Icons.person,
-              ),
-              Divider(
-                height: 20,
-                color: Theme.of(context).colorScheme.outline,
-                thickness: 1,
-              ),
+
               const SizedBox(height: 15),
               SettingItem(
                 title: AppLocalizations.of(context)!.changeLanguage,

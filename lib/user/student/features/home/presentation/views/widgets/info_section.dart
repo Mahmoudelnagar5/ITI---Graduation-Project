@@ -8,7 +8,7 @@ class InfoSection extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'Ahmed Mohamed',
+          'User',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
@@ -17,7 +17,7 @@ class InfoSection extends StatelessWidget {
         ),
         const SizedBox(height: 5),
         Text(
-          'ahmed.mohamed@fayoum.edu.eg',
+          'User@fayoum.edu.eg',
           style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,

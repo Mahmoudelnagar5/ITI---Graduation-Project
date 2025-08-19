@@ -1,44 +1,64 @@
-import 'dart:math';
+import '../../../../../../core/routing/route_export.dart';
+import '../manager/chat_ai/chat_ai_cubit.dart';
+import 'widgets/chat_ai_body_view.dart';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_chat_core/flutter_chat_core.dart';
-import 'package:flutter_chat_ui/flutter_chat_ui.dart';
-
-class ChatAI extends StatefulWidget {
-  const ChatAI({super.key});
+class ChatAIView extends StatefulWidget {
+  const ChatAIView({super.key});
 
   @override
-  ChatAIState createState() => ChatAIState();
+  ChatAIViewState createState() => ChatAIViewState();
 }
 
-class ChatAIState extends State<ChatAI> {
-  final _chatController = InMemoryChatController();
-
-  @override
-  void dispose() {
-    _chatController.dispose();
-    super.dispose();
-  }
-
+class ChatAIViewState extends State<ChatAIView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Chat(
-        chatController: _chatController,
-        currentUserId: 'user1',
-        onMessageSend: (text) {
-          _chatController.insertMessage(
-            TextMessage(
-              // Better to use UUID or similar for the ID - IDs must be unique
-              id: '${Random().nextInt(1000) + 1}',
-              authorId: 'user1',
-              createdAt: DateTime.now().toUtc(),
-              text: text,
-            ),
-          );
+    return BlocProvider(
+      create: (context) => ChatAiCubit(),
+      child: BlocConsumer<ChatAiCubit, ChatAiState>(
+        listener: (context, state) {
+          if (state is ChatAiError) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Center(child: Text(state.error)),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
         },
-        resolveUser: (UserID id) async {
-          return User(id: id, name: 'John Doe');
+        builder: (context, state) {
+          return Scaffold(
+            appBar: AppBar(
+              scrolledUnderElevation: 0,
+              surfaceTintColor: Colors.transparent,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              title: Text(
+                'AI Chat',
+                style: AppTextStyles.textStyleMedium18.copyWith(
+                  fontFamily: AppFontFamily.inter,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    ChatAiCubit.of(context).clearChat();
+                  },
+                  icon: const Icon(Icons.clear_all),
+                ),
+              ],
+            ),
+            body: const ChatAIBodyView(),
+          );
         },
       ),
     );

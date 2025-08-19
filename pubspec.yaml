@@ -41,6 +41,7 @@ dependencies:
   flutter_bloc: ^9.1.1
   flutter_chat_core: ^2.8.0
   flutter_chat_ui: ^2.9.0
+  flutter_gemini: ^3.0.0
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.4.6

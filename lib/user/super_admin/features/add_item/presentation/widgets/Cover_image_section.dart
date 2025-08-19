@@ -1,6 +1,5 @@
 
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/user/super_admin/features/add_item/presentation/widgets/Cover_image_row.dart';
 
 class CoverImageSection extends StatelessWidget {

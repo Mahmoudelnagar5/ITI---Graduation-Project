@@ -32,6 +32,7 @@ class LoginForm extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Form(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               key: LoginCubit.get(context).key,
               child: Column(
                 children: [

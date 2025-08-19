@@ -3,6 +3,7 @@ import 'package:final_project_iti/user/admin/features/admin_panel/presentation/p
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_role_view.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_view.dart';
 import 'package:final_project_iti/user/student/features/forget_password/presentation/pages/forgot_password_page.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/chat_ai.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/user/student/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:final_project_iti/user/super_admin/features/add_item/presentation/views/add_item_view.dart';
@@ -85,6 +86,12 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const StarredQuestionsView(),
         );
+      case AppRoutes.chatAI:
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const ChatAIView(),
+        );
 
       default:
         return pageRouteBuilderMethod(
@@ -108,6 +115,7 @@ abstract class AppRoutes {
   static const String superAdminPanel = '/superAdminPanel';
   static const String fogotPassword = '/fogotPassword';
   static const String addItemView = '/addItemView';
+  static const String chatAI = '/chatAI';
 
   static const String addResourceView = '/addResourceView';
 

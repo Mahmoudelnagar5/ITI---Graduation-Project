@@ -11,6 +11,8 @@ class TrackContentView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
+        surfaceTintColor: Colors.transparent,
         backgroundColor: Theme.of(context).colorScheme.surface,
         leading: IconButton(
           icon: Icon(

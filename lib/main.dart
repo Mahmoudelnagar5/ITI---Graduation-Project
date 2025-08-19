@@ -17,9 +17,16 @@ import 'package:final_project_iti/user/student/features/splash_view/splash_view.
 import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/add_resource_view.dart';
 import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await dotenv.load(fileName: '.env');
+    debugPrint('Environment variables loaded successfully');
+  } catch (e) {
+    debugPrint('Warning: Could not load .env file: $e');
+  }
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await CacheHelper().init();
   Bloc.observer = AppBlocObserver();

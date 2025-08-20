@@ -1,6 +1,4 @@
 import '../../../../../../core/routing/route_export.dart';
-import 'active_track_item.dart';
-import 'package:final_project_iti/user/student/features/home/data/repositories/home_repository.dart';
 
 class GirdViewActiveTrackItem extends StatelessWidget {
   const GirdViewActiveTrackItem({super.key});

@@ -1,4 +1,4 @@
-import '../../../../../../../core/routing/route_export.dart';
+import '../../../../../../core/routing/route_export.dart';
 import 'welcome_text.dart';
 
 class NoMessagesWidget extends StatelessWidget {

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../../../core/config/configrations.dart';
-import '../../../../../../../core/functions/navigations/navigations.dart';
-import '../../../../../../../core/utilities/styles_manager.dart';
+import '../../../../../../core/config/configrations.dart';
+import '../../../../../../core/functions/navigations/navigations.dart';
+import '../../../../../../core/utilities/styles_manager.dart';
 
 class TrackItem extends StatelessWidget {
   const TrackItem({super.key, required this.trackModel});

@@ -1,4 +1,4 @@
-import '../../../../../../../core/routing/route_export.dart';
+import '../../../../../../core/routing/route_export.dart';
 
 class GradientText extends StatelessWidget {
   const GradientText({

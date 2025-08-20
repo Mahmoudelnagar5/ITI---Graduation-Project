@@ -183,7 +183,7 @@ class _AddResourceViewState extends State<AddResourceView> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SendNotificationView(),
+                        builder: (context) => const SendNotificationView(),
                       ),
                     );
                   } catch (e) {

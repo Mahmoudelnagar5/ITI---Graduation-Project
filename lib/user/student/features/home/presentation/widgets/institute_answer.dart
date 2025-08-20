@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../../core/utilities/styles_manager.dart';
+import '../../../../../../core/utilities/styles_manager.dart';
 
 class InstituteAnswer extends StatelessWidget {
   const InstituteAnswer({super.key, required this.instituteAnswer});

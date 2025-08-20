@@ -2,7 +2,7 @@ import 'package:final_project_iti/l10n/app_localizations.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_cubit.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
 
-import '../../../../../../../core/routing/route_export.dart';
+import '../../../../../../core/routing/route_export.dart';
 import 'custom_text_button.dart';
 import 'image_setion.dart';
 import 'info_section.dart';

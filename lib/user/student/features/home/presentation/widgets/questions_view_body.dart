@@ -1,6 +1,6 @@
 import 'package:final_project_iti/l10n/app_localizations.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/search_widget.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/question_list_view.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/widgets/question_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

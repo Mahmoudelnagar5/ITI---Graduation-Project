@@ -28,7 +28,7 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-import '../../../data/models/track_model.dart';
+import '../../data/models/track_model.dart';
 
 class TrackContentListView extends StatelessWidget {
   const TrackContentListView({super.key});

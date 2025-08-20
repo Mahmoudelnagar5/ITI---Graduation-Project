@@ -1,5 +1,5 @@
 // import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/profile_body.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/widgets/profile_body.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/widgets/profile_body.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {

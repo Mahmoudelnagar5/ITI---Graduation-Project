@@ -39,10 +39,10 @@ export 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 export 'package:final_project_iti/user/student/features/home/presentation/views/questions_view.dart';
 export 'package:final_project_iti/user/student/features/home/presentation/views/tracks_view.dart';
-export 'package:final_project_iti/user/student/features/home/presentation/views/widgets/questions_view_body.dart';
-export 'package:final_project_iti/user/student/features/home/presentation/views/widgets/cards_data_list.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/widgets/questions_view_body.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/widgets/cards_data_list.dart';
 export 'package:final_project_iti/user/student/features/home/presentation/views/search_widget.dart';
 export 'package:final_project_iti/user/student/features/home/data/models/track_model.dart';
-export 'package:final_project_iti/user/student/features/home/presentation/views/widgets/track_content_view_body.dart';
-export 'package:final_project_iti/user/student/features/home/presentation/views/widgets/custom_app_bar.dart';
-export 'package:final_project_iti/user/student/features/home/presentation/views/widgets/tracks_view_body.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/widgets/track_content_view_body.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/widgets/custom_app_bar.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/widgets/tracks_view_body.dart';

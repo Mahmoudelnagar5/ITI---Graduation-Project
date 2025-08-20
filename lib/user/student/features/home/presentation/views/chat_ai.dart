@@ -1,6 +1,6 @@
 import '../../../../../../core/routing/route_export.dart';
 import '../manager/chat_ai/chat_ai_cubit.dart';
-import 'widgets/chat_ai_body_view.dart';
+import '../widgets/chat_ai_body_view.dart';
 
 class ChatAIView extends StatefulWidget {
   const ChatAIView({super.key});

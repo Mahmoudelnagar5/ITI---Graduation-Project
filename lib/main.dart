@@ -14,6 +14,7 @@ import 'package:final_project_iti/user/student/features/home/presentation/manage
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
 import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
+import 'package:final_project_iti/FirebaseApi.dart'; // Import FirebaseApi
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -26,6 +27,11 @@ void main() async {
     debugPrint('Warning: Could not load .env file: $e');
   }
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // Initialize Firebase Messaging and Notifications
+  await FirebaseApi().initNotification();
+  debugPrint('FirebaseApi initialized successfully.');
+
   await CacheHelper().init();
   Bloc.observer = AppBlocObserver();
   runApp(DevicePreview(enabled: false, builder: (context) => const MyApp()));

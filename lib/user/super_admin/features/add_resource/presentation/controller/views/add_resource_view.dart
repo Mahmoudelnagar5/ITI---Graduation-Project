@@ -1,7 +1,7 @@
 import 'package:final_project_iti/user/super_admin/features/add_resource/data/add_resource_repo.dart';
 import 'package:final_project_iti/user/super_admin/features/add_resource/data/models/resource_model.dart';
 import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/widgets/add_resource_app_bar.dart';
-import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/widgets/notification_bottom_sheet.dart';
+import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/send_notification_view.dart'; // Import the new view
 import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/widgets/resource_title_and_description_section.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
 
@@ -180,6 +180,12 @@ class _AddResourceViewState extends State<AddResourceView> {
                       _selectedType = null;
                       _selectedTrack = null;
                     });
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SendNotificationView(),
+                      ),
+                    );
                   } catch (e) {
                     debugPrint('Error adding resource: $e');
                     ScaffoldMessenger.of(context).showSnackBar(

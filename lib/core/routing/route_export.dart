@@ -70,3 +70,20 @@ export 'package:final_project_iti/user/super_admin/features/add_item/presentatio
 export 'package:final_project_iti/user/super_admin/features/add_item/presentation/widgets/add_item_button.dart';
 export 'package:final_project_iti/user/super_admin/features/add_item/presentation/widgets/curriculum_item_list_view.dart';
 export 'package:final_project_iti/user/super_admin/features/add_item/presentation/widgets/curriculum_item_container.dart';
+//Main.dart file imports
+export 'package:final_project_iti/core/theme/theme_manager.dart';
+export 'package:final_project_iti/firebase_options.dart';
+export 'package:final_project_iti/l10n/app_localizations.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_cubit.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_state.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/manager/starred_questions/starred_questions_cubit.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_state.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
+export 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
+export 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
+export 'package:firebase_core/firebase_core.dart';
+export 'package:flutter_dotenv/flutter_dotenv.dart';
+export 'package:final_project_iti/core/bloc_observer/bloc_observer.dart';
+export 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
+export 'package:final_project_iti/core/functions/network/network.dart';

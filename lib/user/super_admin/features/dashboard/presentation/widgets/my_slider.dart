@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 
 import '../../../../../../core/routing/route_export.dart';
 

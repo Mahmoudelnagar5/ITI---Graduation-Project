@@ -1,5 +1,3 @@
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-
 import '../../../../../../core/routing/route_export.dart';
 
 class CustonAppBarAdmin extends StatelessWidget implements PreferredSizeWidget {

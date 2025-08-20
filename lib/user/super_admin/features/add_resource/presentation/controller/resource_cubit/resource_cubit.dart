@@ -1,8 +1,4 @@
-import 'package:final_project_iti/user/super_admin/features/add_resource/data/add_resource_repo.dart';
-import 'package:final_project_iti/user/super_admin/features/add_resource/data/models/resource_model.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'resource_state.dart';
-import 'package:uuid/uuid.dart';
+import 'package:final_project_iti/core/routing/route_export.dart';
 
 class ResourceCubit extends Cubit<ResourceState> {
   final AddResourceRepo repo;

@@ -1,9 +1,4 @@
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-
 import '../../../../../../core/routing/route_export.dart';
-import '../widgets/custom_app_bar_admin.dart';
-import '../widgets/my_slider.dart';
-import 'dashboard_view.dart';
 
 class SuperAdminView extends StatefulWidget {
   const SuperAdminView({super.key});

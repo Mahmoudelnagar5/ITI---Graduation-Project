@@ -46,3 +46,27 @@ export 'package:final_project_iti/user/student/features/home/data/models/track_m
 export 'package:final_project_iti/user/student/features/home/presentation/widgets/track_content_view_body.dart';
 export 'package:final_project_iti/user/student/features/home/presentation/widgets/custom_app_bar.dart';
 export 'package:final_project_iti/user/student/features/home/presentation/widgets/tracks_view_body.dart';
+
+export 'package:final_project_iti/user/super_admin/features/add_resource/data/add_resource_repo.dart';
+export 'package:final_project_iti/user/super_admin/features/add_resource/data/models/resource_model.dart';
+export 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/resource_cubit/resource_state.dart';
+export 'package:uuid/uuid.dart';
+export 'package:final_project_iti/user/super_admin/features/add_resource/presentation/widgets/add_resource_app_bar.dart';
+export 'package:final_project_iti/user/super_admin/features/add_resource/presentation/views/send_notification_view.dart';
+export 'package:final_project_iti/user/super_admin/features/add_resource/presentation/widgets/resource_title_and_description_section.dart';
+export 'package:final_project_iti/FirebaseApi.dart';
+export 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/dashboard_view.dart';
+export 'package:final_project_iti/user/super_admin/features/dashboard/presentation/widgets/custom_app_bar_admin.dart';
+export 'package:final_project_iti/user/super_admin/features/dashboard/presentation/widgets/my_slider.dart';
+export 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+export 'package:final_project_iti/user/super_admin/features/dashboard/presentation/widgets/girdview_active_track_item.dart';
+export 'package:final_project_iti/user/super_admin/features/dashboard/presentation/widgets/list_view_items_info.dart';
+export 'package:final_project_iti/user/super_admin/features/dashboard/presentation/widgets/quick_action_item.dart';
+export 'package:final_project_iti/user/student/features/home/data/repositories/home_repository.dart';
+export 'package:final_project_iti/user/super_admin/features/dashboard/presentation/widgets/active_track_item.dart';
+export 'package:final_project_iti/user/super_admin/features/add_item/presentation/widgets/add_item_app_bar.dart';
+export 'package:final_project_iti/user/super_admin/features/add_item/presentation/widgets/title_and_description_section.dart';
+export 'package:final_project_iti/user/super_admin/features/add_item/presentation/controller/add_item_cubit/add_item_cubit.dart';
+export 'package:final_project_iti/user/super_admin/features/add_item/presentation/widgets/add_item_button.dart';
+export 'package:final_project_iti/user/super_admin/features/add_item/presentation/widgets/curriculum_item_list_view.dart';
+export 'package:final_project_iti/user/super_admin/features/add_item/presentation/widgets/curriculum_item_container.dart';

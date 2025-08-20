@@ -7,7 +7,7 @@ import 'package:final_project_iti/user/student/features/home/presentation/views/
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/user/student/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:final_project_iti/user/super_admin/features/add_item/presentation/views/add_item_view.dart';
-import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/add_resource_view.dart';
+import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/views/add_resource_view.dart';
 import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:flutter/material.dart';
 

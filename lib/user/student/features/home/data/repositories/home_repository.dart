@@ -64,6 +64,10 @@ class HomeRepositoryImpl implements HomeRepository {
               .map((doc) => QuestionModel.fromFirestore(doc))
               .where((question) => question.answer.isNotEmpty)
               .toList();
+          return snapshot.docs
+              .map((doc) => QuestionModel.fromFirestore(doc))
+              .where((question) => question.answer.isNotEmpty)
+              .toList();
         });
 
     return StreamGroup.merge([askedQuestionsStream, questionsStream]);
@@ -101,7 +105,12 @@ class HomeRepositoryImpl implements HomeRepository {
         .map((snapshot) {
           return snapshot.docs
               .map((doc) => QuestionModel.fromFirestore(doc))
+              .map((doc) => QuestionModel.fromFirestore(doc))
               .where((question) {
+                return question.answer.isNotEmpty &&
+                    (question.title.toLowerCase().contains(lowercaseQuery) ||
+                        question.desc.toLowerCase().contains(lowercaseQuery) ||
+                        question.answer.toLowerCase().contains(lowercaseQuery));
                 return question.answer.isNotEmpty &&
                     (question.title.toLowerCase().contains(lowercaseQuery) ||
                         question.desc.toLowerCase().contains(lowercaseQuery) ||

@@ -20,10 +20,10 @@ class QuestionModel {
 
     return QuestionModel(
       id: doc.id,
-      title: data['title'],
-      desc: data['desc'],
-      answer: data['answer'],
-      createdAt: data['createdAt'],
+      title: (data['title'] ?? '').toString(),
+      desc: (data['desc'] ?? data['description'] ?? '').toString(),
+      answer: (data['answer'] ?? '').toString(),
+      createdAt: data['createdAt'] ?? Timestamp.now(),
     );
   }
 

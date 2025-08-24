@@ -1,5 +1,7 @@
+import 'package:final_project_iti/user/admin/features/admin_panel/presentation/views/manage_user_questions_view.dart';
 import 'package:final_project_iti/core/functions/transitions/page_route_builder_method.dart';
 import 'package:final_project_iti/user/admin/features/admin_panel/presentation/views/admin_panel_page.dart';
+import 'package:final_project_iti/user/admin/features/admin_panel/presentation/views/admin_dashboard_view.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_role_view.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_view.dart';
 import 'package:final_project_iti/user/student/features/forget_password/presentation/views/forgot_password_page.dart';
@@ -15,8 +17,20 @@ import '../../user/student/features/home/presentation/views/starred_questions_vi
 import '../../user/student/features/home/presentation/views/track_content_view.dart';
 
 class AppRouter {
-  static Route? generateRoute(RouteSettings settings) {
+  static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case '/manageUserQuestions':
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const ManageUserQuestionsView(),
+        );
+      case '/addFaqQuestion':
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const AdminPanelPage(),
+        );
       case AppRoutes.onboardingView:
         return pageRouteBuilderMethod(
           settings: settings,
@@ -53,7 +67,6 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const AdminPanelPage(),
         );
-
       case AppRoutes.superAdminPanel:
         return pageRouteBuilderMethod(
           settings: settings,
@@ -72,14 +85,12 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const AddItemView(),
         );
-
       case AppRoutes.addResourceView:
         return pageRouteBuilderMethod(
           settings: settings,
           pageBuilder: (context, animation, secondaryAnimation) =>
               AddResourceView(),
         );
-
       case AppRoutes.starredQuestionsView:
         return pageRouteBuilderMethod(
           settings: settings,
@@ -92,7 +103,12 @@ class AppRouter {
           pageBuilder: (context, animation, secondaryAnimation) =>
               const ChatAIView(),
         );
-
+      case '/adminDashboard':
+        return pageRouteBuilderMethod(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              const AdminDashboardView(),
+        );
       default:
         return pageRouteBuilderMethod(
           settings: settings,

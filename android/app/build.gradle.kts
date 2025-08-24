@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.example.final_project_iti"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = flutter.ndkVersion // ✅ صح بدل minSdkVersion
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true 
@@ -22,8 +22,8 @@ android {
 
     defaultConfig {
         applicationId = "com.example.final_project_iti"
-        minSdk = 23
-        targetSdk = flutter.targetSdkVersion
+        minSdk = flutter.minSdkVersion     // ✅ استخدم minSdk
+        targetSdk = flutter.targetSdkVersion  // ✅ استخدم targetSdk
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }

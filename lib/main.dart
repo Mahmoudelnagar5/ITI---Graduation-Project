@@ -14,7 +14,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // Initialize Firebase Messaging and Notifications
-  await FirebaseApi().initNotification();
+  // await FirebaseApi().initNotification();
   debugPrint('FirebaseApi initialized successfully.');
 
   await CacheHelper().init();

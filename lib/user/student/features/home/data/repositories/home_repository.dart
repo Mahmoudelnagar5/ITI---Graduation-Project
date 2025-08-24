@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project_iti/user/super_admin/features/add_resource/data/models/resource_model.dart';
 import '../models/question_model.dart';
 import '../models/track_model.dart';
+import 'package:async/async.dart';
 
 abstract class HomeRepository {
   Stream<List<TrackModel>> getTracksStream();
@@ -43,7 +44,7 @@ class HomeRepositoryImpl implements HomeRepository {
 
   @override
   Stream<List<QuestionModel>> getQuestionsStream() {
-    return _firestore
+    final askedQuestionsStream = _firestore
         .collection('askedQuestions')
         .orderBy('createdAt', descending: true)
         .snapshots()
@@ -53,6 +54,23 @@ class HomeRepositoryImpl implements HomeRepository {
               .where((question) => question.answer.isNotEmpty)
               .toList();
         });
+
+    final questionsStream = _firestore
+        .collection('questions')
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) {
+          return snapshot.docs
+              .map((doc) => QuestionModel.fromFirestore(doc))
+              .where((question) => question.answer.isNotEmpty)
+              .toList();
+          return snapshot.docs
+              .map((doc) => QuestionModel.fromFirestore(doc))
+              .where((question) => question.answer.isNotEmpty)
+              .toList();
+        });
+
+    return StreamGroup.merge([askedQuestionsStream, questionsStream]);
   }
 
   @override
@@ -63,7 +81,7 @@ class HomeRepositoryImpl implements HomeRepository {
 
     final lowercaseQuery = query.toLowerCase();
 
-    return _firestore
+    final askedQuestionsStream = _firestore
         .collection('askedQuestions')
         .orderBy('createdAt', descending: true)
         .snapshots()
@@ -78,6 +96,33 @@ class HomeRepositoryImpl implements HomeRepository {
               })
               .toList();
         });
+
+    // Stream من questions
+    final questionsStream = _firestore
+        .collection('questions')
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) {
+          return snapshot.docs
+              .map((doc) => QuestionModel.fromFirestore(doc))
+              .map((doc) => QuestionModel.fromFirestore(doc))
+              .where((question) {
+                return question.answer.isNotEmpty &&
+                    (question.title.toLowerCase().contains(lowercaseQuery) ||
+                        question.desc.toLowerCase().contains(lowercaseQuery) ||
+                        question.answer.toLowerCase().contains(lowercaseQuery));
+                return question.answer.isNotEmpty &&
+                    (question.title.toLowerCase().contains(lowercaseQuery) ||
+                        question.desc.toLowerCase().contains(lowercaseQuery) ||
+                        question.answer.toLowerCase().contains(lowercaseQuery));
+              })
+              .toList();
+        });
+
+    return StreamGroup.merge([
+      askedQuestionsStream,
+      questionsStream,
+    ]).map((list) => list.toList());
   }
 
   @override

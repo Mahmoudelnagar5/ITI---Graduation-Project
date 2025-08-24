@@ -46,4 +46,8 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+# Firebase service account key
+assets/service_account.json
+
+# Environment variables
 .env

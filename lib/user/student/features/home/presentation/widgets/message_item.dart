@@ -1,5 +1,5 @@
-import '../../../../../../../core/routing/route_export.dart';
-import '../../../data/models/message_model.dart';
+import '../../../../../../core/routing/route_export.dart';
+import '../../data/models/message_model.dart';
 
 class MessageItem extends StatelessWidget {
   const MessageItem({super.key, required this.message});

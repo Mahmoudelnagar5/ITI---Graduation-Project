@@ -18,6 +18,7 @@ dependencies:
   equatable: ^2.0.5
   file_picker: ^10.3.1
   firebase_core: ^4.0.0
+  firebase_messaging: ^16.0.0
   floating_draggable_widget: ^2.3.0
   flutter:
     sdk: flutter
@@ -27,6 +28,7 @@ dependencies:
   flutter_dotenv: ^5.2.1
   flutter_gemini: ^3.0.0
   flutter_launcher_icons: ^0.14.4
+  flutter_local_notifications: ^17.2.3
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.4.6
@@ -34,6 +36,8 @@ dependencies:
   flutter_slider_drawer: ^3.0.2
   flutter_svg: ^2.2.0
   gap: ^3.0.1
+  googleapis_auth: ^1.4.1
+  http: ^1.2.1
   image_picker: ^1.1.2
   intl: ^0.20.2
   path_provider: ^2.1.5
@@ -57,6 +61,7 @@ flutter:
   assets:
     - assets/images/
     - .env
+    - assets/service_account.json
 
   fonts:
     - family: Inter

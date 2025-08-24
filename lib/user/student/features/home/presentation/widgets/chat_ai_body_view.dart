@@ -1,5 +1,5 @@
-import '../../../../../../../core/routing/route_export.dart';
-import '../../manager/chat_ai/chat_ai_cubit.dart';
+import '../../../../../../core/routing/route_export.dart';
+import '../manager/chat_ai/chat_ai_cubit.dart';
 import 'messages_list_view.dart';
 import 'no_message_widget.dart';
 

@@ -1,21 +1,6 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:final_project_iti/core/bloc_observer/bloc_observer.dart';
-import 'package:final_project_iti/core/helper/cashe_helper/cashe_helper.dart';
-import 'package:final_project_iti/core/functions/network/network.dart';
+export 'package:device_preview/device_preview.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/core/theme/theme_manager.dart';
-import 'package:final_project_iti/firebase_options.dart';
-import 'package:final_project_iti/l10n/app_localizations.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_cubit.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_state.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/manager/starred_questions/starred_questions_cubit.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_state.dart';
-import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
-import 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
-import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:final_project_iti/main.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +11,11 @@ void main() async {
     debugPrint('Warning: Could not load .env file: $e');
   }
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // Initialize Firebase Messaging and Notifications
+  await FirebaseApi().initNotification();
+  debugPrint('FirebaseApi initialized successfully.');
+
   await CacheHelper().init();
   Bloc.observer = AppBlocObserver();
   runApp(DevicePreview(enabled: false, builder: (context) => const MyApp()));
@@ -69,7 +59,7 @@ class MyApp extends StatelessWidget {
                     themeMode: AppCubit.get(context).getTheme(),
                     onGenerateRoute: AppRouter.generateRoute,
                     initialRoute: initalRouteMethod(),
-                    home: const MainView(),
+                    home: const SplashView(),
                   );
                 },
               );

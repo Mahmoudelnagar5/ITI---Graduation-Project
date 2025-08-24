@@ -1,4 +1,4 @@
-import '../../../../../../../core/routing/route_export.dart';
+import '../../../../../../core/routing/route_export.dart';
 import 'gradient_text.dart';
 
 class WelcomeText extends StatelessWidget {

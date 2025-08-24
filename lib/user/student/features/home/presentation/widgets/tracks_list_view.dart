@@ -1,17 +1,15 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/home/data/models/question_model.dart';
+import 'package:final_project_iti/user/student/features/home/data/repositories/home_repository.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/widgets/track_item.dart';
 
-import '../../../data/repositories/home_repository.dart';
-import 'question_item.dart';
-
-class QuestionListView extends StatefulWidget {
-  const QuestionListView({super.key});
+class TracksListView extends StatefulWidget {
+  const TracksListView({super.key});
 
   @override
-  State<QuestionListView> createState() => QuestionListViewState();
+  State<TracksListView> createState() => TracksListViewState();
 }
 
-class QuestionListViewState extends State<QuestionListView> {
+class TracksListViewState extends State<TracksListView> {
   String _searchQuery = '';
   final HomeRepositoryImpl _repository = HomeRepositoryImpl();
 
@@ -23,12 +21,13 @@ class QuestionListViewState extends State<QuestionListView> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<List<QuestionModel>>(
-      stream: _repository.searchQuestions(_searchQuery),
+    return StreamBuilder<List<TrackModel>>(
+      stream: _repository.searchTracks(_searchQuery),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         }
+
         if (snapshot.hasError) {
           return Center(
             child: Column(
@@ -41,7 +40,7 @@ class QuestionListViewState extends State<QuestionListView> {
                 ),
                 Gap(16.h),
                 Text(
-                  'Error loading questions',
+                  'Error loading tracks',
                   style: AppTextStyles.textStyleMedium14.copyWith(
                     color: AppColors.lightHintTextField,
                   ),
@@ -60,29 +59,34 @@ class QuestionListViewState extends State<QuestionListView> {
           );
         }
 
-        final questions = snapshot.data ?? [];
-        debugPrint(questions.length.toString());
+        final tracks = snapshot.data ?? [];
 
-        if (questions.isEmpty && _searchQuery.isNotEmpty) {
+        if (tracks.isEmpty) {
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.search_off,
+                  _searchQuery.trim().isEmpty
+                      ? Icons.inbox_outlined
+                      : Icons.search_off,
                   size: 64.r,
                   color: AppColors.lightHintTextField,
                 ),
                 Gap(16.h),
                 Text(
-                  'No questions found',
+                  _searchQuery.trim().isEmpty
+                      ? 'No tracks available'
+                      : 'No tracks found',
                   style: AppTextStyles.textStyleMedium14.copyWith(
                     color: AppColors.lightHintTextField,
                   ),
                 ),
                 Gap(8.h),
                 Text(
-                  'Try searching with different keywords',
+                  _searchQuery.trim().isEmpty
+                      ? 'No tracks have been added yet.\nCheck back later or contact admin.'
+                      : 'Try searching with different keywords',
                   style: AppTextStyles.textStyleRegular12.copyWith(
                     color: AppColors.lightHintTextField,
                   ),
@@ -94,11 +98,12 @@ class QuestionListViewState extends State<QuestionListView> {
         }
 
         return ListView.builder(
-          itemCount: questions.length,
+          physics: const BouncingScrollPhysics(),
+          itemCount: tracks.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: QuestionItem(questionModel: questions[index]),
+              padding: EdgeInsets.only(bottom: 16.h),
+              child: TrackItem(trackModel: tracks[index]),
             );
           },
         );

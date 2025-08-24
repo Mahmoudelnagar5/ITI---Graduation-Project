@@ -1,5 +1,5 @@
-import '../../../../../../../core/routing/route_export.dart';
-import '../../../data/models/message_model.dart';
+import '../../../../../../core/routing/route_export.dart';
+import '../../data/models/message_model.dart';
 import 'message_item.dart';
 
 class MessagesListView extends StatefulWidget {

@@ -1,13 +1,13 @@
 import 'package:final_project_iti/core/functions/transitions/page_route_builder_method.dart';
-import 'package:final_project_iti/user/admin/features/admin_panel/presentation/pages/admin_panel_page.dart';
+import 'package:final_project_iti/user/admin/features/admin_panel/presentation/views/admin_panel_page.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_role_view.dart';
 import 'package:final_project_iti/user/student/features/Auth/presentation/views/auth_view.dart';
-import 'package:final_project_iti/user/student/features/forget_password/presentation/pages/forgot_password_page.dart';
+import 'package:final_project_iti/user/student/features/forget_password/presentation/views/forgot_password_page.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/chat_ai.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
 import 'package:final_project_iti/user/student/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:final_project_iti/user/super_admin/features/add_item/presentation/views/add_item_view.dart';
-import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/controller/views/add_resource_view.dart';
+import 'package:final_project_iti/user/super_admin/features/add_resource/presentation/views/add_resource_view.dart';
 import 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';
 import 'package:flutter/material.dart';
 

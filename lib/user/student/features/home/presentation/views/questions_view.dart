@@ -43,8 +43,8 @@ class QuestionsView extends StatelessWidget {
               );
             }
           },
-          child: const Icon(Icons.add, color: Colors.white),
           tooltip: AppLocalizations.of(context)!.addQuestion ?? 'Add Question',
+          child: const Icon(Icons.add, color: Colors.white),
         ),
       ),
     );

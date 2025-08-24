@@ -1,6 +1,7 @@
 export 'package:device_preview/device_preview.dart';
 import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:final_project_iti/main.dart';
+import 'package:final_project_iti/user/admin/features/admin_panel/presentation/views/admin_dashboard_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

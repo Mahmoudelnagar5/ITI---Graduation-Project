@@ -53,6 +53,7 @@ abstract class AppTextStyles {
   static TextStyle textStyleMedium20 = TextStyle(
     fontWeight: AppFontWeight.medium,
     fontSize: 20.sp,
+    color: Colors.black,
   );
   // semiBold - 600
   static TextStyle textStyleSemiBold18 = TextStyle(

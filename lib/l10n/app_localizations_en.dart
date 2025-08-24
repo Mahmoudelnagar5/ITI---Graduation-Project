@@ -89,4 +89,58 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get systemAdministratorsAndManagers =>
       'System administrators and managers';
+
+  @override
+  String get addQuestion => 'Add Question';
+
+  @override
+  String get questionSubmittedSuccessfully => 'Question submitted successfully';
+
+  @override
+  String get errorSubmittingQuestion => 'Error submitting question';
+
+  @override
+  String get questionTitle => 'Title';
+
+  @override
+  String get questionTitleHint => 'Enter question title';
+
+  @override
+  String get questionDescription => 'Description';
+
+  @override
+  String get questionDescriptionHint => 'Enter question description';
+
+  @override
+  String get requiredField => 'This field is required';
+
+  @override
+  String get save => 'Send Question';
+
+  @override
+  String get adminDashboard => 'Admin Dashboard';
+
+  @override
+  String get addNewQuestion => 'Add New Question';
+
+  @override
+  String get manageUserQuestions => 'Manage User Questions';
+
+  @override
+  String get pendingQuestions => 'Pending Questions';
+
+  @override
+  String get answeredQuestions => 'Answered Questions';
+
+  @override
+  String get answerSubmittedSuccessfully => 'Answer submitted successfully';
+
+  @override
+  String get answerQuestion => 'Answer Question';
+
+  @override
+  String get answerHint => 'Enter your answer';
+
+  @override
+  String get submitAnswer => 'Submit Answer';
 }

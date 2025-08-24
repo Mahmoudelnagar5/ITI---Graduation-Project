@@ -8,7 +8,6 @@ plugins {
 android {
     namespace = "com.example.final_project_iti"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
     ndkVersion = flutter.ndkVersion // ✅ صح بدل minSdkVersion
 
     compileOptions {
@@ -23,9 +22,6 @@ android {
 
     defaultConfig {
         applicationId = "com.example.final_project_iti"
-        minSdk = 23
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
         minSdk = flutter.minSdkVersion     // ✅ استخدم minSdk
         targetSdk = flutter.targetSdkVersion  // ✅ استخدم targetSdk
         versionCode = flutter.versionCode

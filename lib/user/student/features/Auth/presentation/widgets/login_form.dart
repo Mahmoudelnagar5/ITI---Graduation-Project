@@ -20,7 +20,7 @@ class _LoginFormState extends State<LoginForm> {
           if (state.role == 'admin') {
             AppNavigation.pushAndRemoveUntil(
               context: context,
-              route: AppRoutes.adminPanel,
+              route: '/adminDashboard',
             );
           } else {
             AppNavigation.pushAndRemoveUntil(

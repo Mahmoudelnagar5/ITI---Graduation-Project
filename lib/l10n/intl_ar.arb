@@ -33,5 +33,14 @@
   "questionDescription": "وصف السؤال",
   "questionDescriptionHint": "أدخل وصف السؤال",
   "requiredField": "هذا الحقل مطلوب",
-  "save": "إرسال السؤال"
+  "save": "إرسال السؤال",
+  "adminDashboard": "لوحة تحكم المسؤول",
+  "addNewQuestion": "إضافة سؤال جديد",
+  "manageUserQuestions": "إدارة أسئلة المستخدمين",
+  "pendingQuestions": "الأسئلة المعلقة",
+  "answeredQuestions": "الأسئلة المجابة",
+  "answerSubmittedSuccessfully": "تم إرسال الإجابة بنجاح",
+  "answerQuestion": "إجابة السؤال",
+  "answerHint": "أدخل الإجابة هنا",
+  "submitAnswer": "إرسال الإجابة"
 }

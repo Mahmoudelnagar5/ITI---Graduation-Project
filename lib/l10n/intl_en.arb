@@ -33,5 +33,14 @@
   "questionDescription": "Description",
   "questionDescriptionHint": "Enter question description",
   "requiredField": "This field is required",
-  "save": "Send Question"
+  "save": "Send Question",
+  "adminDashboard": "Admin Dashboard",
+  "addNewQuestion": "Add New Question",
+  "manageUserQuestions": "Manage User Questions",
+  "pendingQuestions": "Pending Questions",
+  "answeredQuestions": "Answered Questions",
+  "answerSubmittedSuccessfully": "Answer submitted successfully",
+  "answerQuestion": "Answer Question",
+  "answerHint": "Enter your answer",
+  "submitAnswer": "Submit Answer"
 }

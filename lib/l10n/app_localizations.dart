@@ -307,6 +307,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send Question'**
   String get save;
+
+  /// No description provided for @adminDashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin Dashboard'**
+  String get adminDashboard;
+
+  /// No description provided for @addNewQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Question'**
+  String get addNewQuestion;
+
+  /// No description provided for @manageUserQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage User Questions'**
+  String get manageUserQuestions;
+
+  /// No description provided for @pendingQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending Questions'**
+  String get pendingQuestions;
+
+  /// No description provided for @answeredQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Answered Questions'**
+  String get answeredQuestions;
+
+  /// No description provided for @answerSubmittedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer submitted successfully'**
+  String get answerSubmittedSuccessfully;
+
+  /// No description provided for @answerQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Answer Question'**
+  String get answerQuestion;
+
+  /// No description provided for @answerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your answer'**
+  String get answerHint;
+
+  /// No description provided for @submitAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit Answer'**
+  String get submitAnswer;
 }
 
 class _AppLocalizationsDelegate

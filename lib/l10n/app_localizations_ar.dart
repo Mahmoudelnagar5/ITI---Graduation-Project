@@ -115,4 +115,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get save => 'إرسال السؤال';
+
+  @override
+  String get adminDashboard => 'لوحة تحكم المسؤول';
+
+  @override
+  String get addNewQuestion => 'إضافة سؤال جديد';
+
+  @override
+  String get manageUserQuestions => 'إدارة أسئلة المستخدمين';
+
+  @override
+  String get pendingQuestions => 'الأسئلة المعلقة';
+
+  @override
+  String get answeredQuestions => 'الأسئلة المجابة';
+
+  @override
+  String get answerSubmittedSuccessfully => 'تم إرسال الإجابة بنجاح';
+
+  @override
+  String get answerQuestion => 'إجابة السؤال';
+
+  @override
+  String get answerHint => 'أدخل الإجابة هنا';
+
+  @override
+  String get submitAnswer => 'إرسال الإجابة';
 }

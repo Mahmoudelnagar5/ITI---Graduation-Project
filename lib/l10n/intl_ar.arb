@@ -24,5 +24,14 @@
   "selectYourRoleToProceedToLogin": "اختر دورك للمتابعة إلى تسجيل الدخول",
   "studentsAndCourseParticipants": "الطلاب والمشاركون في الدورات",
   "courseInstructorsAndStaffMembers": "مدربو الدورات وأعضاء هيئة التدريس",
-  "systemAdministratorsAndManagers": "مديرو النظام والمسؤولون"
+  "systemAdministratorsAndManagers": "مديرو النظام والمسؤولون",
+  "addQuestion": "إضافة سؤال",
+  "questionSubmittedSuccessfully": "تم إرسال السؤال بنجاح",
+  "errorSubmittingQuestion": "حدث خطأ أثناء إرسال السؤال",
+  "questionTitle": "عنوان السؤال",
+  "questionTitleHint": "أدخل عنوان السؤال",
+  "questionDescription": "وصف السؤال",
+  "questionDescriptionHint": "أدخل وصف السؤال",
+  "requiredField": "هذا الحقل مطلوب",
+  "save": "إرسال السؤال"
 }

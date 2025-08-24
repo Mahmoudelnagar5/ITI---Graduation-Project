@@ -88,4 +88,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get systemAdministratorsAndManagers => 'مديرو النظام والمسؤولون';
+
+  @override
+  String get addQuestion => 'إضافة سؤال';
+
+  @override
+  String get questionSubmittedSuccessfully => 'تم إرسال السؤال بنجاح';
+
+  @override
+  String get errorSubmittingQuestion => 'حدث خطأ أثناء إرسال السؤال';
+
+  @override
+  String get questionTitle => 'عنوان السؤال';
+
+  @override
+  String get questionTitleHint => 'أدخل عنوان السؤال';
+
+  @override
+  String get questionDescription => 'وصف السؤال';
+
+  @override
+  String get questionDescriptionHint => 'أدخل وصف السؤال';
+
+  @override
+  String get requiredField => 'هذا الحقل مطلوب';
+
+  @override
+  String get save => 'إرسال السؤال';
 }

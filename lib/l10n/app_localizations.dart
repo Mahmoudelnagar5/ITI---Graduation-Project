@@ -253,6 +253,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'System administrators and managers'**
   String get systemAdministratorsAndManagers;
+
+  /// No description provided for @addQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Question'**
+  String get addQuestion;
+
+  /// No description provided for @questionSubmittedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Question submitted successfully'**
+  String get questionSubmittedSuccessfully;
+
+  /// No description provided for @errorSubmittingQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Error submitting question'**
+  String get errorSubmittingQuestion;
+
+  /// No description provided for @questionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get questionTitle;
+
+  /// No description provided for @questionTitleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter question title'**
+  String get questionTitleHint;
+
+  /// No description provided for @questionDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get questionDescription;
+
+  /// No description provided for @questionDescriptionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter question description'**
+  String get questionDescriptionHint;
+
+  /// No description provided for @requiredField.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get requiredField;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Question'**
+  String get save;
 }
 
 class _AppLocalizationsDelegate

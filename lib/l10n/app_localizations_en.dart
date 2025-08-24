@@ -89,4 +89,31 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get systemAdministratorsAndManagers =>
       'System administrators and managers';
+
+  @override
+  String get addQuestion => 'Add Question';
+
+  @override
+  String get questionSubmittedSuccessfully => 'Question submitted successfully';
+
+  @override
+  String get errorSubmittingQuestion => 'Error submitting question';
+
+  @override
+  String get questionTitle => 'Title';
+
+  @override
+  String get questionTitleHint => 'Enter question title';
+
+  @override
+  String get questionDescription => 'Description';
+
+  @override
+  String get questionDescriptionHint => 'Enter question description';
+
+  @override
+  String get requiredField => 'This field is required';
+
+  @override
+  String get save => 'Send Question';
 }

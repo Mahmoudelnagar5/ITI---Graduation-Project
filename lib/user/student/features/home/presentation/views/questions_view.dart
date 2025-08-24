@@ -1,5 +1,7 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/core/utilities/styles_manager.dart';
 import 'package:final_project_iti/l10n/app_localizations.dart';
+import 'package:final_project_iti/user/student/features/home/presentation/views/add_question_view.dart';
 
 class QuestionsView extends StatelessWidget {
   const QuestionsView({super.key});
@@ -12,7 +14,6 @@ class QuestionsView extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         title: Text(
           AppLocalizations.of(context)!.commonQuestions,
-
           style: AppTextStyles.textStyleMedium20.copyWith(
             color: Theme.of(context).colorScheme.onSurface,
           ),
@@ -22,6 +23,30 @@ class QuestionsView extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       body: const QuestionsViewBody(),
+      floatingActionButton: Builder(
+        builder: (context) => FloatingActionButton(
+          backgroundColor: AppColors.mainColorStart,
+          onPressed: () async {
+            final result = await Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (_) => const AddQuestionView()));
+            if (result == true) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    AppLocalizations.of(
+                          context,
+                        )!.questionSubmittedSuccessfully ??
+                        'Question submitted successfully',
+                  ),
+                ),
+              );
+            }
+          },
+          child: const Icon(Icons.add, color: Colors.white),
+          tooltip: AppLocalizations.of(context)!.addQuestion ?? 'Add Question',
+        ),
+      ),
     );
   }
 }

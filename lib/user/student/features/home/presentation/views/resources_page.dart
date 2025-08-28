@@ -34,40 +34,6 @@ class _ResourcesPageState extends State<ResourcesPage> {
           AppLocalizations.of(context)!.itiLearningResources,
           style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
         ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.filter_list,
-              size: 22.sp,
-              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
-            ),
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(16.r),
-                  ),
-                ),
-                builder: (context) {
-                  return ListView(
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.all(16),
-                    children: tracks.map((track) {
-                      return ListTile(
-                        title: Text(track),
-                        onTap: () {
-                          debugPrint("Selected track: $track");
-                          Navigator.pop(context);
-                        },
-                      );
-                    }).toList(),
-                  );
-                },
-              );
-            },
-          ),
-        ],
         backgroundColor: Theme.of(context).colorScheme.background,
       ),
       body: SafeArea(

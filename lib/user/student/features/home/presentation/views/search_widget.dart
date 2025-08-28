@@ -28,19 +28,9 @@ class _SearchWidgetState extends State<SearchWidget> {
     return Container(
       height: 50.h,
       padding: const EdgeInsets.symmetric(horizontal: 12),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.surface,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: theme.colorScheme.outline),
-      ),
+
       child: Row(
         children: [
-          Icon(
-            Icons.search,
-            size: 20,
-            color: theme.colorScheme.onSurface.withOpacity(0.6),
-          ),
-          const SizedBox(width: 10),
           Expanded(
             child: TextField(
               controller: _searchController,
@@ -51,6 +41,11 @@ class _SearchWidgetState extends State<SearchWidget> {
               ),
               cursorColor: theme.colorScheme.primary,
               decoration: InputDecoration(
+                prefixIcon: Icon(
+                  Icons.search,
+                  size: 20,
+                  color: theme.colorScheme.onSurface.withOpacity(0.6),
+                ),
                 isCollapsed: true,
                 hintText: widget.hintText,
                 hintStyle: TextStyle(

@@ -8,7 +8,7 @@ class AuthView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 1,
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         body: SafeArea(
@@ -33,7 +33,7 @@ class AuthView extends StatelessWidget {
                 child: TabBar(
                   tabs: const [
                     TabTextWidget(text: 'Login'),
-                    TabTextWidget(text: 'Register'),
+                    // TabTextWidget(text: 'Register'),
                   ],
 
                   indicatorColor: Theme.of(context).colorScheme.primary,
@@ -50,10 +50,10 @@ class AuthView extends StatelessWidget {
                           LoginCubit(LoginRepoImpl()),
                       child: const LoginForm(),
                     ),
-                    BlocProvider(
-                      create: (BuildContext context) => RegisterCubit(),
-                      child: const RegisterForm(),
-                    ),
+                    // BlocProvider(
+                    //   create: (BuildContext context) => RegisterCubit(),
+                    //   child: const RegisterForm(),
+                    // ),
                   ],
                 ),
               ),

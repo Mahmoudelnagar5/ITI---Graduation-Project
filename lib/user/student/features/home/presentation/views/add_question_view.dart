@@ -48,8 +48,13 @@ class _AddQuestionViewState extends State<AddQuestionView> {
     final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: Text(loc.addQuestion, style: AppTextStyles.textStyleMedium20),
-        backgroundColor: Colors.transparent,
+        title: Text(
+          loc.addQuestion,
+          style: AppTextStyles.textStyleMedium20.copyWith(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.surface,
         elevation: 0,
       ),
       body: Padding(
@@ -66,11 +71,23 @@ class _AddQuestionViewState extends State<AddQuestionView> {
                 decoration: InputDecoration(
                   hintText: loc.questionTitleHint,
                   filled: true,
-                  fillColor: AppColors.lightSearchFillColor,
+                  fillColor: Theme.of(context).colorScheme.surface,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.lightUnfocusedTextFieldBorder,
+                    borderSide: BorderSide(
+                      color: Theme.of(context).colorScheme.outline,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      color: Theme.of(context).colorScheme.outline,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -89,11 +106,23 @@ class _AddQuestionViewState extends State<AddQuestionView> {
                 decoration: InputDecoration(
                   hintText: loc.questionDescriptionHint,
                   filled: true,
-                  fillColor: AppColors.lightSearchFillColor,
+                  fillColor: Theme.of(context).colorScheme.surface,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.lightUnfocusedTextFieldBorder,
+                    borderSide: BorderSide(
+                      color: Theme.of(context).colorScheme.outline,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      color: Theme.of(context).colorScheme.outline,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -112,7 +141,7 @@ class _AddQuestionViewState extends State<AddQuestionView> {
                   child: _isLoading
                       ? const CircularProgressIndicator()
                       : Text(
-                          loc.save ?? 'Save',
+                          loc.save,
                           style: AppTextStyles.textStyleMedium16.copyWith(
                             color: Colors.white,
                           ),

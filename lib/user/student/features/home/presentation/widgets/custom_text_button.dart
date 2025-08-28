@@ -1,5 +1,3 @@
-import 'package:final_project_iti/l10n/app_localizations.dart';
-
 import '../../../../../../core/routing/route_export.dart';
 
 class CustomTextButtom extends StatelessWidget {

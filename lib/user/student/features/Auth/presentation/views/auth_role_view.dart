@@ -1,5 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/l10n/app_localizations.dart';
 
 class AuthRoleView extends StatelessWidget {
   const AuthRoleView({super.key});

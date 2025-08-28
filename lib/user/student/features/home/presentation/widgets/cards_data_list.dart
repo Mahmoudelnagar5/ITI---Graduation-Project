@@ -101,7 +101,7 @@ class CardsListState extends State<CardsList> {
                 subtitle: resources[index].description,
                 meta: resources[index].type != "Article (Link)"
                     ? '${resources[index].type}• 2.5 hours'
-                    : '${resources[index].type}',
+                    : resources[index].type,
                 actionLabel: resources[index].type == "Article (Link)"
                     ? 'View'
                     : 'open',

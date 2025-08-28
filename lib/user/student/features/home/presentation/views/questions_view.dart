@@ -1,6 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/core/utilities/styles_manager.dart';
-import 'package:final_project_iti/l10n/app_localizations.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/views/add_question_view.dart';
 
 class QuestionsView extends StatelessWidget {

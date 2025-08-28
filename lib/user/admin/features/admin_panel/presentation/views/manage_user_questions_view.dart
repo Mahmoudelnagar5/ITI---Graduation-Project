@@ -49,7 +49,7 @@ class _ManageUserQuestionsViewState extends State<ManageUserQuestionsView>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
+        children: const [
           _QuestionsList(pending: true),
           _QuestionsList(pending: false),
         ],
@@ -78,7 +78,7 @@ class _QuestionsList extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
         if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-          return Center(child: Text('No questions found'));
+          return const Center(child: Text('No questions found'));
         }
         final docs = snapshot.data!.docs;
         return ListView.builder(
@@ -99,7 +99,7 @@ class _QuestionsList extends StatelessWidget {
                     if (!pending && answer != null) ...[
                       const SizedBox(height: 8),
                       Text(
-                        'Answer: \\${answer}',
+                        'Answer: \\$answer',
                         style: AppTextStyles.textStyleRegular14,
                       ),
                     ],
@@ -171,7 +171,7 @@ class _AnswerQuestionViewState extends State<AnswerQuestionView> {
     } catch (e) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(SnackBar(content: Text('Error submitting answer')));
+      ).showSnackBar(const SnackBar(content: Text('Error submitting answer')));
     } finally {
       setState(() => _isLoading = false);
     }
@@ -206,7 +206,7 @@ class _AnswerQuestionViewState extends State<AnswerQuestionView> {
                 fillColor: AppColors.lightSearchFillColor,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: AppColors.lightUnfocusedTextFieldBorder,
                   ),
                 ),

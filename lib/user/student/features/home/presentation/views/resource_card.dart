@@ -14,7 +14,7 @@ class ResourceCard extends StatelessWidget {
   final String urlPath;
 
   const ResourceCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.meta,
@@ -22,7 +22,7 @@ class ResourceCard extends StatelessWidget {
     required this.type,
     required this.actionType,
     required this.urlPath,
-  }) : super(key: key);
+  });
 
   IconData _actionIcon(type) {
     switch (type) {
@@ -77,7 +77,9 @@ class ResourceCard extends StatelessWidget {
                 Row(
                   children: [
                     Icon(
-                    type=="Article (Link)"? Icons.picture_as_pdf:Icons.video_library_outlined,
+                      type == "Article (Link)"
+                          ? Icons.picture_as_pdf
+                          : Icons.video_library_outlined,
                       size: 16.sp,
                       color: Theme.of(
                         context,

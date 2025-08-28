@@ -1,5 +1,4 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/home/data/repositories/home_repository.dart';
 import 'package:final_project_iti/user/student/features/home/presentation/widgets/track_item.dart';
 
 class TracksListView extends StatefulWidget {

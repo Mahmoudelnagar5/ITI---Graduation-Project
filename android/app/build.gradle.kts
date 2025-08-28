@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.example.final_project_iti"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion // ✅ صح بدل minSdkVersion
+    ndkVersion = "27.0.12077973" // Updated to match plugin requirements
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true 
@@ -22,7 +22,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.final_project_iti"
-        minSdk = flutter.minSdkVersion     // ✅ استخدم minSdk
+        minSdk = 23     // Updated to 23 to satisfy cloud_firestore requirement
         targetSdk = flutter.targetSdkVersion  // ✅ استخدم targetSdk
         versionCode = flutter.versionCode
         versionName = flutter.versionName

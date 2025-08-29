@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../user/student/features/home/presentation/manager/theme/app_cubit.dart';
-import '../../user/student/features/home/presentation/manager/theme/app_state.dart';
+import '../../user/student/features/home/presentation/manager/app/app_cubit.dart';
+import '../../user/student/features/home/presentation/manager/app/app_state.dart';
 
 class ThemeToggleWidget extends StatelessWidget {
   const ThemeToggleWidget({super.key});

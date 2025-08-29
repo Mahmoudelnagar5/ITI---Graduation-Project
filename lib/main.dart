@@ -31,37 +31,29 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AppCubit()),
-        BlocProvider(create: (context) => LocalizationCubit()),
         BlocProvider(create: (context) => StarredQuestionsCubit()),
       ],
-      child: BlocBuilder<LocalizationCubit, LocalizationState>(
-        builder: (context, state) {
-          return ScreenUtilInit(
-            designSize: const Size(390, 844),
-            minTextAdapt: true,
+      child: ScreenUtilInit(
+        designSize: const Size(390, 844),
+        minTextAdapt: true,
 
-            // splitScreenMode: true,
-            builder: (context, child) {
-              return BlocBuilder<AppCubit, AppState>(
-                builder: (context, state) {
-                  return MaterialApp(
-                    locale: Locale(
-                      LocalizationCubit.get(context).getLanguage(),
-                    ),
-                    supportedLocales: AppLocalizations.supportedLocales,
-                    localizationsDelegates:
-                        AppLocalizations.localizationsDelegates,
-                    debugShowCheckedModeBanner: false,
-                    theme: ThemeManager.getLightTheme(),
-                    darkTheme: ThemeManager.getDarkTheme(),
-                    themeAnimationCurve: Curves.fastOutSlowIn,
-                    themeAnimationDuration: const Duration(milliseconds: 2000),
-                    themeMode: AppCubit.get(context).getTheme(),
-                    onGenerateRoute: AppRouter.generateRoute,
-                    initialRoute: initalRouteMethod(),
-                    home: const SplashView(),
-                  );
-                },
+        // splitScreenMode: true,
+        builder: (context, child) {
+          return BlocBuilder<AppCubit, AppState>(
+            builder: (context, state) {
+              return MaterialApp(
+                locale: Locale(AppCubit.get(context).getLanguage()),
+                supportedLocales: AppLocalizations.supportedLocales,
+                localizationsDelegates: AppLocalizations.localizationsDelegates,
+                debugShowCheckedModeBanner: false,
+                theme: ThemeManager.getLightTheme(),
+                darkTheme: ThemeManager.getDarkTheme(),
+                themeAnimationCurve: Curves.fastOutSlowIn,
+                themeAnimationDuration: const Duration(milliseconds: 300),
+                themeMode: AppCubit.get(context).getTheme(),
+                onGenerateRoute: AppRouter.generateRoute,
+                initialRoute: initalRouteMethod(),
+                home: const SplashView(),
               );
             },
           );

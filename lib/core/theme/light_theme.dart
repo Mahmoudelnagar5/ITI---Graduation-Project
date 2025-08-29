@@ -21,9 +21,10 @@ class LightTheme {
       onBackground: AppColors.lightHomeUserTitle,
       onError: AppColors.white,
     ),
-
+    shadowColor: const Color(0xffFFFFFF),
     // AppBar Theme
     appBarTheme: AppBarTheme(
+      shadowColor: const Color(0xffFFFFFF),
       backgroundColor: AppColors.lightBackAppBar,
       foregroundColor: AppColors.white,
       elevation: 0,

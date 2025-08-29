@@ -22,7 +22,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addNewQuestion": MessageLookupByLibrary.simpleMessage("إضافة سؤال جديد"),
+    "addQuestion": MessageLookupByLibrary.simpleMessage("إضافة سؤال"),
     "admin": MessageLookupByLibrary.simpleMessage("مسؤول"),
+    "adminDashboard": MessageLookupByLibrary.simpleMessage("لوحة تحكم المسؤول"),
+    "answerHint": MessageLookupByLibrary.simpleMessage("أدخل الإجابة هنا"),
+    "answerQuestion": MessageLookupByLibrary.simpleMessage("إجابة السؤال"),
+    "answerSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال الإجابة بنجاح",
+    ),
+    "answeredQuestions": MessageLookupByLibrary.simpleMessage(
+      "الأسئلة المجابة",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage(
       "معهد تكنولوجيا المعلومات",
     ),
@@ -32,6 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "مدربو الدورات وأعضاء هيئة التدريس",
     ),
     "editProfile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
+    "errorSubmittingQuestion": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء إرسال السؤال",
+    ),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "itiFayoum": MessageLookupByLibrary.simpleMessage(
       "معهد تكنولوجيا المعلومات - الفيوم",
@@ -43,12 +57,29 @@ class MessageLookup extends MessageLookupByLibrary {
       "المسارات التعليمية",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "manageUserQuestions": MessageLookupByLibrary.simpleMessage(
+      "إدارة أسئلة المستخدمين",
+    ),
+    "pendingQuestions": MessageLookupByLibrary.simpleMessage("الأسئلة المعلقة"),
     "pleaseSelectYourAccountType": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار نوع الحساب",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "questionDescription": MessageLookupByLibrary.simpleMessage("وصف السؤال"),
+    "questionDescriptionHint": MessageLookupByLibrary.simpleMessage(
+      "أدخل وصف السؤال",
+    ),
+    "questionSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال السؤال بنجاح",
+    ),
+    "questionTitle": MessageLookupByLibrary.simpleMessage("عنوان السؤال"),
+    "questionTitleHint": MessageLookupByLibrary.simpleMessage(
+      "أدخل عنوان السؤال",
+    ),
     "questions": MessageLookupByLibrary.simpleMessage("الأسئلة"),
+    "requiredField": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "resources": MessageLookupByLibrary.simpleMessage("المصادر"),
+    "save": MessageLookupByLibrary.simpleMessage("إرسال السؤال"),
     "searchForQuestions": MessageLookupByLibrary.simpleMessage(
       "البحث عن الأسئلة",
     ),
@@ -63,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "studentsAndCourseParticipants": MessageLookupByLibrary.simpleMessage(
       "الطلاب والمشاركون في الدورات",
     ),
+    "submitAnswer": MessageLookupByLibrary.simpleMessage("إرسال الإجابة"),
     "superAdmin": MessageLookupByLibrary.simpleMessage("المسؤول الأعلى"),
     "systemAdministratorsAndManagers": MessageLookupByLibrary.simpleMessage(
       "مديرو النظام والمسؤولون",

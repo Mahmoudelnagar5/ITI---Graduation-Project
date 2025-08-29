@@ -74,11 +74,9 @@ export 'package:final_project_iti/user/super_admin/features/add_item/presentatio
 export 'package:final_project_iti/core/theme/theme_manager.dart';
 export 'package:final_project_iti/firebase_options.dart';
 export 'package:final_project_iti/l10n/app_localizations.dart';
-export 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_cubit.dart';
-export 'package:final_project_iti/user/student/features/home/presentation/manager/localization/localization_state.dart';
 export 'package:final_project_iti/user/student/features/home/presentation/manager/starred_questions/starred_questions_cubit.dart';
-export 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_cubit.dart';
-export 'package:final_project_iti/user/student/features/home/presentation/manager/theme/app_state.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/manager/app/app_cubit.dart';
+export 'package:final_project_iti/user/student/features/home/presentation/manager/app/app_state.dart';
 export 'package:final_project_iti/user/student/features/home/presentation/views/main_view.dart';
 export 'package:final_project_iti/user/student/features/splash_view/splash_view.dart';
 export 'package:final_project_iti/user/super_admin/features/dashboard/presentation/views/super_admin_view.dart';

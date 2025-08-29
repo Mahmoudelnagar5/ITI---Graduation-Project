@@ -21,9 +21,11 @@ class DarkTheme {
       onBackground: AppColors.darkHomeUserTitle,
       onError: AppColors.white,
     ),
+    shadowColor: const Color(0xff1E1E1E),
 
     // AppBar Theme
     appBarTheme: AppBarTheme(
+      shadowColor: const Color(0xff1E1E1E),
       backgroundColor: AppColors.darkBackAppBar,
       foregroundColor: AppColors.white,
       elevation: 0,

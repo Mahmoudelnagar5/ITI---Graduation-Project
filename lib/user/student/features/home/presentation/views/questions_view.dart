@@ -21,8 +21,12 @@ class QuestionsView extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       body: const QuestionsViewBody(),
-      floatingActionButton: Builder(
+      floatingActionButton: 
+    
+      Builder(
+        
         builder: (context) => FloatingActionButton(
+          heroTag: "star",
           backgroundColor: AppColors.mainColorStart,
           onPressed: () async {
             final result = await Navigator.of(

@@ -12,12 +12,14 @@ class ProfileBody extends StatefulWidget {
 }
 
 class _ProfileBodyState extends State<ProfileBody> {
-  late String _selectedTheme; // Default selection
+  late String _selectedTheme;
   late String _selectedLanguage;
+
   @override
   void initState() {
-    _selectedTheme = AppCubit.get(context).getTheme().name.toString();
-    _selectedLanguage = LocalizationCubit.get(context).getLanguage();
+    final appCubit = AppCubit.get(context);
+    _selectedTheme = appCubit.getTheme().name;
+    _selectedLanguage = appCubit.getLanguage();
     super.initState();
   }
 
@@ -28,170 +30,142 @@ class _ProfileBodyState extends State<ProfileBody> {
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       builder: (context) {
-        return StatefulBuilder(
-          builder: (context, setStateSheet) {
-            return Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 40,
-                    height: 4,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[400],
-                      borderRadius: BorderRadius.circular(2),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  const Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Select Theme',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  ListTile(
-                    title: const Text('Dark Mode'),
-                    trailing: Radio<String>(
-                      value: 'dark',
-                      groupValue: _selectedTheme,
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedTheme = value!;
-                          AppCubit.get(
-                            context,
-                          ).selectTheme(ThemeModeState.dark);
-                        });
-                        setStateSheet(() {});
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    title: const Text('Light Mode'),
-                    trailing: Radio<String>(
-                      value: 'light',
-                      groupValue: _selectedTheme,
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedTheme = value!;
-                          AppCubit.get(
-                            context,
-                          ).selectTheme(ThemeModeState.light);
-                        });
-                        setStateSheet(() {});
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    title: const Text('System Settings'),
-                    trailing: Radio<String>(
-                      value: 'system',
-                      groupValue: _selectedTheme,
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedTheme = value!;
-                          AppCubit.get(
-                            context,
-                          ).selectTheme(ThemeModeState.system);
-                        });
-                        setStateSheet(() {});
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                ],
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: Colors.grey[400],
+                  borderRadius: BorderRadius.circular(2),
+                ),
               ),
-            );
-          },
+              const SizedBox(height: 16),
+              const Text(
+                'Select Theme',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 10),
+              _buildThemeOption(
+                context,
+                'Dark Mode',
+                'dark',
+                ThemeModeState.dark,
+              ),
+              _buildThemeOption(
+                context,
+                'Light Mode',
+                'light',
+                ThemeModeState.light,
+              ),
+              _buildThemeOption(
+                context,
+                'System Settings',
+                'system',
+                ThemeModeState.system,
+              ),
+            ],
+          ),
         );
       },
     );
   }
 
-  void _showSelectedLanguage(BuildContext context) {
+  Widget _buildThemeOption(
+    BuildContext context,
+    String title,
+    String value,
+    ThemeModeState themeMode,
+  ) {
+    return ListTile(
+      title: Text(title),
+      trailing: Radio<String>(
+        value: value,
+        groupValue: _selectedTheme,
+        onChanged: (val) {
+          if (val == null) return;
+          setState(() => _selectedTheme = val);
+          AppCubit.get(context).selectTheme(themeMode);
+          Navigator.pop(context);
+        },
+      ),
+    );
+  }
+
+  void _showLanguageSelectorSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       builder: (context) {
-        return StatefulBuilder(
-          builder: (context, setStateSheet) {
-            return Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 40,
-                    height: 4,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[400],
-                      borderRadius: BorderRadius.circular(2),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  const Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Select Language',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  ListTile(
-                    title: const Text('English'),
-                    trailing: Radio<String>(
-                      value: 'en',
-                      groupValue: _selectedLanguage,
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedLanguage = value!;
-                          LocalizationCubit.get(context).selectLanguage('en');
-                        });
-                        setStateSheet(() {});
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    title: const Text('Arabic'),
-                    trailing: Radio<String>(
-                      value: 'ar',
-                      groupValue: _selectedLanguage,
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedLanguage = value!;
-                          LocalizationCubit.get(context).selectLanguage('ar');
-                        });
-                        setStateSheet(() {});
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                ],
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: Colors.grey[400],
+                  borderRadius: BorderRadius.circular(2),
+                ),
               ),
-            );
-          },
+              const SizedBox(height: 16),
+              const Text(
+                'Select Language',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 10),
+              _buildLanguageOption(context, 'English', 'en'),
+              _buildLanguageOption(context, 'Arabic', 'ar'),
+            ],
+          ),
         );
       },
     );
   }
 
+  Widget _buildLanguageOption(
+    BuildContext context,
+    String title,
+    String value,
+  ) {
+    return ListTile(
+      title: Text(title),
+      trailing: Radio<String>(
+        value: value,
+        groupValue: _selectedLanguage,
+        onChanged: (val) {
+          if (val == null) return;
+          setState(() => _selectedLanguage = val);
+          AppCubit.get(context).selectLanguage(val);
+          Navigator.pop(context);
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final divider = Divider(
+      height: 20,
+      color: Theme.of(context).colorScheme.outline,
+      thickness: 1,
+    );
+
     return SafeArea(
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -204,38 +178,25 @@ class _ProfileBodyState extends State<ProfileBody> {
               const SizedBox(height: 20),
               const InfoSection(),
               const SizedBox(height: 32),
-              Divider(
-                height: 20,
-                color: Theme.of(context).colorScheme.outline,
-                thickness: 1,
-              ),
-
+              divider,
               const SizedBox(height: 15),
               SettingItem(
                 title: AppLocalizations.of(context)!.changeLanguage,
                 icon: Icons.language,
-                onTap: () => _showSelectedLanguage(context),
+                onTap: () => _showLanguageSelectorSheet(context),
               ),
-              Divider(
-                height: 20,
-                color: Theme.of(context).colorScheme.outline,
-                thickness: 1,
-              ),
+              divider,
               const SizedBox(height: 15),
               SettingItem(
                 title: AppLocalizations.of(context)!.themeSetting,
-
                 icon: Icons.dark_mode,
                 onTap: () => _showThemeSelectorSheet(context),
               ),
-              Divider(
-                height: 20,
-                color: Theme.of(context).colorScheme.outline,
-                thickness: 1,
-              ),
+              divider,
               const SizedBox(height: 15),
               SettingItem(
                 onTap: () {
+                  
                   AppNavigation.pushName(
                     context: context,
                     route: AppRoutes.starredQuestionsView,
@@ -245,11 +206,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                 title: AppLocalizations.of(context)!.starredQuestions,
                 icon: Icons.star,
               ),
-              Divider(
-                height: 20,
-                color: Theme.of(context).colorScheme.outline,
-                thickness: 1,
-              ),
+              divider,
               SizedBox(height: 0.06.sh),
               const CustomTextButtom(),
             ],

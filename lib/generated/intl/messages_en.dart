@@ -22,7 +22,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addNewQuestion": MessageLookupByLibrary.simpleMessage("Add New Question"),
+    "addQuestion": MessageLookupByLibrary.simpleMessage("Add Question"),
     "admin": MessageLookupByLibrary.simpleMessage("Admin"),
+    "adminDashboard": MessageLookupByLibrary.simpleMessage("Admin Dashboard"),
+    "answerHint": MessageLookupByLibrary.simpleMessage("Enter your answer"),
+    "answerQuestion": MessageLookupByLibrary.simpleMessage("Answer Question"),
+    "answerSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Answer submitted successfully",
+    ),
+    "answeredQuestions": MessageLookupByLibrary.simpleMessage(
+      "Answered Questions",
+    ),
     "appTitle": MessageLookupByLibrary.simpleMessage("ITI Graduation Project"),
     "changeLanguage": MessageLookupByLibrary.simpleMessage("Change Language"),
     "commonQuestions": MessageLookupByLibrary.simpleMessage("Common Questions"),
@@ -30,6 +41,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Course instructors and staff members",
     ),
     "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+    "errorSubmittingQuestion": MessageLookupByLibrary.simpleMessage(
+      "Error submitting question",
+    ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "itiFayoum": MessageLookupByLibrary.simpleMessage("ITI Fayoum"),
     "itiLearningResources": MessageLookupByLibrary.simpleMessage(
@@ -37,12 +51,33 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "learningTracks": MessageLookupByLibrary.simpleMessage("Learning Tracks"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "manageUserQuestions": MessageLookupByLibrary.simpleMessage(
+      "Manage User Questions",
+    ),
+    "pendingQuestions": MessageLookupByLibrary.simpleMessage(
+      "Pending Questions",
+    ),
     "pleaseSelectYourAccountType": MessageLookupByLibrary.simpleMessage(
       "Please select your account type",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "questionDescription": MessageLookupByLibrary.simpleMessage("Description"),
+    "questionDescriptionHint": MessageLookupByLibrary.simpleMessage(
+      "Enter question description",
+    ),
+    "questionSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Question submitted successfully",
+    ),
+    "questionTitle": MessageLookupByLibrary.simpleMessage("Title"),
+    "questionTitleHint": MessageLookupByLibrary.simpleMessage(
+      "Enter question title",
+    ),
     "questions": MessageLookupByLibrary.simpleMessage("Questions"),
+    "requiredField": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "resources": MessageLookupByLibrary.simpleMessage("Resources"),
+    "save": MessageLookupByLibrary.simpleMessage("Send Question"),
     "searchForQuestions": MessageLookupByLibrary.simpleMessage(
       "Search for questions",
     ),
@@ -59,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "studentsAndCourseParticipants": MessageLookupByLibrary.simpleMessage(
       "Students and course participants",
     ),
+    "submitAnswer": MessageLookupByLibrary.simpleMessage("Submit Answer"),
     "superAdmin": MessageLookupByLibrary.simpleMessage("Super Admin"),
     "systemAdministratorsAndManagers": MessageLookupByLibrary.simpleMessage(
       "System administrators and managers",

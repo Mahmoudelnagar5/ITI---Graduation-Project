@@ -268,6 +268,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Add Question`
+  String get addQuestion {
+    return Intl.message(
+      'Add Question',
+      name: 'addQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Question submitted successfully`
+  String get questionSubmittedSuccessfully {
+    return Intl.message(
+      'Question submitted successfully',
+      name: 'questionSubmittedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error submitting question`
+  String get errorSubmittingQuestion {
+    return Intl.message(
+      'Error submitting question',
+      name: 'errorSubmittingQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get questionTitle {
+    return Intl.message('Title', name: 'questionTitle', desc: '', args: []);
+  }
+
+  /// `Enter question title`
+  String get questionTitleHint {
+    return Intl.message(
+      'Enter question title',
+      name: 'questionTitleHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get questionDescription {
+    return Intl.message(
+      'Description',
+      name: 'questionDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter question description`
+  String get questionDescriptionHint {
+    return Intl.message(
+      'Enter question description',
+      name: 'questionDescriptionHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get requiredField {
+    return Intl.message(
+      'This field is required',
+      name: 'requiredField',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Question`
+  String get save {
+    return Intl.message('Send Question', name: 'save', desc: '', args: []);
+  }
+
+  /// `Admin Dashboard`
+  String get adminDashboard {
+    return Intl.message(
+      'Admin Dashboard',
+      name: 'adminDashboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Question`
+  String get addNewQuestion {
+    return Intl.message(
+      'Add New Question',
+      name: 'addNewQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage User Questions`
+  String get manageUserQuestions {
+    return Intl.message(
+      'Manage User Questions',
+      name: 'manageUserQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending Questions`
+  String get pendingQuestions {
+    return Intl.message(
+      'Pending Questions',
+      name: 'pendingQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Answered Questions`
+  String get answeredQuestions {
+    return Intl.message(
+      'Answered Questions',
+      name: 'answeredQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Answer submitted successfully`
+  String get answerSubmittedSuccessfully {
+    return Intl.message(
+      'Answer submitted successfully',
+      name: 'answerSubmittedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Answer Question`
+  String get answerQuestion {
+    return Intl.message(
+      'Answer Question',
+      name: 'answerQuestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your answer`
+  String get answerHint {
+    return Intl.message(
+      'Enter your answer',
+      name: 'answerHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit Answer`
+  String get submitAnswer {
+    return Intl.message(
+      'Submit Answer',
+      name: 'submitAnswer',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

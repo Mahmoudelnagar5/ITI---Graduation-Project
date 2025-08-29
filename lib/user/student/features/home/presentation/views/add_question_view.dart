@@ -1,9 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:final_project_iti/core/utilities/app_colors.dart';
-import 'package:final_project_iti/core/utilities/styles_manager.dart';
-import 'package:final_project_iti/l10n/app_localizations.dart';
 
 class AddQuestionView extends StatefulWidget {
   const AddQuestionView({super.key});

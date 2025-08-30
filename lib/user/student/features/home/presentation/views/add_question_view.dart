@@ -57,94 +57,98 @@ class _AddQuestionViewState extends State<AddQuestionView> {
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(loc.questionTitle, style: AppTextStyles.textStyleMedium16),
-              const SizedBox(height: 8),
-              TextFormField(
-                controller: _titleController,
-                decoration: InputDecoration(
-                  hintText: loc.questionTitleHint,
-                  filled: true,
-                  fillColor: Theme.of(context).colorScheme.surface,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.outline,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(loc.questionTitle, style: AppTextStyles.textStyleMedium16),
+                const SizedBox(height: 8),
+                TextFormField(
+                  onTapOutside: (_) => FocusScope.of(context).unfocus(),
+                  controller: _titleController,
+                  decoration: InputDecoration(
+                    hintText: loc.questionTitleHint,
+                    filled: true,
+                    fillColor: Theme.of(context).colorScheme.surface,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: Theme.of(context).colorScheme.outline,
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: Theme.of(context).colorScheme.outline,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                     ),
                   ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.outline,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
+                  validator: (v) =>
+                      v == null || v.trim().isEmpty ? loc.requiredField : null,
                 ),
-                validator: (v) =>
-                    v == null || v.trim().isEmpty ? loc.requiredField : null,
-              ),
-              const SizedBox(height: 16),
-              Text(
-                loc.questionDescription,
-                style: AppTextStyles.textStyleMedium16,
-              ),
-              const SizedBox(height: 8),
-              TextFormField(
-                controller: _descriptionController,
-                maxLines: 4,
-                decoration: InputDecoration(
-                  hintText: loc.questionDescriptionHint,
-                  filled: true,
-                  fillColor: Theme.of(context).colorScheme.surface,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.outline,
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.outline,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
+                const SizedBox(height: 16),
+                Text(
+                  loc.questionDescription,
+                  style: AppTextStyles.textStyleMedium16,
                 ),
-                validator: (v) =>
-                    v == null || v.trim().isEmpty ? loc.requiredField : null,
-              ),
-              const SizedBox(height: 24),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: _isLoading ? null : _submitQuestion,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.mainColorStart,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
+                const SizedBox(height: 8),
+                TextFormField(
+                  onTapOutside: (_) => FocusScope.of(context).unfocus(),
+                  controller: _descriptionController,
+                  maxLines: 4,
+                  decoration: InputDecoration(
+                    hintText: loc.questionDescriptionHint,
+                    filled: true,
+                    fillColor: Theme.of(context).colorScheme.surface,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: Theme.of(context).colorScheme.outline,
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: Theme.of(context).colorScheme.outline,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
                   ),
-                  child: _isLoading
-                      ? const CircularProgressIndicator()
-                      : Text(
-                          loc.save,
-                          style: AppTextStyles.textStyleMedium16.copyWith(
-                            color: Colors.white,
+                  validator: (v) =>
+                      v == null || v.trim().isEmpty ? loc.requiredField : null,
+                ),
+                const SizedBox(height: 24),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: _isLoading ? null : _submitQuestion,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.mainColorStart,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                    ),
+                    child: _isLoading
+                        ? const CircularProgressIndicator()
+                        : Text(
+                            loc.save,
+                            style: AppTextStyles.textStyleMedium16.copyWith(
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -36,6 +36,7 @@ class AuthRoleView extends StatelessWidget {
             ),
             Gap(32.h),
             Expanded(
+              flex: 30,
               child: ListView(
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
@@ -87,7 +88,7 @@ class AuthRoleView extends StatelessWidget {
                 ],
               ),
             ),
-            Gap(24.h),
+            const Expanded(child: SizedBox()),
             Text(
               AppLocalizations.of(context)!.selectYourRoleToProceedToLogin,
               style: AppTextStyles.textStyleRegular14.copyWith(
@@ -95,7 +96,7 @@ class AuthRoleView extends StatelessWidget {
                 color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
               ),
             ),
-            Gap(120.h),
+            const Expanded(child: SizedBox()),
           ],
         ),
       ),

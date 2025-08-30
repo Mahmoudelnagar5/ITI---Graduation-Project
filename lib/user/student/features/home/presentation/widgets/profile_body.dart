@@ -1,5 +1,4 @@
 import '../../../../../../core/routing/route_export.dart';
-import 'custom_text_button.dart';
 import 'image_setion.dart';
 import 'info_section.dart';
 import 'setting_item.dart';
@@ -26,33 +25,33 @@ class _ProfileBodyState extends State<ProfileBody> {
   void _showThemeSelectorSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
       ),
       builder: (context) {
         return Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.w),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                width: 40,
-                height: 4,
+                width: 40.w,
+                height: 4.h,
                 decoration: BoxDecoration(
                   color: Colors.grey[400],
-                  borderRadius: BorderRadius.circular(2),
+                  borderRadius: BorderRadius.circular(2.r),
                 ),
               ),
-              const SizedBox(height: 16),
-              const Text(
+              SizedBox(height: 16.h),
+              Text(
                 'Select Theme',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
               _buildThemeOption(
                 context,
                 'Dark Mode',
@@ -102,33 +101,33 @@ class _ProfileBodyState extends State<ProfileBody> {
   void _showLanguageSelectorSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
       ),
       builder: (context) {
         return Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.w),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                width: 40,
-                height: 4,
+                width: 40.w,
+                height: 4.h,
                 decoration: BoxDecoration(
                   color: Colors.grey[400],
-                  borderRadius: BorderRadius.circular(2),
+                  borderRadius: BorderRadius.circular(2.r),
                 ),
               ),
-              const SizedBox(height: 16),
-              const Text(
+              SizedBox(height: 16.h),
+              Text(
                 'Select Language',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
               _buildLanguageOption(context, 'English', 'en'),
               _buildLanguageOption(context, 'Arabic', 'ar'),
             ],
@@ -161,9 +160,9 @@ class _ProfileBodyState extends State<ProfileBody> {
   @override
   Widget build(BuildContext context) {
     final divider = Divider(
-      height: 20,
+      height: 20.h,
       color: Theme.of(context).colorScheme.outline,
-      thickness: 1,
+      thickness: 1.h,
     );
 
     return SafeArea(
@@ -171,32 +170,31 @@ class _ProfileBodyState extends State<ProfileBody> {
         physics: const BouncingScrollPhysics(),
         child: Container(
           alignment: Alignment.center,
-          margin: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+          margin: EdgeInsets.symmetric(horizontal: 32.w, vertical: 20.h),
           child: Column(
             children: [
               const ImageSection(),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
               const InfoSection(),
-              const SizedBox(height: 32),
+              SizedBox(height: 32.h),
               divider,
-              const SizedBox(height: 15),
+              SizedBox(height: 15.h),
               SettingItem(
                 title: AppLocalizations.of(context)!.changeLanguage,
                 icon: Icons.language,
                 onTap: () => _showLanguageSelectorSheet(context),
               ),
               divider,
-              const SizedBox(height: 15),
+              SizedBox(height: 15.h),
               SettingItem(
                 title: AppLocalizations.of(context)!.themeSetting,
                 icon: Icons.dark_mode,
                 onTap: () => _showThemeSelectorSheet(context),
               ),
               divider,
-              const SizedBox(height: 15),
+              SizedBox(height: 15.h),
               SettingItem(
                 onTap: () {
-                  
                   AppNavigation.pushName(
                     context: context,
                     route: AppRoutes.starredQuestionsView,
@@ -208,7 +206,8 @@ class _ProfileBodyState extends State<ProfileBody> {
               ),
               divider,
               SizedBox(height: 0.06.sh),
-              const CustomTextButtom(),
+              //Removed Logout Button To Future Consideration if needed
+              //const CustomTextButtom(),
             ],
           ),
         ),

@@ -13,7 +13,9 @@ class AdminDashboardView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           loc.adminDashboard ?? 'Admin Dashboard',
-          style: AppTextStyles.textStyleMedium20,
+          style: AppTextStyles.textStyleMedium20.copyWith(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,

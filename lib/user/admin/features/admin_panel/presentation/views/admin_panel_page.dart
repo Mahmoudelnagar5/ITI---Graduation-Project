@@ -27,14 +27,17 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
         appBar: AppBar(
           scrolledUnderElevation: 0,
           surfaceTintColor: Colors.transparent,
-          centerTitle: false,
+          centerTitle: true,
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+
           title: Text(
             'ITI Admin Panel',
             style: AppTextStyles.textStyleBold20.copyWith(
               color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
-          backgroundColor: AppColors.white,
+          // backgroundColor: AppColors.white,
         ),
         body: SingleChildScrollView(
           padding: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 24.h),

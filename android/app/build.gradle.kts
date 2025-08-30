@@ -22,7 +22,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.final_project_iti"
-        minSdk = 23     // Updated to 23 to satisfy cloud_firestore requirement
+        minSdk = flutter.minSdkVersion     // Updated to 23 to satisfy cloud_firestore requirement
         targetSdk = flutter.targetSdkVersion  // ✅ استخدم targetSdk
         versionCode = flutter.versionCode
         versionName = flutter.versionName

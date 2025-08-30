@@ -59,7 +59,7 @@ class _SendNotificationViewState extends State<SendNotificationView> {
               style: AppTextStyles.textStyleMedium18.copyWith(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
-                color: AppColors.black,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
             Gap(16.h),

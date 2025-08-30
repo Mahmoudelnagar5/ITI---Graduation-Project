@@ -43,14 +43,14 @@ class _SearchWidgetState extends State<SearchWidget> {
               decoration: InputDecoration(
                 prefixIcon: Icon(
                   Icons.search,
-                  size: 20,
+                  size: 20.sp,
                   color: theme.colorScheme.onSurface.withOpacity(0.6),
                 ),
                 isCollapsed: true,
                 hintText: widget.hintText,
-                hintStyle: TextStyle(
+                hintStyle: AppTextStyles.textStyleRegular16.copyWith(
+                  fontFamily: AppFontFamily.roboto,
                   color: theme.colorScheme.onSurface.withOpacity(0.6),
-                  fontSize: 16,
                 ),
                 border: InputBorder.none,
               ),

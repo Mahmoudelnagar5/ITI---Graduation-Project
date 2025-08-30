@@ -21,15 +21,52 @@ class _AddResourceViewState extends State<AddResourceView> {
 
   final List<String> _tracks = [
     'All',
+
+    // Mobile
     'Flutter',
-    'AI',
-    'DevOps',
+    'React Native',
+    'Native',
+    'Swift',
+    'Kotlin',
+
+    // Web
     'Web Dev',
-    'Security',
-    'Network',
+    'Frontend',
+    'React',
+    'Angular',
+    'Vue.js',
+    'Backend',
+    'Node.js',
+    '.Net',
+    'Python',
+    'Java',
+    'C#',
+    'Full Stack',
+
+    // AI & Data
+    'AI',
+    'Machine Learning',
     'Data Science',
-    'Game Dev',
+    'Big Data',
+    'Robotics',
+
+    // Security & Networks
+    'Cyber Security',
+    'Penetration Testing',
+    'Network',
+
+    // Infrastructure
+    'DevOps',
+    'Cloud Computing',
+    'Git, GitHub',
+
+    // Other
     'UI/UX',
+    'Game Dev',
+    'Blockchain',
+    'IOT',
+    'Testing & QA',
+    'Database',
   ];
 
   @override

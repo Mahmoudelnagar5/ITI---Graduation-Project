@@ -1,4 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/core/constants/app_constants.dart';
 
 class AddResourceView extends StatefulWidget {
   final AddResourceRepo _repo = AddResourceRepo();
@@ -17,57 +18,9 @@ class _AddResourceViewState extends State<AddResourceView> {
   String? _selectedType;
   String? _selectedTrack;
 
-  final List<String> _resourceTypes = ["Article (Link)", "YouTube Video"];
+  final List<String> _resourceTypes = AppConstants.resourceTypes;
 
-  final List<String> _tracks = [
-    'All',
-
-    // Mobile
-    'Flutter',
-    'React Native',
-    'Native',
-    'Swift',
-    'Kotlin',
-
-    // Web
-    'Web Dev',
-    'Frontend',
-    'React',
-    'Angular',
-    'Vue.js',
-    'Backend',
-    'Node.js',
-    '.Net',
-    'Python',
-    'Java',
-    'C#',
-    'Full Stack',
-
-    // AI & Data
-    'AI',
-    'Machine Learning',
-    'Data Science',
-    'Big Data',
-    'Robotics',
-
-    // Security & Networks
-    'Cyber Security',
-    'Penetration Testing',
-    'Network',
-
-    // Infrastructure
-    'DevOps',
-    'Cloud Computing',
-    'Git, GitHub',
-
-    // Other
-    'UI/UX',
-    'Game Dev',
-    'Blockchain',
-    'IOT',
-    'Testing & QA',
-    'Database',
-  ];
+  final List<String> _tracks = AppConstants.resourceTracks;
 
   @override
   void dispose() {

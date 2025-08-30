@@ -1,4 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/core/constants/app_constants.dart';
 
 class ResourcesPage extends StatefulWidget {
   const ResourcesPage({super.key});
@@ -10,55 +11,7 @@ class ResourcesPage extends StatefulWidget {
 class _ResourcesPageState extends State<ResourcesPage> {
   final GlobalKey<CardsListState> _cardListKey = GlobalKey<CardsListState>();
 
-  final tracks = [
-    'All',
-
-    // Mobile
-    'Flutter',
-    'React Native',
-    'Native',
-    'Swift',
-    'Kotlin',
-
-    // Web
-    'Web Dev',
-    'Frontend',
-    'React',
-    'Angular',
-    'Vue.js',
-    'Backend',
-    'Node.js',
-    '.Net',
-    'Python',
-    'Java',
-    'C#',
-    'Full Stack',
-
-    // AI & Data
-    'AI',
-    'Machine Learning',
-    'Data Science',
-    'Big Data',
-    'Robotics',
-
-    // Security & Networks
-    'Cyber Security',
-    'Penetration Testing',
-    'Network',
-
-    // Infrastructure
-    'DevOps',
-    'Cloud Computing',
-    'Git, GitHub',
-
-    // Other
-    'UI/UX',
-    'Game Dev',
-    'Blockchain',
-    'IOT',
-    'Testing & QA',
-    'Database',
-  ];
+  final tracks = AppConstants.resourceTracks;
 
   int selectedIndex = 0;
 

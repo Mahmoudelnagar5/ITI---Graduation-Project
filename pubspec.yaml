@@ -12,7 +12,6 @@ environment:
 dependencies:
   cloud_firestore: ^6.0.0
   cupertino_icons: ^1.0.8
-  device_preview: ^1.3.1
   dio: ^5.9.0
   dotted_border: ^3.1.0
   equatable: ^2.0.5
@@ -23,8 +22,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
-  flutter_chat_core: ^2.8.0
-  flutter_chat_ui: ^2.9.0
   flutter_dotenv: ^5.2.1
   flutter_gemini: ^3.0.0
   flutter_launcher_icons: ^0.14.4
@@ -88,12 +85,10 @@ flutter:
           weight: 400
         - asset: assets/fonts/Roboto/Roboto-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Roboto/Roboto-ExtraBold.ttf
-          weight: 800
         - asset: assets/fonts/Roboto/Roboto-SemiBold.ttf
           weight: 600
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
+          weight: 700
 
 flutter_assets:
   assets_path: assets/images

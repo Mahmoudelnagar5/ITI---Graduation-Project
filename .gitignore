@@ -50,6 +50,6 @@ app.*.map.json
 .fvm/
 # Firebase service account key
 assets/service_account.json
-
+android/app/build.gradle.kts
 # Environment variables
 .env

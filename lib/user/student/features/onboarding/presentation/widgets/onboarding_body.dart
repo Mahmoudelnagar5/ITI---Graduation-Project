@@ -36,11 +36,11 @@ class OnboardingBody extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  height: 280,
+                  height: 250,
                   width: 326,
                 ),
               ),
-              Gap(16.h),
+              Gap(20.h),
               Text(
                 onboardingDataList[index].title,
                 style: AppTextStyles.textStyleBold24.copyWith(
@@ -48,7 +48,7 @@ class OnboardingBody extends StatelessWidget {
                   fontFamily: AppFontFamily.inter,
                 ),
               ),
-              Gap(16.h),
+              Gap(12.h),
               Text(
                 textAlign: TextAlign.center,
                 onboardingDataList[index].subTitle,
@@ -60,7 +60,7 @@ class OnboardingBody extends StatelessWidget {
                   fontFamily: AppFontFamily.inter,
                 ),
               ),
-              const Gap(16),
+              const Expanded(child: SizedBox()),
               SmoothPageIndicator(
                 controller: pageController,
                 count: onboardingDataList.length,
@@ -71,6 +71,7 @@ class OnboardingBody extends StatelessWidget {
                   dotWidth: 12.w,
                 ),
               ),
+              const Expanded(child: SizedBox()),
             ],
           ),
         ),

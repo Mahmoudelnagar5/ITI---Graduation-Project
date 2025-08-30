@@ -23,6 +23,7 @@ class AppTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return TextFormField(
+      onTapOutside: (_) => FocusScope.of(context).unfocus(),
       onSaved: onSaved,
       maxLines: maxLines,
       style: TextStyle(color: theme.colorScheme.onSurface),

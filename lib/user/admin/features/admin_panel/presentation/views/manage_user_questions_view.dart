@@ -199,6 +199,7 @@ class _AnswerQuestionViewState extends State<AnswerQuestionView> {
             Text(widget.description),
             const SizedBox(height: 24),
             TextFormField(
+              onTapOutside: (_) => FocusScope.of(context).unfocus(),
               controller: _answerController,
               decoration: InputDecoration(
                 hintText: loc.answerHint ?? 'Enter your answer',

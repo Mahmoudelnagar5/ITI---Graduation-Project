@@ -9,9 +9,9 @@ final List<OnboardingModel> onboardingDataList = [
     image: Assets.imagesOnboarding,
   ),
   OnboardingModel(
-    title: 'Welcome to ITI Fayoum',
+    title: 'Stay Connected',
     subTitle:
-        "Join Egypt's premier tech education hub. Start your journey to becoming a tech professional.",
+        "Easily access training programs and keep in touch with ITI community.",
     image: Assets.imagesOnboarding2,
   ),
 ];

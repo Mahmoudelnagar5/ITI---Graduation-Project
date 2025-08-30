@@ -28,7 +28,17 @@ class OnboardingBody extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 14),
-                child: Image.asset(onboardingDataList[index].image),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    image: DecorationImage(
+                      image: AssetImage(onboardingDataList[index].image),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  height: 280,
+                  width: 326,
+                ),
               ),
               Gap(16.h),
               Text(

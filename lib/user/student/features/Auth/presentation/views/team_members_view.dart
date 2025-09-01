@@ -1,5 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/Auth/models/developer_model.dart';
+import 'package:final_project_iti/user/student/features/Auth/data/models/developer_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -46,10 +46,10 @@ class TeamMembersPage extends StatelessWidget {
           children: [
             Row(
               children: [
-                // Avatar
                 CircleAvatar(
                   radius: 25,
                   backgroundColor: Theme.of(context).colorScheme.primary,
+
                   child: Text(
                     member.avatar,
                     style: const TextStyle(

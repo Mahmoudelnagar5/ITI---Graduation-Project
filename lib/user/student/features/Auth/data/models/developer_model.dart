@@ -16,6 +16,13 @@ class DeveloperModel {
 
 final List<DeveloperModel> ourTeam = [
   DeveloperModel(
+    name: "Yousef Ahmed",
+    role: "Flutter Developer",
+    linkedin: "https://www.linkedin.com/in/1youssef-ahmed/",
+    github: "https://github.com/yousefa7med",
+    avatar: "YA",
+  ),
+  DeveloperModel(
     name: "Mahmoud Elnagar",
     role: "Flutter Developer",
     linkedin: "https://www.linkedin.com/in/mahmoud-elnagar-11040a259/",
@@ -36,12 +43,5 @@ final List<DeveloperModel> ourTeam = [
         "https://www.linkedin.com/in/youssef-mahmoud-eid-attia-067433272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com/Youssef-Ma7moud-Eid",
     avatar: "YM",
-  ),
-  DeveloperModel(
-    name: "Yousef Ahmed",
-    role: "Flutter Developer",
-    linkedin: "https://www.linkedin.com/in/1youssef-ahmed/",
-    github: "https://github.com/yousefa7med",
-    avatar: "YA",
   ),
 ];

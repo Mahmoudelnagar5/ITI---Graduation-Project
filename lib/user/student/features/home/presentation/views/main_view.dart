@@ -52,6 +52,7 @@ class _MainViewState extends State<MainView> {
 
         child: PersistentTabView(
           context,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           controller: controller,
           screens: _pages,
           items: [
@@ -91,9 +92,9 @@ class _MainViewState extends State<MainView> {
             ),
             screenTransitionAnimation: ScreenTransitionAnimationSettings(
               animateTabTransition: true,
-              duration: Duration(milliseconds: 300),
+              duration: Duration(milliseconds: 200),
               screenTransitionAnimationType:
-                  ScreenTransitionAnimationType.fadeIn,
+                  ScreenTransitionAnimationType.slide,
             ),
           ),
         ),

@@ -34,14 +34,14 @@ class _ManageUserQuestionsViewState extends State<ManageUserQuestionsView>
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          loc.manageUserQuestions ?? 'Manage User Questions',
+          loc.manageUserQuestions,
           style: AppTextStyles.textStyleMedium20,
         ),
         bottom: TabBar(
           controller: _tabController,
           tabs: [
-            Tab(text: loc.pendingQuestions ?? 'Pending Questions'),
-            Tab(text: loc.answeredQuestions ?? 'Answered Questions'),
+            Tab(text: loc.pendingQuestions),
+            Tab(text: loc.answeredQuestions),
           ],
         ),
         backgroundColor: Colors.transparent,
@@ -162,8 +162,7 @@ class _AnswerQuestionViewState extends State<AnswerQuestionView> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              AppLocalizations.of(context)!.answerSubmittedSuccessfully ??
-                  'Answer submitted successfully',
+              AppLocalizations.of(context)!.answerSubmittedSuccessfully,
             ),
           ),
         );
@@ -182,10 +181,7 @@ class _AnswerQuestionViewState extends State<AnswerQuestionView> {
     final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          loc.answerQuestion ?? 'Answer Question',
-          style: AppTextStyles.textStyleMedium20,
-        ),
+        title: Text(loc.answerQuestion, style: AppTextStyles.textStyleMedium20),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -202,7 +198,7 @@ class _AnswerQuestionViewState extends State<AnswerQuestionView> {
               onTapOutside: (_) => FocusScope.of(context).unfocus(),
               controller: _answerController,
               decoration: InputDecoration(
-                hintText: loc.answerHint ?? 'Enter your answer',
+                hintText: loc.answerHint,
                 filled: true,
                 fillColor: AppColors.lightSearchFillColor,
                 border: OutlineInputBorder(
@@ -226,7 +222,7 @@ class _AnswerQuestionViewState extends State<AnswerQuestionView> {
                 child: _isLoading
                     ? const CircularProgressIndicator()
                     : Text(
-                        loc.submitAnswer ?? 'Submit Answer',
+                        loc.submitAnswer,
                         style: AppTextStyles.textStyleMedium16.copyWith(
                           color: Colors.white,
                         ),

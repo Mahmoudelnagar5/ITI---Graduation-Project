@@ -2,7 +2,7 @@ name: final_project_iti
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -15,6 +15,7 @@ dependencies:
   dio: ^5.9.0
   dotted_border: ^3.1.0
   equatable: ^2.0.5
+  font_awesome_flutter: ^10.7.0
   file_picker: ^10.3.1
   firebase_core: ^4.0.0
   firebase_messaging: ^16.0.0

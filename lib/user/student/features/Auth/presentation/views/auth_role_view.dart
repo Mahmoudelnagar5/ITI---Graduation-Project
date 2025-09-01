@@ -1,5 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
-import 'package:final_project_iti/user/student/features/Auth/presentation/views/team_members.dart';
+import 'package:final_project_iti/user/student/features/Auth/presentation/views/team_members_view.dart';
 
 class AuthRoleView extends StatelessWidget {
   const AuthRoleView({super.key});

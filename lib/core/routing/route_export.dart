@@ -12,7 +12,7 @@ export 'package:final_project_iti/user/admin/features/admin_panel/presentation/w
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/manager/register_cubit/register_state.dart';
 export 'package:final_project_iti/core/utilities/assets_manager.dart';
-export 'package:final_project_iti/user/student/features/Auth/data/login_role_model.dart';
+export 'package:final_project_iti/user/student/features/Auth/data/models/login_role_model.dart';
 export 'package:final_project_iti/core/config/configrations.dart';
 export 'package:final_project_iti/core/utilities/app_font_family.dart';
 export 'package:final_project_iti/user/student/features/Auth/presentation/widgets/role_card.dart';

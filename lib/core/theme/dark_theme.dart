@@ -12,7 +12,7 @@ class DarkTheme {
     colorScheme: const ColorScheme.dark(
       primary: AppColors.mainColorStart,
       secondary: AppColors.adminPrimaryColor,
-      surface: AppColors.darkScaffoldBg,
+      surface: AppColors.darkCardBg,
       background: AppColors.darkScaffoldBg,
       error: AppColors.adminPrimaryColor,
       onPrimary: AppColors.white,

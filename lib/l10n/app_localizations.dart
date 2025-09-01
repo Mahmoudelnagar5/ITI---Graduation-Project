@@ -230,6 +230,24 @@ abstract class AppLocalizations {
   /// **'Super Admin'**
   String get superAdmin;
 
+  /// No description provided for @student.
+  ///
+  /// In en, this message translates to:
+  /// **'Student'**
+  String get student;
+
+  /// No description provided for @instructor.
+  ///
+  /// In en, this message translates to:
+  /// **'Instructor'**
+  String get instructor;
+
+  /// No description provided for @manager.
+  ///
+  /// In en, this message translates to:
+  /// **'Manager'**
+  String get manager;
+
   /// No description provided for @selectYourRoleToProceedToLogin.
   ///
   /// In en, this message translates to:

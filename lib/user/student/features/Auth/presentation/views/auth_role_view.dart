@@ -41,7 +41,7 @@ class AuthRoleView extends StatelessWidget {
                 children: [
                   RoleCard(
                     roleModel: LoginRoleModel(
-                      title: AppLocalizations.of(context)!.user,
+                      title: AppLocalizations.of(context)!.student,
                       subTitle: AppLocalizations.of(
                         context,
                       )!.studentsAndCourseParticipants,
@@ -56,7 +56,7 @@ class AuthRoleView extends StatelessWidget {
                   ),
                   RoleCard(
                     roleModel: LoginRoleModel(
-                      title: AppLocalizations.of(context)!.admin,
+                      title: AppLocalizations.of(context)!.instructor,
                       subTitle: AppLocalizations.of(
                         context,
                       )!.courseInstructorsAndStaffMembers,
@@ -71,7 +71,7 @@ class AuthRoleView extends StatelessWidget {
                   ),
                   RoleCard(
                     roleModel: LoginRoleModel(
-                      title: AppLocalizations.of(context)!.superAdmin,
+                      title: AppLocalizations.of(context)!.manager,
                       subTitle: AppLocalizations.of(
                         context,
                       )!.systemAdministratorsAndManagers,
@@ -90,7 +90,7 @@ class AuthRoleView extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 24.w),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.surface,
                         borderRadius: BorderRadius.circular(16.r),
                         border: Border.all(
                           color: Theme.of(

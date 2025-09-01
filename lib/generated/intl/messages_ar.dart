@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "حدث خطأ أثناء إرسال السؤال",
     ),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "instructor": MessageLookupByLibrary.simpleMessage("مدرب"),
     "itiFayoum": MessageLookupByLibrary.simpleMessage(
       "معهد تكنولوجيا المعلومات - الفيوم",
     ),
@@ -60,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "manageUserQuestions": MessageLookupByLibrary.simpleMessage(
       "إدارة أسئلة المستخدمين",
     ),
+    "manager": MessageLookupByLibrary.simpleMessage("مدير المعهد"),
     "pendingQuestions": MessageLookupByLibrary.simpleMessage("الأسئلة المعلقة"),
     "pleaseSelectYourAccountType": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار نوع الحساب",
@@ -91,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "اختر دورك للمتابعة إلى تسجيل الدخول",
     ),
     "starredQuestions": MessageLookupByLibrary.simpleMessage("الأسئلة المميزة"),
+    "student": MessageLookupByLibrary.simpleMessage("طالب"),
     "studentsAndCourseParticipants": MessageLookupByLibrary.simpleMessage(
       "الطلاب والمشاركون في الدورات",
     ),

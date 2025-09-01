@@ -229,6 +229,21 @@ class S {
     return Intl.message('Super Admin', name: 'superAdmin', desc: '', args: []);
   }
 
+  /// `Student`
+  String get student {
+    return Intl.message('Student', name: 'student', desc: '', args: []);
+  }
+
+  /// `Instructor`
+  String get instructor {
+    return Intl.message('Instructor', name: 'instructor', desc: '', args: []);
+  }
+
+  /// `Manager`
+  String get manager {
+    return Intl.message('Manager', name: 'manager', desc: '', args: []);
+  }
+
   /// `Select your role to proceed to login`
   String get selectYourRoleToProceedToLogin {
     return Intl.message(

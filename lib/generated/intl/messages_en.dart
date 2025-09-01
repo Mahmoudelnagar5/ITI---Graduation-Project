@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Error submitting question",
     ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "instructor": MessageLookupByLibrary.simpleMessage("Instructor"),
     "itiFayoum": MessageLookupByLibrary.simpleMessage("ITI Fayoum"),
     "itiLearningResources": MessageLookupByLibrary.simpleMessage(
       "ITI Learning Resources",
@@ -54,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "manageUserQuestions": MessageLookupByLibrary.simpleMessage(
       "Manage User Questions",
     ),
+    "manager": MessageLookupByLibrary.simpleMessage("Manager"),
     "pendingQuestions": MessageLookupByLibrary.simpleMessage(
       "Pending Questions",
     ),
@@ -91,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "starredQuestions": MessageLookupByLibrary.simpleMessage(
       "Starred Questions",
     ),
+    "student": MessageLookupByLibrary.simpleMessage("Student"),
     "studentsAndCourseParticipants": MessageLookupByLibrary.simpleMessage(
       "Students and course participants",
     ),

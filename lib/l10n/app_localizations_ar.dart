@@ -76,6 +76,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get superAdmin => 'المسؤول الأعلى';
 
   @override
+  String get student => 'طالب';
+
+  @override
+  String get instructor => 'مدرب';
+
+  @override
+  String get manager => 'مدير المعهد';
+
+  @override
   String get selectYourRoleToProceedToLogin =>
       'اختر دورك للمتابعة إلى تسجيل الدخول';
 

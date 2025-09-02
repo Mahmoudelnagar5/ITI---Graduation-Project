@@ -1,4 +1,5 @@
 import 'package:final_project_iti/core/routing/route_export.dart';
+import 'package:final_project_iti/user/student/features/Auth/data/models/developer_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,38 +8,6 @@ class TeamMembersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final team = [
-      {
-        "name": "Mahmoud Elnagar",
-        "role": "Flutter Developer",
-        "linkedin": "https://www.linkedin.com/in/mahmoud-elnagar-11040a259/",
-        "github": "https://github.com/Mahmoudelnagar5",
-        "avatar": "ME",
-      },
-      {
-        "name": "Moaz Ayman",
-        "role": "Flutter Developer",
-        "linkedin": "https://www.linkedin.com/in/moaz-ayman-a59230296/",
-        "github": "https://github.com/moaz-abdeltawab92",
-        "avatar": "MA",
-      },
-      {
-        "name": "Yousef Mahmoud",
-        "role": "Flutter Developer",
-        "linkedin":
-            "https://www.linkedin.com/in/youssef-mahmoud-eid-attia-067433272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        "github": "https://github.com/Youssef-Ma7moud-Eid",
-        "avatar": "YM",
-      },
-      {
-        "name": "Yousef Ahmed",
-        "role": "Flutter Developer",
-        "linkedin": "https://www.linkedin.com/in/1youssef-ahmed/",
-        "github": "https://github.com/yousefa7med",
-        "avatar": "YA",
-      },
-    ];
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -53,9 +22,9 @@ class TeamMembersPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
-          itemCount: team.length,
+          itemCount: ourTeam.length,
           itemBuilder: (context, index) {
-            final member = team[index];
+            final member = ourTeam[index];
             return Padding(
               padding: const EdgeInsets.only(bottom: 16.0),
               child: _buildMemberCard(context, member),
@@ -66,7 +35,7 @@ class TeamMembersPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMemberCard(BuildContext context, Map<String, String> member) {
+  Widget _buildMemberCard(BuildContext context, DeveloperModel member) {
     return Card(
       elevation: 4,
       shadowColor: Colors.black12,
@@ -77,12 +46,12 @@ class TeamMembersPage extends StatelessWidget {
           children: [
             Row(
               children: [
-                // Avatar
                 CircleAvatar(
                   radius: 25,
                   backgroundColor: Theme.of(context).colorScheme.primary,
+
                   child: Text(
-                    member["avatar"]!,
+                    member.avatar,
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -98,7 +67,7 @@ class TeamMembersPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        member["name"]!,
+                        member.name,
                         style: Theme.of(context).textTheme.titleMedium
                             ?.copyWith(
                               fontWeight: FontWeight.bold,
@@ -107,7 +76,7 @@ class TeamMembersPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        member["role"]!,
+                        member.role,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Theme.of(
                             context,
@@ -130,14 +99,14 @@ class TeamMembersPage extends StatelessWidget {
                 _buildSocialIcon(
                   icon: FontAwesomeIcons.github,
                   color: const Color(0xFF24292e),
-                  onPressed: () => _launchURL(member["github"]!),
+                  onPressed: () => _launchURL(member.github),
                   tooltip: "GitHub",
                 ),
-                const SizedBox(width: 20),
+                const SizedBox(width: 50),
                 _buildSocialIcon(
                   icon: FontAwesomeIcons.linkedin,
                   color: const Color(0xFF0A66C2),
-                  onPressed: () => _launchURL(member["linkedin"]!),
+                  onPressed: () => _launchURL(member.linkedin),
                   tooltip: "LinkedIn",
                 ),
               ],

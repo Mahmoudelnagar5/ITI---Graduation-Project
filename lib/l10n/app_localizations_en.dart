@@ -75,6 +75,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get superAdmin => 'Super Admin';
 
   @override
+  String get student => 'Student';
+
+  @override
+  String get instructor => 'Instructor';
+
+  @override
+  String get manager => 'Manager';
+
+  @override
   String get selectYourRoleToProceedToLogin =>
       'Select your role to proceed to login';
 

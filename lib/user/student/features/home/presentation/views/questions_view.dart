@@ -38,14 +38,14 @@ class QuestionsView extends StatelessWidget {
                   content: Text(
                     AppLocalizations.of(
                           context,
-                        )!.questionSubmittedSuccessfully ??
-                        'Question submitted successfully',
+                        )!.questionSubmittedSuccessfully 
+
                   ),
                 ),
               );
             }
           },
-          tooltip: AppLocalizations.of(context)!.addQuestion ?? 'Add Question',
+          tooltip: AppLocalizations.of(context)!.addQuestion ,
           child: const Icon(Icons.add, color: Colors.white),
         ),
       ),

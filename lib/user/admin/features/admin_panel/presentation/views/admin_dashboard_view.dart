@@ -12,11 +12,13 @@ class AdminDashboardView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          loc.adminDashboard ,
+          loc.adminDashboard,
           style: AppTextStyles.textStyleMedium20.copyWith(
             color: Theme.of(context).colorScheme.onSurface,
           ),
         ),
+        scrolledUnderElevation: 0,
+        surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -27,7 +29,7 @@ class AdminDashboardView extends StatelessWidget {
           children: [
             _DashboardCard(
               icon: Icons.add_circle_outline,
-              label: loc.addNewQuestion ,
+              label: loc.addNewQuestion,
               onTap: () {
                 Navigator.of(context).pushNamed('/addFaqQuestion');
               },
@@ -35,7 +37,7 @@ class AdminDashboardView extends StatelessWidget {
             const SizedBox(height: 32),
             _DashboardCard(
               icon: Icons.question_answer,
-              label: loc.manageUserQuestions ,
+              label: loc.manageUserQuestions,
               onTap: () {
                 Navigator.of(context).pushNamed('/manageUserQuestions');
               },

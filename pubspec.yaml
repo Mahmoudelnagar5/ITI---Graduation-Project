@@ -15,7 +15,6 @@ dependencies:
   dio: ^5.9.0
   dotted_border: ^3.1.0
   equatable: ^2.0.5
-  font_awesome_flutter: ^10.7.0
   file_picker: ^10.3.1
   firebase_core: ^4.0.0
   firebase_messaging: ^16.0.0
@@ -33,6 +32,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   flutter_slider_drawer: ^3.0.2
   flutter_svg: ^2.2.0
+  font_awesome_flutter: ^10.10.0
   gap: ^3.0.1
   googleapis_auth: ^1.4.1
   http: ^1.2.1

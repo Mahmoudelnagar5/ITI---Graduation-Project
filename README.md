@@ -176,6 +176,16 @@ graph TB
 
 ---
 
+# 📚 ITI Learning Platform
+
+An **educational Flutter application** built by our team to streamline learning for **Students, Admins, and Super Admins**. The app provides AI-powered study assistance, track-based courses, resource management, and role-based dashboards for seamless interaction.
+
+🌐 **Live Website & Demo**  
+You can explore the features and download the app here:  
+👉 [ITI Learning Platform Website](https://itiwebview.netlify.app/)
+
+---
+
 ## 👥 Authors
 
 - **Mahmoud Elnagar** - *Initial work* - [GitHub](https://github.com/Mahmoudelnagar5/)

@@ -2,9 +2,21 @@ import 'package:final_project_iti/core/routing/route_export.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 
 class GeminiService {
-  static final Gemini _gemini = Gemini.init(
-    apiKey: dotenv.env['GEMINI_API_KEY'] ?? '',
-  );
+  static Gemini? _gemini;
+
+  static Gemini get gemini {
+    if (_gemini == null) {
+      final apiKey = dotenv.env['GEMINI_API_KEY'] ?? '';
+      if (apiKey.isEmpty) {
+        throw Exception('GEMINI_API_KEY not found in environment variables');
+      }
+      _gemini = Gemini.init(apiKey: apiKey);
+      debugPrint(
+        'Gemini initialized with API key: ${apiKey.substring(0, 10)}...',
+      );
+    }
+    return _gemini!;
+  }
 
   static Future<String?> sendQuery({
     required List<Map<String, dynamic>> data,
@@ -19,14 +31,14 @@ class GeminiService {
         responseInstructions: responseFormat,
       );
 
-      final response = await _gemini.prompt(
+      final response = await gemini.prompt(
         parts: [Part.text(prompt), Part.text(userQuery)],
       );
       debugPrint(response?.output);
 
       return response?.output;
     } catch (e) {
-      debugPrint('Gemini Error: ${e.toString()}');
+      debugPrint('Gemini Error: $e');
       return null;
     }
   }

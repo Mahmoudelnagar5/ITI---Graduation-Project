@@ -17,13 +17,7 @@ void main() async {
   await CacheHelper().init();
   Bloc.observer = AppBlocObserver();
 
-
-
-
-
-  runApp( const MyApp());
-
-
+  runApp(const MyApp());
 }
 
 //27.0.12077973

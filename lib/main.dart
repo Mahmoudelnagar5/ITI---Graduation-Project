@@ -2,13 +2,13 @@ import 'package:final_project_iti/core/routing/route_export.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // try {
-  //   await dotenv.load(fileName: '.env');
-  //   debugPrint('Environment variables loaded successfully');
-  // } catch (e) {
-  //   debugPrint('Warning: Could not load .env file: $e');
-  // }
-   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  try {
+    await dotenv.load(fileName: '.env');
+    debugPrint('Environment variables loaded successfully');
+  } catch (e) {
+    debugPrint('Warning: Could not load .env file: $e');
+  }
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   // // Initialize Firebase Messaging and Notifications
   // await FirebaseApi().initNotification();
@@ -18,9 +18,6 @@ void main() async {
   Bloc.observer = AppBlocObserver();
 
   runApp(const MyApp());
-
-  runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
-
 }
 
 //27.0.12077973

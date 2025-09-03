@@ -168,11 +168,15 @@ graph TB
 ---
 ## 📱 Screenshots
 
-<img width="1542" height="640" alt="Image" src="https://github.com/user-attachments/assets/738c37c3-9377-4224-b16f-644f926120d3" />
+![Image](https://github.com/user-attachments/assets/509fc7ad-747b-4c06-9d42-a28806c79162)
 
-<img width="1530" height="644" alt="Image" src="https://github.com/user-attachments/assets/42457ad6-b253-4b17-847f-506932b7c219" />
+![Image](https://github.com/user-attachments/assets/a60326bd-17af-4db2-a9dd-689b70807bbe)
 
-<img width="1534" height="642" alt="Image" src="https://github.com/user-attachments/assets/ae69a44c-3235-4735-a759-03710209bbd4" />
+![Image](https://github.com/user-attachments/assets/f42137a7-d3eb-4ca7-8bc1-bdd53c24c6bf)
+
+![Image](https://github.com/user-attachments/assets/56658947-3176-4b68-9465-1e5b810069d1)
+
+![Image](https://github.com/user-attachments/assets/48fc093c-43dd-4155-8149-acd2ed749281)
 
 ---
 
